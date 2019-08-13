@@ -1,0 +1,99 @@
+.compute-section {
+    min-height: 100vh;
+    padding-top: 10rem;
+    background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%),
+        url('../img/abandoned-computer.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+
+    @media(max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    p {
+        margin-bottom: 3rem;
+    }
+
+    #results-more {
+        position: absolute;
+        max-width: 100px;
+        padding: 10px;
+        border-radius: 5px;
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    #compute-container {
+        min-height: 100%;
+        min-height: -moz-available;
+        /* WebKit-based browsers will ignore this. */
+        min-height: -webkit-fill-available;
+        /* Mozilla-based browsers will ignore this. */
+        min-height: fill-available;
+    }
+
+    #compute-form {
+        color: white;
+        margin-bottom: 2.5rem;
+
+        label {
+            margin: 0;
+        }
+
+        #compute-selects-row {
+            justify-content: space-evenly;
+            margin-bottom: 3rem;
+
+            @media(max-width: 768px) {
+                padding: 0 2rem;
+            }
+
+        }
+    }
+
+    #result-row {
+
+        #result-card {
+
+            margin: auto;
+            background-color: $white;
+            border-radius: 5px;
+            border-bottom: 5px solid $primary;
+            padding: 2rem;
+            box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+
+            .result-value {
+                font-size: 3rem;
+                font-weight: 200;
+            }
+
+            #result-unit {
+                font-size: 1rem;
+                color: $gray-700;
+            }
+
+            .result-box {}
+
+            #result-emitted {
+                #emitted-unit {}
+
+                #emitted-value {
+                    color: orange;
+                }
+            }
+
+            #result-offset {
+                #offset-unit {}
+
+                #offset-value {
+                    color: green
+                }
+            }
+        }
+    }
+}

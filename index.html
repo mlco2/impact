@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>ML CO2 Impact</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/grayscale.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#">ML CO2 Impact</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a id="compute-nav-link" class="nav-link js-scroll-trigger" href="#compute">Compute</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#act">Act</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#learn">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- Header -->
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">ML CO2 Impact</h1>
+            <h2 class="mx-auto mt-2 mb-5">Machine Learning has an impact on Climate. But not all models are born equal.
+            </h2>
+            <a href="#compute" class="btn-primary btn js-scroll-trigger">Compute your model's impact</a>
+        </div>
+    </div>
+</header>
+<!-- Compute Section -->
+<section id="compute" class="compute-section text-center">
+    <div id="compute-container" class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
+                <p class="text-white-80">Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours
+                    right
+                    now, simply download the template on
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is
+                    open
+                    source, and you can use it for any purpose, personal or commercial.</p>
+            </div>
+
+        </div>
+
+        <form id="compute-form">
+
+            <div class="form-row" id="compute-selects-row">
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                    <label for="compute-gpu">GPU type</label>
+                    <select class="form-control compute-input" id="compute-gpu">
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                    <label for="compute-hours">GPU hours</label>
+                    <input class="form-control compute-input" id="compute-hours" type="number" value="3" />
+                </div>
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                    <label for="compute-provider">Provider</label>
+                    <select class="form-control compute-input" id="compute-provider">
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                    <label for="compute-region">Region of compute</label>
+                    <select class="form-control compute-input" id="compute-region">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <button id="compute-submit" class="btn btn-primary" type="submit">Compute</button>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="spinner-border text-light" style="width: 3rem; height: 3rem;display:none;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+
+        <a id="goToResults" href="#compute-submit" class="js-scroll-trigger"></a>
+
+        <div class="row" id="result-row">
+
+            <div style="display:none;" id="result-card" class="col-md-6 col-8">
+
+                <div class="row">
+                    <a href="#act" class="btn btn-secondary text-uppercase js-scroll-trigger" id="results-more">What can
+                        I
+                        do?</a>
+                    <div class="col-md-6 result-box" id="result-emitted">
+                        <div class="result-title small text-uppercase text-black-50">Emitted Carbon</div>
+                        <div id="emitted-value" class="result-value">219</div>
+                    </div>
+                    <div class="col-md-6 result-box" id="result-offset">
+                        <div class="result-title small text-uppercase text-black-50">Offset Carbon</div>
+                        <div id="offset-value" class="result-value">219</div>
+                    </div>
+                    <div class="col-md-12 small text-black-50" id="result-unit"> kg eq. CO2 <a href="#co2eq"
+                            class="js-scroll-trigger"><i class="fas fa-question-circle"></i></a></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- Act Section -->
+<section id="act" class="act-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+                <i class="far fa-compass fa-2x mb-2 text-white"></i>
+                <h2 class="text-white mb-4">There are things you can do</h2>
+                <p class="text-white-80">With great computing power comes great responsibility</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="learn-card-container">
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Chose your provider</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">nfzkefnjk jef qfn ezfnezqfneqfn qfe fqnf fzenqfjnezqfjncdn
+                            nfzkefnjk jef
+                            qfn ezfnezqfneqfn qfe fqnf fzenqfjnezqfjncdn nfzkefnjk jef qfn ezfnezqfneqfn qfe fqnf
+                            fzenqfjnezqfjncdn
+                            nfzkefnjk jef qfn ezfnezqfneqfn qfe fqnf fzenqfjnezqfjncdn </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Chose your region</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">
+                            <a href="#">f nqf zne fjnsjg nwjf nqnfqjfeqk, N fjfjenqf jk nfj qnjknoizaiepo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Answer our poll</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">+1 (555) 902-8832</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="learn-more-div">
+
+            <a href="#learn" class="btn btn-primary js-scroll-trigger">Learn more<i>⤵</i></a>
+
+        </div>
+        <!-- 
+        <div class="social d-flex justify-content-center">
+          <a href="#" class="mx-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="mx-2">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="mx-2">
+            <i class="fab fa-github"></i>
+          </a>
+        </div> -->
+
+    </div>
+</section>
+<!-- Learn Section -->
+<section id="learn" class="learn-section bg-light">
+    <div class="container">
+
+        <div id="learn-title" class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">Learn</h2>
+                <p class="text-white-80">This section will present some of the important concepts to better understand
+                    the carbon footprint of your computations, including what providers do to offset it</p>
+            </div>
+
+        </div>
+
+        <!-- Project One Row -->
+        <div id="co2eq" class="row justify-content-center no-gutters mb-5 mb-lg-0">
+            <!-- <div class="col-lg-6">
+          <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
+        </div> -->
+            <div class="col-lg-12">
+                <div class="text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="learn-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Eq. kg CO2</h4>
+                            <p class="mb-0 text-white-80">An example of where you can put an image of a project, or
+                                anything else,
+                                along with a description.</p>
+                            <hr class="d-none d-lg-block mb-0 ml-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Two Row -->
+        <div class="row justify-content-center no-gutters">
+            <!-- <div class="col-lg-6">
+          <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
+        </div> -->
+            <div class="col-lg-12 order-lg-first">
+                <div class="text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="learn-text w-100 my-auto text-center text-lg-right">
+                            <h4 class="text-white">Offsetting</h4>
+                            <p class="mb-0 text-white-80">Another example of a project with its respective description.
+                                These
+                                sections work well responsively as well, try this theme on a small screen!</p>
+                            <hr class="d-none d-lg-block mb-0 mr-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project One Row -->
+        <div id="co2eq" class="row justify-content-center no-gutters mb-5 mb-lg-0">
+            <!-- <div class="col-lg-6">
+            <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
+          </div> -->
+            <div class="col-lg-12">
+                <div class="text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="learn-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">ERCs</h4>
+                            <p class="mb-0 text-white-80">An example of where you can put an image of a project, or
+                                anything else,
+                                along with a description.</p>
+                            <hr class="d-none d-lg-block mb-0 ml-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Two Row -->
+        <div class="row justify-content-center no-gutters">
+            <!-- <div class="col-lg-6">
+            <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
+          </div> -->
+            <div class="col-lg-12 order-lg-first">
+                <div class="text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="learn-text w-100 my-auto text-center text-lg-right">
+                            <h4 class="text-white">Carbon Neutral</h4>
+                            <p class="mb-0 text-white-80">Another example of a project with its respective description.
+                                These
+                                sections work well responsively as well, try this theme on a small screen!</p>
+                            <hr class="d-none d-lg-block mb-0 mr-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project One Row -->
+        <div id="co2eq" class="row justify-content-center no-gutters mb-5 mb-lg-0">
+            <!-- <div class="col-lg-6">
+            <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
+          </div> -->
+            <div class="col-lg-12">
+                <div class="text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="learn-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Additivity</h4>
+                            <p class="mb-0 text-white-80">An example of where you can put an image of a project, or
+                                anything else,
+                                along with a description.</p>
+                            <hr class="d-none d-lg-block mb-0 ml-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- About Section -->
+<section id="about" class="about-section bg-light">
+    <div class="container">
+
+        <div id="about-title" class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">About ML CO2 Impact</h2>
+                <p class="text-white-80">blabla this is us</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Footer -->
+<footer class="small text-center text-white-80">
+    <div class="container">
+
+        <form class="row form-inline d-flex">
+
+            <div class="col-md-6 col-12">
+                <textarea rows="5" required type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
+                    id="inputEmail" placeholder="Can something be improved?"></textarea>
+            </div>
+            <div class="col-md-4 col-12">
+                <input type="email" required class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
+                    placeholder="Enter email address...">
+            </div>
+
+            <div class="col-md-2 col-12">
+                <button type="submit" class="btn btn-primary mx-auto">Send</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <!-- <div id= class="container">
+          Copyright &copy; Your Website 2019
+        </div> -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/grayscale.min.js"></script>
+
+</body>
+
+</html>

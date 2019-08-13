@@ -1,0 +1,85 @@
+<!-- Compute Section -->
+<section id="compute" class="compute-section text-center">
+    <div id="compute-container" class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
+                <p class="text-white-80">Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours
+                    right
+                    now, simply download the template on
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is
+                    open
+                    source, and you can use it for any purpose, personal or commercial.</p>
+            </div>
+
+        </div>
+
+        <form id="compute-form">
+
+            <div class="form-row" id="compute-selects-row">
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                    <label for="compute-gpu">GPU type</label>
+                    <select class="form-control compute-input" id="compute-gpu">
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                    <label for="compute-hours">GPU hours</label>
+                    <input class="form-control compute-input" id="compute-hours" type="number" value="3" />
+                </div>
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                    <label for="compute-provider">Provider</label>
+                    <select class="form-control compute-input" id="compute-provider">
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                    <label for="compute-region">Region of compute</label>
+                    <select class="form-control compute-input" id="compute-region">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <button id="compute-submit" class="btn btn-primary" type="submit">Compute</button>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="spinner-border text-light" style="width: 3rem; height: 3rem;display:none;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+
+        <a id="goToResults" href="#compute-submit" class="js-scroll-trigger"></a>
+
+        <div class="row" id="result-row">
+
+            <div style="display:none;" id="result-card" class="col-md-6 col-8">
+
+                <div class="row">
+                    <a href="#act" class="btn btn-secondary text-uppercase js-scroll-trigger" id="results-more">What can
+                        I
+                        do?</a>
+                    <div class="col-md-6 result-box" id="result-emitted">
+                        <div class="result-title small text-uppercase text-black-50">Emitted Carbon</div>
+                        <div id="emitted-value" class="result-value">219</div>
+                    </div>
+                    <div class="col-md-6 result-box" id="result-offset">
+                        <div class="result-title small text-uppercase text-black-50">Offset Carbon</div>
+                        <div id="offset-value" class="result-value">219</div>
+                    </div>
+                    <div class="col-md-12 small text-black-50" id="result-unit"> kg eq. CO2 <a href="#co2eq"
+                            class="js-scroll-trigger"><i class="fas fa-question-circle"></i></a></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

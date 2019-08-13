@@ -1,0 +1,41 @@
+.learn-section {
+    background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%),
+        url('../img/Lake-Tahoe-Scenic.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    padding: 10rem 0;
+
+    text-align: center;
+
+    @media(max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+
+    .featured-text {
+        padding: 2rem;
+
+        @media (min-width: 992px) {
+            padding: 0 0 0 2rem;
+            border-left: 0.5rem solid $primary;
+        }
+    }
+
+    .learn-text {
+        padding: 3rem;
+        font-size: 90%;
+
+        @media (min-width: 992px) {
+            padding: 5rem;
+
+            hr {
+                border-color: $primary;
+                border-width: .25rem;
+                width: 30%;
+            }
+        }
+    }
+}

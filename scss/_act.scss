@@ -1,0 +1,35 @@
+.act-section {
+    padding: 10rem 0;
+    background: linear-gradient(to bottom, $back-15 0, $back-2 75%, $back-25 100%), url("../img/100_0221-min.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    min-height: 100vh;
+
+    @media(max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    #learn-card-container {
+        padding: 2.5em;
+
+        @media(max-width: 768px) {
+            padding: 1rem;
+        }
+
+    }
+
+
+    #learn-more-div {
+        padding: 5rem;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.5rem;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+}
