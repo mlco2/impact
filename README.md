@@ -13,7 +13,7 @@ For safety, disable the credential helper:
 To **commit** chose a random username and password:
 
 ```
-~/path/to/mlco2/impact $ git -c user.name='Jahne Doe' -c user.email='my@email.org' commit -m 'some commit message'
+~/path/to/mlco2/impact $ git -c user.name='Jahne Doe' -c user.email='my@email.org' commit -am 'some commit message'
 ```
 
 Then `git push origin master` as usual with the credentials you have been given
