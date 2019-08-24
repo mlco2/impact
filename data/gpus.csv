@@ -1,0 +1,13 @@
+name,watt
+RTX 2080 Ti,250
+RTX 2080,215
+GTX 1080 Ti,250
+GTX 1080,180
+amd RX480,150
+Titan V,250
+Tesla V100,300
+TPU2,250
+TPU3,250
+Intel Xeon E5-2699,145
+AGX Xavier,30
+brain ,20
