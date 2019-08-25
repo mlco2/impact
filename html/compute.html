@@ -61,6 +61,8 @@
 
             <div style="display:none;" id="result-card" class="col-md-6 col-8">
 
+                <!-- main card -->
+
                 <div class="row">
                     <a href="#act" class="btn btn-secondary text-uppercase js-scroll-trigger" id="results-more">What can
                         I
@@ -77,8 +79,24 @@
                             class="js-scroll-trigger"><i class="fas fa-question-circle"></i></a></div>
                 </div>
 
-            </div>
+                <!-- details -->
 
+                <div id="result-details" class="details-hidden">
+                    <div id="details-content" class="small text-black-50">
+                        <div style="padding-top: 15px;">Power consumption x Time x Provider's Region carbon impact</div>
+                        <div>=</div>
+                        <div id="details-counts"></div>
+                    </div>
+                    <div id="details-banner">
+                        <a class="arrow-icon open" title="Learn more about these numbers">
+                            <span class="left-bar"></span>
+                            <span class="right-bar"></span>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
 
     </div>

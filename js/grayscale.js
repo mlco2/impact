@@ -116,8 +116,8 @@ const submitCompute = (_values) => {
   const offset = co2 * state.providers[provider][region].offsetRatio / 100
 
   $("#emitted-value").text(parseInt(co2));
-  $("#offset-value").text(parseInt(co2));
-
+  $("#offset-value").text(parseInt(offset));
+  $("#details-counts").text(`${state.gpus[gpu].watt} x ${hours} x ${state.providers[provider][region].impact / 1000}`)
 
   setTimeout(() => {
     $(".spinner-border").hide()
@@ -291,7 +291,18 @@ const setInputs2 = () => {
     $("#compute-submit").prop("disabled", true);
     if (checkForm()) $("#compute-submit").prop("disabled", false);
   })
-
+  $(".arrow-icon").click(function () {
+    if ($(this).hasClass("open")) {
+      var h = 0;
+      $("#details-content").children().each((k, v) => {
+        h += $(v).innerHeight()
+      })
+      $("#details-content").height(h);
+    } else {
+      $("#details-content").height(0);
+    }
+    $(this).toggleClass("open");
+  });
 
 
 })(jQuery); // End of use strict

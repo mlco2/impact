@@ -1,3 +1,7 @@
+
+var dev_base_data_url = '/data/';
+var prod_base_data_url = '/impact/data/';
+
 const parseProvidersData = data => {
     let providers = {};
     let prov, min;
@@ -53,12 +57,22 @@ async function getProvidersData() {
     try {
         result = await $.ajax({
             type: "GET",
-            url: "/data/impact.csv",
+            url: prod_base_data_url + "impact.csv",
             dataType: "text",
         });
         return result;
     } catch (error) {
-        console.error(error);
+        try {
+            result = await $.ajax({
+                type: "GET",
+                url: dev_base_data_url + "impact.csv",
+                dataType: "text",
+            });
+            return result;
+        } catch (error) {
+            console.log("Error getting providers:")
+            console.error(error);
+        }
     }
 }
 
@@ -67,12 +81,22 @@ async function getGPUData() {
     try {
         result = await $.ajax({
             type: "GET",
-            url: "/data/gpus.csv",
+            url: prod_base_data_url + "gpus.csv",
             dataType: "text",
         });
         return result;
     } catch (error) {
-        console.error(error);
+        try {
+            result = await $.ajax({
+                type: "GET",
+                url: dev_base_data_url + "gpus.csv",
+                dataType: "text",
+            });
+            return result;
+        } catch (error) {
+            console.log("Error getting providers:")
+            console.error(error);
+        }
     }
 }
 

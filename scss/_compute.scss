@@ -1,6 +1,11 @@
+$easing: cubic-bezier(.25, 1.7, .35, .8);
+$duration: 0.5s;
+$arrowwidth:20px;
+$arrowheight:2px;
+
 .compute-section {
     min-height: 100vh;
-    padding-top: 10rem;
+    padding-top: 6rem;
     background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%),
         url('../img/abandoned-computer.jpg');
     background-position: center;
@@ -63,7 +68,7 @@
             margin: auto;
             background-color: $white;
             border-radius: 5px;
-            border-bottom: 5px solid $primary;
+            // border-bottom: 5px solid $primary;
             padding: 2rem;
             box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
 
@@ -75,6 +80,108 @@
             #result-unit {
                 font-size: 1rem;
                 color: $gray-700;
+            }
+
+            #result-details {
+
+                #details-content {
+                    transition: all ease 600ms;
+                    overflow: hidden;
+                    height: 0px;
+                }
+
+                #details-banner {   
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    left: 0;
+                    border-radius: 0px 0px 5px 5px;
+                    background-color: $primary;
+                    min-height: 21px;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .arrow-icon {
+                        height: 2.2em;
+                        width: 2.8em;
+                        display: block;
+                        padding: 0.5em;
+                        margin: 1em auto;
+                        position: absolute;
+                        cursor: pointer;
+                        border-radius: 4px;
+                    }
+
+                    .left-bar {
+                        position: absolute;
+                        background-color: transparent;
+                        top: 0;
+                        left: 0;
+                        width: $arrowwidth;
+                        height: $arrowheight;
+                        display: block;
+                        transform: rotate(35deg);
+                        float: right;
+                        border-radius: 2px;
+
+                        &:after {
+                            content: "";
+                            background-color: white;
+                            width: $arrowwidth;
+                            height: $arrowheight;
+                            display: block;
+                            float: right;
+                            border-radius: 6px 10px 10px 6px;
+                            transition: all $duration $easing;
+                            z-index: -1;
+                        }
+                    }
+
+                    .right-bar {
+                        position: absolute;
+                        background-color: transparent;
+                        top: 0px;
+                        left: 15px;
+                        width: $arrowwidth;
+                        height: $arrowheight;
+                        display: block;
+                        transform: rotate(-35deg);
+                        float: right;
+                        border-radius: 2px;
+
+                        &:after {
+                            content: "";
+                            background-color: white;
+                            width: $arrowwidth;
+                            height: $arrowheight;
+                            display: block;
+                            float: right;
+                            border-radius: 10px 6px 6px 10px;
+                            transition: all $duration $easing;
+                            z-index: -1;
+                        }
+                    }
+
+                    .open {
+                        .left-bar:after {
+                            transform-origin: center center;
+                            transform: rotate(-70deg);
+                        }
+
+                        .right-bar:after {
+                            transform-origin: center center;
+                            transform: rotate(70deg);
+                        }
+
+                    }
+
+
+
+                }
+
+
             }
 
             .result-box {}

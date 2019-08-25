@@ -200,7 +200,7 @@
 
 .compute-section {
   min-height: 100vh;
-  padding-top: 10rem;
+  padding-top: 6rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("../img/abandoned-computer.jpg");
   background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("../img/abandoned-computer.jpg");
   background-position: center;
@@ -268,7 +268,6 @@
   margin: auto;
   background-color: #fff;
   border-radius: 5px;
-  border-bottom: 5px solid #f55249;
   padding: 2rem;
   -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
@@ -282,6 +281,112 @@
 .compute-section #result-row #result-card #result-unit {
   font-size: 1rem;
   color: #495057;
+}
+
+.compute-section #result-row #result-card #result-details #details-content {
+  -webkit-transition: all ease 600ms;
+  transition: all ease 600ms;
+  overflow: hidden;
+  height: 0px;
+}
+
+.compute-section #result-row #result-card #result-details #details-banner {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  border-radius: 0px 0px 5px 5px;
+  background-color: #f55249;
+  min-height: 21px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.compute-section #result-row #result-card #result-details #details-banner .arrow-icon {
+  height: 2.2em;
+  width: 2.8em;
+  display: block;
+  padding: 0.5em;
+  margin: 1em auto;
+  position: absolute;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.compute-section #result-row #result-card #result-details #details-banner .left-bar {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  display: block;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+  float: right;
+  border-radius: 2px;
+}
+
+.compute-section #result-row #result-card #result-details #details-banner .left-bar:after {
+  content: "";
+  background-color: white;
+  width: 20px;
+  height: 2px;
+  display: block;
+  float: right;
+  border-radius: 6px 10px 10px 6px;
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  z-index: -1;
+}
+
+.compute-section #result-row #result-card #result-details #details-banner .right-bar {
+  position: absolute;
+  background-color: transparent;
+  top: 0px;
+  left: 15px;
+  width: 20px;
+  height: 2px;
+  display: block;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+  float: right;
+  border-radius: 2px;
+}
+
+.compute-section #result-row #result-card #result-details #details-banner .right-bar:after {
+  content: "";
+  background-color: white;
+  width: 20px;
+  height: 2px;
+  display: block;
+  float: right;
+  border-radius: 10px 6px 6px 10px;
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  z-index: -1;
+}
+
+.compute-section #result-row #result-card #result-details #details-banner .open .left-bar:after {
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: rotate(-70deg);
+  transform: rotate(-70deg);
+}
+
+.compute-section #result-row #result-card #result-details #details-banner .open .right-bar:after {
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: rotate(70deg);
+  transform: rotate(70deg);
 }
 
 .compute-section #result-row #result-card #result-emitted #emitted-value {
@@ -299,7 +404,7 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  padding: 10rem 0;
+  padding: 6rem 0;
   text-align: center;
 }
 
@@ -338,7 +443,7 @@
 }
 
 .act-section {
-  padding: 10rem 0;
+  padding: 6rem 0;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("../img/100_0221-min.jpg");
   background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("../img/100_0221-min.jpg");
   background-position: center;
@@ -431,7 +536,7 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  padding: 10rem 0;
+  padding: 6rem 0;
 }
 
 @media (max-width: 768px) {
