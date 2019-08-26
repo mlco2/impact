@@ -60,12 +60,13 @@
     <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
             <h1 class="mx-auto my-0 text-uppercase">ML CO2 Impact</h1>
-            <h2 class="mx-auto mt-2 mb-5">Machine Learning has an impact on Climate. But not all models are born equal.
+            <h2 class="mx-auto mt-2 mb-5"> Machine Learning has a carbon footprint. We've made a tool to help you estimate yours!
             </h2>
-            <a href="#compute" class="btn-primary btn js-scroll-trigger">Compute your model's impact</a>
+            <a href="#compute" class="btn-primary btn js-scroll-trigger">Compute your ML carbon impact</a>
         </div>
     </div>
 </header>
+
 <!-- Compute Section -->
 <section id="compute" class="compute-section text-center">
     <div id="compute-container" class="container">
@@ -75,7 +76,7 @@
                 <p class="text-white-80">Choose your hardware, runtime and cloud provider to estimate the carbon impact of your
                     research.</p>
                 <p class="text-white-80">This calculator will give you 2 numbers: the <strong> raw
-                    </strong> carbon emissions produced and the <strong>offset cost </strong> for these
+                    </strong> carbon emissions produced and the approximate Gold Standard <strong> offset cost </strong> for these
                     carbon emissions. The latter number depends on the grid used by the cloud provider and we are open to update our estimates if
                     anything looks inaccurate or outdated.</p>
             </div>
@@ -140,10 +141,10 @@
                         <div id="emitted-value" class="result-value">219</div>
                     </div>
                     <div class="col-md-6 result-box" id="result-offset">
-                        <div class="result-title small text-uppercase text-black-50">Carbon Offset by Provider</div>
+                        <div class="result-title small text-uppercase text-black-50">Carbon Already Offset by Provider</div>
                         <div id="offset-value" class="result-value">219</div>
                     </div>
-                    <div class="col-md-12 small text-black-50" id="result-unit"> kg eq. CO<sub>2</sub> <a href="#co2eq"
+                    <div class="col-md-12 small text-black-50" id="result-unit"> kg CO<sub>2</sub> eq. <a href="#co2eq"
                             class="js-scroll-trigger"><i class="fas fa-question-circle"></i></a></div>
                 </div>
 
@@ -151,7 +152,7 @@
 
                 <div id="result-details" class="details-hidden">
                     <div id="details-content" class="small text-black-50">
-                        <div style="padding-top: 15px;">Power consumption x Time x Provider's Region carbon impact:
+                        <div style="padding-top: 15px;">Power consumption x Time x Carbon Produced Based on the Local Power Grid:
                         </div>
                         <div id="details-counts"></div>
                         <div id="details-separator"></div>
@@ -161,7 +162,7 @@
                             <div id="details-min-region"></div>
                             <div id="details-alternative-content">
                                 Visit the <strong><a href="#act" class="js-scroll-trigger">Act</a></strong>
-                                section to learn what more you can do
+                                section to learn about what you can do!
                             </div>
                         </div>
                     </div>
@@ -202,10 +203,10 @@
                 <div class="card card-item h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Chose your provider</h6>
+                        <h6 class="text-uppercase m-0">Chose your cloud provider wisely</h6>
                         <hr class="my-4">
-                        <div class="small text-black-50">They don't all buy offsets, RECs or invest as much in clean
-                            energy sources. Investigate and make an informed choice.</div>
+                        <div class="small text-black-50">They don't all buy offsets, RECs or invest equally in clean
+                            energy sources. Read their sustainability commitments and make an informed choice.</div>
                     </div>
                 </div>
             </div>
@@ -217,8 +218,8 @@
                         <h6 class="text-uppercase m-0">Chose your region</h6>
                         <hr class="my-4">
                         <div class="small text-black-50">
-                            Different regions are powered by differrent mixes of energy. If regulations and
-                            licenses allow you to, do select a sustainable region.
+                            Different regions are powered by different combinations of renewable and non-renewable energy. If regulations and
+                            legal aspects allow, select a more sustainable region.
                         </div>
                     </div>
                 </div>
@@ -231,8 +232,8 @@
                         <h6 class="text-uppercase m-0">Buy Carbon Offsets</h6>
                         <hr class="my-4">
                         <div class="small text-black-50">Many platforms provide easy ways to offset
-                            your emissions. You can have a great impact by pushing this within your organization. It's
-                            also worth doing it in your personal life too</div>
+                            your emissions. You can have a big impact by proposing offsetting within your organization. It is
+                            also worth doing in your personal life too, for instance by offsetting flights. </div>
                     </div>
                 </div>
             </div>
@@ -241,12 +242,11 @@
                 <div class="card card-item h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Don't Grid Search</h6>
+                        <h6 class="text-uppercase m-0">Don't Do Grid Search</h6>
                         <hr class="my-4">
                         <div class="small text-black-50">Hyperparameter search is a great source of ML-related carbon
-                            emissions. If there is no litterature to help you set good ones and you're going to look for
-                            them,
-                            at least do it randomly, don't grid search them.</div>
+                            emissions. If there is no literature to help you establish good values and you need to look for
+                            relevant ones, at least do it randomly, not via grid search.</div>
                     </div>
                 </div>
             </div>
@@ -258,7 +258,7 @@
                         <h6 class="text-uppercase m-0">Choose Clean Energy</h6>
                         <hr class="my-4">
                         <div class="small text-black-50">Your organization may have a choice in their power supply. You
-                            may too. Chosing a cleaner and more sustainable source of energy will help decrease your
+                            may too. Chosing a cleaner and more sustainable source of energy will go far in decreasing your
                             carbon impact</div>
                     </div>
                 </div>
@@ -268,11 +268,10 @@
                 <div class="card card-item h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Answer our poll</h6>
+                        <h6 class="text-uppercase m-0">Fill Out Our Survey</h6>
                         <hr class="my-4">
-                        <div class="small text-black-50">We're trying to understand ML practitionners' understanding and
-                            perspective on Climate Change. Answer our poll! (We know there is going to be an audience
-                            bias)</div>
+                        <div class="small text-black-50">We are trying to understand ML practitioners' understanding and
+                            perspective on Climate Change. Help us by filling out our survey! </div>
                     </div>
                 </div>
             </div>
@@ -406,6 +405,7 @@
 
 
 </section>
+
 <!-- Learn Section -->
 <section id="learn" class="learn-section bg-light">
     <div class="container">
@@ -414,7 +414,7 @@
             <div class="col-lg-8 mx-auto">
                 <h2 class="text-white mb-4">Learn</h2>
                 <p class="text-white-80">This section will present some of the important concepts to better understand
-                    the carbon footprint of your computations, including what providers do to offset it</p>
+                    the carbon footprint of your ML research, including what providers do to help you offset it</p>
             </div>
 
         </div>
@@ -428,10 +428,9 @@
                 <div class="text-center h-100 project">
                     <div class="d-flex h-100">
                         <div class="learn-text w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-white">Eq. kg CO2</h4>
-                            <p class="mb-0 text-white-80">An example of where you can put an image of a project, or
-                                anything else,
-                                along with a description.</p>
+                            <h4 class="text-white"> CO<sub>2</sub></h4>
+                            <p class="mb-0 text-white-80">At the center of the climate crisis is a commonplace but very important concept: that of carbon dioxide (CO<sub>2</sub>), low amounts of which occur naturally in the Earth's atmosphere, but its concentration has been rapidly increasing due to human activity. This increase is dangerous because of CO2’s effect as a greenhouse gas, meaning that it absorbs and emits infrared radiation in the wavelength range emitted by the Earth, which contributes to the global warming of the planet ( <a href="https://www.ipcc.ch/site/assets/uploads/2018/02/WGIIAR5-AnnexII_FINAL.pdf" target="_blank"
+                                    rel="noopener noreferrer"> IPCC Glossary </a>).</p>
                             <hr class="d-none d-lg-block mb-0 ml-0">
                         </div>
                     </div>
@@ -448,10 +447,8 @@
                 <div class="text-center h-100 project">
                     <div class="d-flex h-100">
                         <div class="learn-text w-100 my-auto text-center text-lg-right">
-                            <h4 class="text-white">Offsetting</h4>
-                            <p class="mb-0 text-white-80">Another example of a project with its respective description.
-                                These
-                                sections work well responsively as well, try this theme on a small screen!</p>
+                            <h4 class="text-white"> CO<sub>2</sub> eq.</h4>
+                            <p class="mb-0 text-white-80">Since other gases such as methane, nitrous oxide or even water vapor also have this warming effect, a standardized measure for describing how much warming a given amount of gas will have is often provided in CO<sub>2</sub>-equivalents (CO<sub>2</sub>eq), for simplification purposes. For instance, the carbon intensity of transportation is measured in grams of CO2-equivalent per person-km, whereas the carbon intensity of energy is measured in grams of CO<sub>2</sub>-equivalent per kilowatt hour. </p>
                             <hr class="d-none d-lg-block mb-0 mr-0">
                         </div>
                     </div>
@@ -468,10 +465,44 @@
                 <div class="text-center h-100 project">
                     <div class="d-flex h-100">
                         <div class="learn-text w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-white">ERCs</h4>
-                            <p class="mb-0 text-white-80">An example of where you can put an image of a project, or
-                                anything else,
-                                along with a description.</p>
+                            <h4 class="text-white">Renewable vs. Nonrenewable Energy </h4>
+                            <p class="mb-0 text-white-80"> A key distinction to be made is that between renewable and nonrenewable energy sources. Renewable energy is collected from sources which are naturally replenished on a human timescale: this includes wind, sunlight, tides, geothermal heat, etc. In contrast, nonrenewable energy sources such as coal and petrol are not naturally replenished after their usage, and can take millions of years to be formed again. Finally, not all renewable energy sources are carbon-free, since the burning of biomass (such as plants or algae) still produces CO<sub>2</sub>-equivalents.</p>
+                            <hr class="d-none d-lg-block mb-0 ml-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Two Row -->
+        <div class="row justify-content-center no-gutters">
+            <!-- <div class="col-lg-6">
+            <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
+          </div> -->
+            <div class="col-lg-12 order-lg-first">
+                <div class="text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="learn-text w-100 my-auto text-center text-lg-right">
+                            <h4 class="text-white">Carbon Offsetting</h4>
+                            <p class="mb-0 text-white-80"> Carbon offsetting is a reduction in emissions of CO<sub>2</sub>-equivalents that is made in order to compensate for the emissions made by another actor. The money paid via carbon offsetting is invested towards different types of projects, including renewable energy or energy efficiency, carbon sequestration, methane abatement, among others. These projects are run by private companies, more often than not in a different place than where the offsetting is carried out. A large part of carbon offsetting goes towards funding renewable energy projects such as building wind or solar farms, hydroelectric dams, and extracting biofuel, in the hopes of reducing the cost of renewable production.</p>
+                            <hr class="d-none d-lg-block mb-0 mr-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project One Row -->
+        <div id="co2eq" class="row justify-content-center no-gutters mb-5 mb-lg-0">
+            <!-- <div class="col-lg-6">
+            <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
+          </div> -->
+            <div class="col-lg-12">
+                <div class="text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="learn-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Renewable Energy Credits</h4>
+                            <p class="mb-0 text-white-80"> An indirect form of offsetting that is often used by large companies is the purchasing of Renewable Energy Credits (RECs), which involves directly purchasing quantities of energy produced by renewable sources. This is considered to be an indirect of offsetting because in order to convert RECs into offsets, the energy purchased is translated into carbon reductions under the assumption that the clean energy is displacing an equivalent amount of electricity produced by non-renewable methods. Other commonly used forms of carbon offsetting include reforestation, sequestration, replacement of legacy equipment such as coal-burning stoves by more modern ones, etc.</p>
                             <hr class="d-none d-lg-block mb-0 ml-0">
                         </div>
                     </div>
@@ -489,49 +520,7 @@
                     <div class="d-flex h-100">
                         <div class="learn-text w-100 my-auto text-center text-lg-right">
                             <h4 class="text-white">Carbon Neutral</h4>
-                            <p class="mb-0 text-white-80">Another example of a project with its respective description.
-                                These
-                                sections work well responsively as well, try this theme on a small screen!</p>
-                            <hr class="d-none d-lg-block mb-0 mr-0">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project One Row -->
-        <div id="co2eq" class="row justify-content-center no-gutters mb-5 mb-lg-0">
-            <!-- <div class="col-lg-6">
-            <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
-          </div> -->
-            <div class="col-lg-12">
-                <div class="text-center h-100 project">
-                    <div class="d-flex h-100">
-                        <div class="learn-text w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-white">Additivity</h4>
-                            <p class="mb-0 text-white-80">An example of where you can put an image of a project, or
-                                anything else,
-                                along with a description.</p>
-                            <hr class="d-none d-lg-block mb-0 ml-0">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Two Row -->
-        <div class="row justify-content-center no-gutters">
-            <!-- <div class="col-lg-6">
-            <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
-          </div> -->
-            <div class="col-lg-12 order-lg-first">
-                <div class="text-center h-100 project">
-                    <div class="d-flex h-100">
-                        <div class="learn-text w-100 my-auto text-center text-lg-right">
-                            <h4 class="text-white">P.U.E.</h4>
-                            <p class="mb-0 text-white-80">Another example of a project with its respective description.
-                                These
-                                sections work well responsively as well, try this theme on a small screen!</p>
+                            <p class="mb-0 text-white-80"> ‘Carbon neutral’ is a term used to indicate a net zero carbon footprint of an individual or organization. While a small part of carbon-neutral entities rely entirely on renewable energy that is zero-carbon, the large majority of entities balance their emissions of CO2-equivalents, using approaches such as carbon offsetting or the purchase of RECs. Many major technology companies such as Google and Microsoft are carbon-neutral, matching 100% of their electricity use with renewable energy purposes (Google, 2018; Microsoft, 2018). This does not mean, however, that their operations do not produce CO2-equivalents, since this is dependent on the energy sources of the locations in which their infrastructure is located.</p>
                             <hr class="d-none d-lg-block mb-0 mr-0">
                         </div>
                     </div>
@@ -541,6 +530,7 @@
 
     </div>
 </section>
+
 <!-- About Section -->
 <section class="about-section bg-light" id="about">
     <div class="container">
@@ -549,16 +539,14 @@
             <div class="col-lg-8 mx-auto">
                 <h2 class="text-white mb-4">About ML CO2 Impact</h2>
                 <p class="text-white-80">Progress in Machine Learning (ML) in recent years has been meteorical, with
-                    major breakthroughs happening fromdomains such as machine translation, image recognition and
-                    generation.
-                    While these advances are having widespread applications in many domains, detecting cancers on X-rays
-                    and improving the prediction of supply and demand,
-                    the carbon impact of ML training has not been a central part of the conversation untilrecently.</p>
+                    major breakthroughs happening in domains such as machine translation, image recognition and
+                    generation.  While these advances are having widespread applications in many domains, detecting cancers on X-rays
+                    and improving the prediction of supply and demand,the carbon impact of ML training has not been a central part of
+		    the conversation until recently.</p>
                 <p class="text-white-80">
                     Therefore, as ML practitioners who are also aware of the overall state of the environment, we find
-                    thatit is important to develop this conversion further and work towards building the tools we need
-                    to
-                    assess the carbon emissions generated by the models we train, as well as ways to reduce those
+                    that it is important to develop this conversion further and work towards building the tools we need
+                    to assess the carbon emissions generated by the models we train, as well as ways to reduce those
                     emissions.</p>
                 <p></p>
 
@@ -566,11 +554,11 @@
                     <div class="row" id="about-content-row">
                         <div class="col-md-6 col-sm-12 about-content-text">
                             <h4 class="text-white mb-4" style="width:100%">Read our paper</h4>
-                            <p class="text-white mb-4">We have submitted this short 3 pages paper to NeurIPS 2019's
+                            <p class="text-white mb-4">We have submitted this short 3 page paper to the
                                 <a href="https://www.climatechange.ai/NeurIPS2019_workshop.html" target="_blank"
                                     rel="noopener noreferrer">Climate Change AI
-                                    workshop</a>.
-                                Work under review.</p>
+                                    workshop</a> at NeurIPS 2019.
+                                This work under review.</p>
                         </div>
                         <div class="col-md-6 col-sm-12 about-content-img">
                             <a href="../data/paper-.pdf" target="_blank" rel="noopener noreferrer">
@@ -584,8 +572,8 @@
                 <div class="about-content">
                     <div class="row" id="about-content-row">
                         <div class="col-md-6 col-sm-12 about-content-text">
-                            <h4 class="text-white mb-4" style="width:100%">Audit the Data</h4>
-                            <p class="text-white mb-4">It's hosted on Github to allow for external contributions</p>
+                            <h4 class="text-white mb-4" style="width:100%">Look at the Data</h4>
+                            <p class="text-white mb-4">The data is hosted on Github to allow for external contributions</p>
                         </div>
                         <div class="col-md-6 col-sm-12 about-content-img">
                             <a href="https://github.com/mlco2/impact/tree/master/data" title="Go see the data on Github"
@@ -619,6 +607,7 @@
 
     </div>
 </section>
+
 <!-- Footer -->
 <footer class="small text-center text-white-80">
     <div class="container">
