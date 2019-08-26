@@ -11,4 +11,40 @@
         padding-bottom: 3rem;
     }
 
+    #about-content-row {
+
+        margin-top: 3rem;
+
+        .about-content-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a{
+                text-align: center;
+            }
+
+            img {
+                padding: 10px 15px;
+                background-color: white;
+                transition: all 250ms ease;
+                max-width: 90%;
+                border-radius: 4px;
+                box-shadow: $cardboxshadow;
+
+                &:hover {
+                    transform: scale(1.05)
+                }
+            }
+        }
+
+        .about-content-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+
 }
