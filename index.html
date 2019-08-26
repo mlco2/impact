@@ -71,12 +71,12 @@
     <div id="compute-container" class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <h2 class="text-white mb-4">Model Emission Calculator</h2>
-                <p class="text-white-80">Chose your hardware, time and provider to compute an estimate of your
-                    procedure's carbon emissions.</p>
-                <p class="text-white-80">This calculator will mainly present you with 2 numbers: the <strong> raw
-                    </strong> carbon emissions from the hardware's energy consumption, and the <strong>offset</strong>
-                    carbon emissions. The latter number depends on the provider and we're open to contribution if
+                <h2 class="text-white mb-4">Machine Learning Emissions Calculator</h2>
+                <p class="text-white-80">Choose your hardware, runtime and cloud provider to estimate the carbon impact of your
+                    research.</p>
+                <p class="text-white-80">This calculator will give you 2 numbers: the <strong> raw
+                    </strong> carbon emissions produced and the <strong>offset cost </strong> for these
+                    carbon emissions. The latter number depends on the grid used by the cloud provider and we are open to update our estimates if
                     anything looks inaccurate or outdated.</p>
             </div>
 
@@ -87,24 +87,24 @@
             <div class="form-row" id="compute-selects-row">
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
-                    <label for="compute-gpu">GPU type</label>
+                    <label for="compute-gpu">Hardware type</label>
                     <select class="form-control compute-input" id="compute-gpu">
                     </select>
                 </div>
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
-                    <label for="compute-hours">GPU hours</label>
+                    <label for="compute-hours">Hours Used</label>
                     <input class="form-control compute-input" id="compute-hours" type="number" value="3" />
                 </div>
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
-                    <label for="compute-provider">Provider</label>
+                    <label for="compute-provider">Cloud Provider</label>
                     <select class="form-control compute-input" id="compute-provider">
                     </select>
                 </div>
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
-                    <label for="compute-region">Region of compute</label>
+                    <label for="compute-region">Region of Compute</label>
                     <select class="form-control compute-input" id="compute-region">
                     </select>
                 </div>
@@ -136,11 +136,11 @@
                         I
                         do?</a>
                     <div class="col-md-6 result-box" id="result-emitted">
-                        <div class="result-title small text-uppercase text-black-50">Emitted Carbon</div>
+                        <div class="result-title small text-uppercase text-black-50">Carbon Emitted </div>
                         <div id="emitted-value" class="result-value">219</div>
                     </div>
                     <div class="col-md-6 result-box" id="result-offset">
-                        <div class="result-title small text-uppercase text-black-50">Offset Carbon by provider</div>
+                        <div class="result-title small text-uppercase text-black-50">Carbon Offset by Provider</div>
                         <div id="offset-value" class="result-value">219</div>
                     </div>
                     <div class="col-md-12 small text-black-50" id="result-unit"> kg eq. CO<sub>2</sub> <a href="#co2eq"
@@ -179,6 +179,7 @@
 
     </div>
 </section>
+
 <!-- Act Section -->
 <section id="act" class="act-section">
     <div class="container">
