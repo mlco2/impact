@@ -122,6 +122,7 @@ const setDetails = (values) => {
       the carbon emitted would have been of <strong>${minco2}</strong> kg eq. CO<sub>2</sub>
       `
     )
+    $("#details-alternative").show()
   } else {
     $("#details-min-selected").show()
     $("#details-alternative").hide()
