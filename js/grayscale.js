@@ -98,6 +98,43 @@ const checkForm = () => {
   return values;
 }
 
+const setDetails = (values) => {
+  const { gpu, hours, provider, region } = values
+  const energy = state.gpus[gpu].watt * hours;
+  const co2 = parseInt(energy * state.providers[provider][region].impact / 1000, 10);
+  const offset = parseInt(co2 * state.providers[provider][region].offsetRatio / 100, 10)
+  $("#emitted-value").text(co2);
+  $("#offset-value").text(offset);
+  $("#details-counts").html(`
+  ${state.gpus[gpu].watt}W x ${hours}h x ${state.providers[provider][region].impact / 1000} 
+  kg CO<sub>2</sub>/kWh = ${co2} kg eq. CO<sub>2</sub>
+  `);
+
+  const provName = state.providers[provider][region].providerName;
+  const minRegId = state.providers[provider].__min.region;
+  const minReg = state.providers[provider][minRegId];
+  if (region !== minRegId) {
+    const minco2 = parseInt(energy * minReg.impact / 1000, 10);
+    $("#details-min-selected").hide()
+    $("#details-alternative").html(
+      `
+      Had this model been run in ${provName}'s <strong>${minReg.regionName}</strong> region,
+      the carbon emitted would have been of <strong>${minco2}</strong> kg eq. CO<sub>2</sub>
+      `
+    )
+  } else {
+    $("#details-min-selected").show()
+    $("#details-alternative").hide()
+    $("#details-min-region").html(
+      `
+      You have selected ${provName}'s cleanest region!
+      `
+    )
+  }
+
+
+}
+
 const submitCompute = (_values) => {
   $("#result-card").hide();
   $(".spinner-border").show()
@@ -105,19 +142,9 @@ const submitCompute = (_values) => {
   const values = getValues();
   console.log(values);
   if (!values) return;
-  const { gpu, hours, provider, region } = values
 
-  // setGetParams(values);
-
-  // Computations
-
-  const energy = state.gpus[gpu].watt * hours;
-  const co2 = energy * state.providers[provider][region].impact / 1000;
-  const offset = co2 * state.providers[provider][region].offsetRatio / 100
-
-  $("#emitted-value").text(parseInt(co2));
-  $("#offset-value").text(parseInt(offset));
-  $("#details-counts").text(`${state.gpus[gpu].watt} x ${hours} x ${state.providers[provider][region].impact / 1000}`)
+  setDetails(values);
+  state.current = values
 
   setTimeout(() => {
     $(".spinner-border").hide()
@@ -130,59 +157,11 @@ const submitCompute = (_values) => {
 }
 
 
-const parseGetParams = () => {
-  let values = {};
-  for (const key of FEATURES) {
-    const val = findGetParameter(key);
-    console.log(key, val, check(key, val));
-    if (key === "hours") val = parseInt(val);
-    if (val && check(key, val)) values[key] = val;
-  }
-  console.log("get param values", values);
-  if ($.isEmptyObject(values)) {
-    window.history.pushState('', '', window.location.pathname);
-    return;
-  }
-
-  setGetParams(values);
-  updateInputs(values);
-  setTimeout(() => {
-    $("#compute-nav-link").trigger("click");
-  }, 500)
-}
-
-const setGetParams = (values) => {
-  var kvp = [];
-  for (const key in values) {
-    if (values.hasOwnProperty(key)) {
-      const value = values[key];
-      kvp = insertParam(kvp, key, value)
-    }
-  }
-  window.history.pushState('', '', '?' + kvp.join("&"));
-}
-
-const updateInputs = (values) => {
-  for (const key of FEATURES) {
-    if (values.hasOwnProperty(key)) {
-      $("#compute-" + key).val(values[key]);
-    }
-  }
-}
-
-const setInputs = () => {
-  ["gpu", "region", "provider"].forEach((input, k) => {
-    $("#compute-" + input).html(state[input + "s"].map((v, i) => {
-      return `<option value="${v.name}">${v.name}</option>`
-    }).join(""));
-  })
-}
-
 const setRegion = provider => {
   $("#compute-region").html('');
   let regs = [];
   for (const region in state.providers[provider]) {
-    if (state.providers[provider].hasOwnProperty(region)) {
+    if (state.providers[provider].hasOwnProperty(region) && region !== "__min") {
       let { regionName } = state.providers[provider][region];
       if (!regionName) {
         regionName = region;
@@ -211,7 +190,7 @@ const setInputs2 = () => {
     if (state.providers.hasOwnProperty(provider)) {
       let providerName;
       for (const region in state.providers[provider]) {
-        if (state.providers[provider].hasOwnProperty(region)) {
+        if (state.providers[provider].hasOwnProperty(region) && region !== "__min") {
           providerName = state.providers[provider][region]["providerName"];
           break;
         }
@@ -291,8 +270,8 @@ const setInputs2 = () => {
     $("#compute-submit").prop("disabled", true);
     if (checkForm()) $("#compute-submit").prop("disabled", false);
   })
-  $(".arrow-icon").click(function () {
-    if ($(this).hasClass("open")) {
+  $("#details-banner").click(function () {
+    if ($(this).find(".arrow-icon").hasClass("open")) {
       var h = 0;
       $("#details-content").children().each((k, v) => {
         h += $(v).innerHeight()
@@ -301,8 +280,48 @@ const setInputs2 = () => {
     } else {
       $("#details-content").height(0);
     }
-    $(this).toggleClass("open");
+    $(this).find(".arrow-icon").toggleClass("open");
   });
+
+  // carddeck
+  // $(".card-custom").mouseenter((el) => {
+  //   const customCard = $(el.target).closest(".card-custom");
+  //   const containerId = "#learn-card-container"
+
+  //   const viewportLeft = $(containerId).scrollLeft();
+  //   const viewportRight = viewportLeft + $(containerId).width();
+  //   const elementLeft = viewportLeft + customCard.offset().left;
+  //   const elementRight = elementLeft + customCard.width();
+
+
+  //   const rightVisible = elementRight < viewportRight;
+  //   const leftVisible = elementLeft > viewportLeft;
+  //   console.log("")
+  //   console.log("")
+  //   console.log(customCard)
+  //   console.log("elementLeft: " + elementLeft);
+  //   console.log("elementRight: " + elementRight);
+  //   console.log("viewportLeft: " + viewportLeft);
+  //   console.log("viewportRight: " + viewportRight);
+  //   console.log("rightVisible: " + rightVisible);
+  //   console.log("leftVisible: " + leftVisible);
+
+  //   if (rightVisible && leftVisible) {
+  //     return
+  //   }
+
+  //   let target;
+
+  //   if (!leftVisible) {
+  //     target = elementLeft - 50;
+  //   } else {
+  //     target = viewportLeft + customCard.width();
+  //   }
+  //   console.log(target);
+  //   $('#learn-card-container').animate({
+  //     scrollLeft: target
+  //   }, 'slow');
+  // })
 
 
 })(jQuery); // End of use strict

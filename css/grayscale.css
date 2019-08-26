@@ -152,6 +152,13 @@
   text-transform: uppercase;
   letter-spacing: .15rem;
   border: 0;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .btn-primary {
@@ -269,8 +276,15 @@
   background-color: #fff;
   border-radius: 5px;
   padding: 2rem;
-  -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
+  box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+}
+
+.compute-section #result-row #result-card:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .compute-section #result-row #result-card .result-value {
@@ -283,6 +297,10 @@
   color: #495057;
 }
 
+.compute-section #result-row #result-card #result-details {
+  padding: 0px 20px;
+}
+
 .compute-section #result-row #result-card #result-details #details-content {
   -webkit-transition: all ease 600ms;
   transition: all ease 600ms;
@@ -290,7 +308,24 @@
   height: 0px;
 }
 
+.compute-section #result-row #result-card #result-details #details-counts {
+  padding-top: 8px;
+}
+
+.compute-section #result-row #result-card #result-details #details-alternative,
+.compute-section #result-row #result-card #result-details #details-min-selected {
+  padding-top: 8px;
+}
+
+.compute-section #result-row #result-card #result-details #details-separator {
+  width: 25%;
+  border-bottom: 1px solid lightgrey;
+  margin: auto;
+  padding-top: 8px;
+}
+
 .compute-section #result-row #result-card #result-details #details-banner {
+  cursor: pointer;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -468,6 +503,29 @@
   .act-section #learn-card-container {
     padding: 1rem;
   }
+}
+
+@media (max-width: 992px) {
+  .act-section #learn-card-container {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.act-section #learn-card-container .card-col {
+  margin-bottom: 2rem;
+}
+
+.act-section #learn-card-container .card-item {
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
+  box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
+}
+
+.act-section #learn-card-container .card-item:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .act-section #learn-more-div {

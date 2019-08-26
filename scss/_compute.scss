@@ -70,7 +70,12 @@ $arrowheight:2px;
             border-radius: 5px;
             // border-bottom: 5px solid $primary;
             padding: 2rem;
-            box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: $cardboxshadow;
+            transition: all ease 250ms;
+
+            &:hover {
+                transform: scale(1.05)
+            }
 
             .result-value {
                 font-size: 3rem;
@@ -83,6 +88,7 @@ $arrowheight:2px;
             }
 
             #result-details {
+                padding: 0px 20px;
 
                 #details-content {
                     transition: all ease 600ms;
@@ -90,7 +96,24 @@ $arrowheight:2px;
                     height: 0px;
                 }
 
-                #details-banner {   
+                #details-counts {
+                    padding-top: 8px;
+                }
+
+                #details-alternative,
+                #details-min-selected {
+                    padding-top: 8px;
+                }
+
+                #details-separator {
+                    width: 25%;
+                    border-bottom: 1px solid lightgrey;
+                    margin: auto;
+                    padding-top: 8px;
+                }
+
+                #details-banner {
+                    cursor: pointer;
                     position: absolute;
                     bottom: 0;
                     width: 100%;

@@ -4,24 +4,34 @@ var prod_base_data_url = '/impact/data/';
 
 const parseProvidersData = data => {
     let providers = {};
-    let prov, min;
+    let prov;
     for (const d of data) {
         const {
             provider,
             region,
-            regionName,
             country,
             state,
             city,
-            impact,
             source,
             comment,
             providerName,
             offsetRatio
         } = d;
-        if (prov != provider) min = 100000;
+        const impact = parseInt(d.impact, 10)
+        let { regionName } = d;
+        if (!regionName){
+            regionName = region;
+        }
         if (!(provider in providers)) {
-            providers[provider] = {};
+            providers[provider] = {
+                __min: {
+                    impact: 10000,
+                    region: ""
+                }
+            };
+        }
+        if (impact < providers[provider].__min.impact) {
+            providers[provider].__min = { region, impact }
         }
         providers[provider][region] = {
             regionName,

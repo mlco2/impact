@@ -5,6 +5,10 @@
   text-transform: uppercase;
   letter-spacing: .15rem;
   border: 0;
+  transition: all ease 250ms;
+  &:hover{
+    transform: scale(1.05)
+  }
 }
 
 .btn-primary {
