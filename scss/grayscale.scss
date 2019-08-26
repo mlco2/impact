@@ -9,8 +9,8 @@
 @import 'contact.scss';
 @import 'about.scss';
 
-html{
-  background: $secondary;
+html {
+    background: $secondary;
 }
 
 body {
@@ -45,7 +45,9 @@ footer {
 }
 
 .form-inline {
-    input, textarea {
+
+    input,
+    textarea {
         box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, .1) !important;
         padding: 1.25rem 2rem;
         height: auto;
@@ -58,10 +60,10 @@ footer {
     }
 }
 
-footer{
-  background-color: $secondary;
+footer {
+    background-color: $secondary;
 }
 
 .text-white-80 {
-  color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
 }
