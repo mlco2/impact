@@ -46,6 +46,16 @@ function sc(id) {
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
 
+const setImports = (serveFrom, elType, attr) => {
+  const isDev = serveFrom === "dev";
+  $(elType).each((i, el) => {
+    let val = $(el).attr(attr);
+    if (val && val.indexOf("...") >= 0) {
+      $(el).attr(attr, isDev ? val.split("...")[1] : "/impact" + val.split("...")[1])
+    }
+  })
+}
+
 
 const getValues = () => {
   const gpu = $("#compute-gpu option:selected").val();
@@ -62,6 +72,35 @@ const fail = (id) => {
   $(".spinner-border").hide()
   $("#compute-" + id).css("border", "2px solid red");
   setInputs();
+}
+
+const growDivOnArrowClick = (clickId, growId) => {
+  $(clickId).click(function () {
+    if ($(this).find(".arrow-icon").hasClass("open")) {
+      var h = 0;
+      $(growId).children().each((k, v) => {
+        h += $(v).innerHeight()
+      })
+      $(growId).height(h);
+    } else {
+      $(growId).height(0);
+    }
+    $(this).find(".arrow-icon").toggleClass("open");
+  });
+}
+const growDivOnArrowClickLearn = (clickId, growId) => {
+  $(clickId).click(function () {
+    if ($(this).find(".arrow-icon").hasClass("open")) {
+      var h = 0;
+      $(this).siblings(growId).children().each((k, v) => {
+        h += $(v).innerHeight()
+      })
+      $(this).siblings(growId).height(h);
+    } else {
+      $(this).siblings(growId).height(0);
+    }
+    $(this).find(".arrow-icon").toggleClass("open");
+  });
 }
 
 const check = (type, value) => {
@@ -254,8 +293,9 @@ const setInputs2 = () => {
 
 
   state = await getData();
-  console.log(state);
   setInputs2();
+  setImports(serveFrom, "a", "href");
+  setImports(serveFrom, "img", "src");
 
   $("#compute-provider").change(e => {
     const provider = $("#compute-provider option:selected").val();
@@ -271,18 +311,34 @@ const setInputs2 = () => {
     $("#compute-submit").prop("disabled", true);
     if (checkForm()) $("#compute-submit").prop("disabled", false);
   })
-  $("#details-banner").click(function () {
-    if ($(this).find(".arrow-icon").hasClass("open")) {
-      var h = 0;
-      $("#details-content").children().each((k, v) => {
-        h += $(v).innerHeight()
-      })
-      $("#details-content").height(h);
+
+  $(".details-summary").each((i, el) => {
+
+    if (i % 2 == 0) {
+      const arrowTemplate = `
+      <a class="arrow-icon arrow-learn-even open" title="Learn more">
+      <span class="left-bar"></span>
+      <span class="right-bar"></span>
+      </a>
+      `
+      $(el).append($(arrowTemplate))
     } else {
-      $("#details-content").height(0);
+      const arrowTemplate = `
+      <a class="arrow-icon arrow-learn-odd open" title="Learn more">
+      <span class="left-bar"></span>
+      <span class="right-bar"></span>
+      </a>
+      `
+      $(el).css("justify-content", "flex-end");
+      $(el).prepend($(arrowTemplate))
     }
-    $(this).find(".arrow-icon").toggleClass("open");
   });
+
+  growDivOnArrowClickLearn(`.details-summary`, `.summary-content`);
+  growDivOnArrowClick("#details-banner", "#details-content");
+
+
+
 
   // carddeck
   // $(".card-custom").mouseenter((el) => {

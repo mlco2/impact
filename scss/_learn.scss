@@ -14,6 +14,27 @@
         padding-bottom: 3rem;
     }
 
+    .details-summary {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .summary-content {
+        height: 0px;
+        overflow: hidden;
+        transition: all 250ms ease;
+    }
+
+
+    .arrow-learn-even {
+        margin: 1em 0 0 1em;
+        position: relative;
+    }
+
+    .arrow-learn-odd {
+        margin: 1em 1em 0 0em;
+        position: relative;
+    }
 
     .featured-text {
         padding: 2rem;
@@ -25,11 +46,11 @@
     }
 
     .learn-text {
-        padding: 3rem;
+        padding: 2rem;
         font-size: 90%;
 
         @media (min-width: 992px) {
-            padding: 5rem;
+            padding: 3rem;
 
             hr {
                 border-color: $primary;

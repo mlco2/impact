@@ -1,7 +1,3 @@
-$easing: cubic-bezier(.25, 1.7, .35, .8);
-$duration: 0.5s;
-$arrowwidth:20px;
-$arrowheight:2px;
 
 .compute-section {
     min-height: 100vh;
@@ -125,82 +121,6 @@ $arrowheight:2px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-
-                    .arrow-icon {
-                        height: 2.2em;
-                        width: 2.8em;
-                        display: block;
-                        padding: 0.5em;
-                        margin: 1em auto;
-                        position: absolute;
-                        cursor: pointer;
-                        border-radius: 4px;
-                    }
-
-                    .left-bar {
-                        position: absolute;
-                        background-color: transparent;
-                        top: 0;
-                        left: 0;
-                        width: $arrowwidth;
-                        height: $arrowheight;
-                        display: block;
-                        transform: rotate(35deg);
-                        float: right;
-                        border-radius: 2px;
-
-                        &:after {
-                            content: "";
-                            background-color: white;
-                            width: $arrowwidth;
-                            height: $arrowheight;
-                            display: block;
-                            float: right;
-                            border-radius: 6px 10px 10px 6px;
-                            transition: all $duration $easing;
-                            z-index: -1;
-                        }
-                    }
-
-                    .right-bar {
-                        position: absolute;
-                        background-color: transparent;
-                        top: 0px;
-                        left: 15px;
-                        width: $arrowwidth;
-                        height: $arrowheight;
-                        display: block;
-                        transform: rotate(-35deg);
-                        float: right;
-                        border-radius: 2px;
-
-                        &:after {
-                            content: "";
-                            background-color: white;
-                            width: $arrowwidth;
-                            height: $arrowheight;
-                            display: block;
-                            float: right;
-                            border-radius: 10px 6px 6px 10px;
-                            transition: all $duration $easing;
-                            z-index: -1;
-                        }
-                    }
-
-                    .open {
-                        .left-bar:after {
-                            transform-origin: center center;
-                            transform: rotate(-70deg);
-                        }
-
-                        .right-bar:after {
-                            transform-origin: center center;
-                            transform: rotate(70deg);
-                        }
-
-                    }
-
-
 
                 }
 

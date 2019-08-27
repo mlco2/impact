@@ -1,6 +1,7 @@
 
 var dev_base_data_url = '/data/';
 var prod_base_data_url = '/impact/data/';
+var serveFrom = "dev"
 
 const parseProvidersData = data => {
     let providers = {};
@@ -19,7 +20,7 @@ const parseProvidersData = data => {
         } = d;
         const impact = parseInt(d.impact, 10)
         let { regionName } = d;
-        if (!regionName){
+        if (!regionName) {
             regionName = region;
         }
         if (!(provider in providers)) {
@@ -70,6 +71,7 @@ async function getProvidersData() {
             url: prod_base_data_url + "impact.csv",
             dataType: "text",
         });
+        serveFrom = "prod"
         return result;
     } catch (error) {
         try {
