@@ -209,7 +209,10 @@ const submitCompute = (_values) => {
   setTimeout(() => {
     $(".spinner-border").hide()
     $("#result-card").fadeIn();
-    if ($(window).width() < 769) {
+    const isBottomVisible = $("#result-card").offset().top + $("#result-card").outerHeight() < ($(window).scrollTop() + $(window).height())
+    console.log($(window).scrollTop() + $(window).height());
+
+    if ($(window).width() < 769 || !isBottomVisible) {
       scrollToBottomResultCard()
     }
   }, getRandomInt(500, 1200)
