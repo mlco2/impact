@@ -92,28 +92,28 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  padding: 15rem 0;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(12, 31, 55, 0.9)), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("../img/bg-masthead.jpg");
   background: linear-gradient(to bottom, rgba(12, 31, 55, 0.9) 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("../img/bg-masthead.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-}
-
-@media (max-width: 768px) {
-  .masthead {
-    padding-top: 10rem;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .masthead h1 {
   font-family: 'Open Sans';
   font-size: 2.5rem;
-  line-height: 2.5rem;
+  line-height: 3.5rem;
   letter-spacing: 0.8rem;
-  background: white;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  color: white;
 }
 
 .masthead h2 {
@@ -124,18 +124,17 @@
 @media (min-width: 768px) {
   .masthead h1 {
     font-size: 4rem;
-    line-height: 4rem;
+    line-height: 6rem;
   }
 }
 
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
-    padding: 0;
   }
   .masthead h1 {
     font-size: 6.5rem;
-    line-height: 6.5rem;
+    line-height: 9.5rem;
     letter-spacing: 0.8rem;
   }
   .masthead h2 {
@@ -207,7 +206,7 @@
 
 .compute-section {
   min-height: 100vh;
-  padding-top: 6rem;
+  padding-top: 4rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("../img/abandoned-computer.jpg");
   background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("../img/abandoned-computer.jpg");
   background-position: center;
@@ -224,7 +223,7 @@
 }
 
 .compute-section p {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .compute-section #results-more {
@@ -240,6 +239,13 @@
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+  .compute-section #results-more {
+    max-width: 70px;
+    right: -35px;
+  }
+}
+
 .compute-section #compute-container {
   min-height: 100%;
   min-height: -moz-available;
@@ -252,6 +258,7 @@
 .compute-section #compute-form {
   color: white;
   margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 .compute-section #compute-form label {
@@ -360,7 +367,7 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  padding: 6rem 0;
+  padding: 4rem 0;
   text-align: center;
 }
 
@@ -386,12 +393,12 @@
 }
 
 .learn-section .arrow-learn-even {
-  margin: 1em 0 0 1em;
+  margin: 1em 0 0 2em;
   position: relative;
 }
 
 .learn-section .arrow-learn-odd {
-  margin: 1em 1em 0 0em;
+  margin: 1em 2em 0 0em;
   position: relative;
 }
 
@@ -408,7 +415,6 @@
 
 .learn-section .learn-text {
   padding: 2rem;
-  font-size: 90%;
 }
 
 @media (min-width: 992px) {
@@ -423,7 +429,7 @@
 }
 
 .act-section {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("../img/100_0221-min.jpg");
   background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("../img/100_0221-min.jpg");
   background-position: center;
@@ -489,7 +495,7 @@
 }
 
 .contact-section {
-  padding: 5rem 0 0;
+  padding: 4rem 0 0;
 }
 
 .contact-section .card {
@@ -539,7 +545,7 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 
 @media (max-width: 768px) {
@@ -608,6 +614,8 @@ html {
 body {
   font-family: 'Open Sans';
   letter-spacing: 0.0625em;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {

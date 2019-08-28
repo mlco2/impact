@@ -1,7 +1,6 @@
-
 .compute-section {
     min-height: 100vh;
-    padding-top: 6rem;
+    padding-top: $sectionPaddingTop;
     background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%),
         url('../img/abandoned-computer.jpg');
     background-position: center;
@@ -15,10 +14,15 @@
     }
 
     p {
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
     }
 
     #results-more {
+        @media(max-width: 768px) {
+            max-width: 70px;
+            right: -35px;
+        }
+
         position: absolute;
         max-width: 100px;
         padding: 10px;
@@ -26,7 +30,8 @@
         right: -50px;
         top: 50%;
         transform: translateY(-50%);
-        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2),
+        0 1px 10px 0 rgba(0, 0, 0, 0.1);
     }
 
     #compute-container {
@@ -41,6 +46,8 @@
     #compute-form {
         color: white;
         margin-bottom: 2.5rem;
+
+        margin-top: 1.5rem;
 
         label {
             margin: 0;

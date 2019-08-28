@@ -74,23 +74,42 @@ const fail = (id) => {
   setInputs();
 }
 
+const scrollToBottomResultCard = () => {
+  const cardOffset = $("#result-card").offset().top + $("#result-card").outerHeight() - $(window).height() + 50;
+  $("html, body").animate({
+    scrollTop: cardOffset
+  }, 1000, "easeInOutExpo");
+  return
+}
+
 const growDivOnArrowClick = (clickId, growId) => {
   $(clickId).click(function () {
-    if ($(this).find(".arrow-icon").hasClass("open")) {
+    if (!$(this).find(".arrow-icon").hasClass("open")) {
       var h = 0;
       $(growId).children().each((k, v) => {
         h += $(v).innerHeight()
       })
       $(growId).height(h);
+
+      setTimeout(() => {
+        if ($(window).height() > ($("#result-card").outerHeight() + 150)) {
+          scrollToBottomResultCard()
+        }
+      }, 500)
+
     } else {
       $(growId).height(0);
+      setTimeout(() => {
+        scrollToBottomResultCard()
+      }, 500);
     }
+
     $(this).find(".arrow-icon").toggleClass("open");
   });
 }
 const growDivOnArrowClickLearn = (clickId, growId) => {
   $(clickId).click(function () {
-    if ($(this).find(".arrow-icon").hasClass("open")) {
+    if (!$(this).find(".arrow-icon").hasClass("open")) {
       var h = 0;
       $(this).siblings(growId).children().each((k, v) => {
         h += $(v).innerHeight()
@@ -177,10 +196,11 @@ const setDetails = (values) => {
 
 const submitCompute = (_values) => {
   $("#result-card").hide();
+  $("#details-content").height(0);
+  $("#details-banner .arrow-icon").removeClass("open")
   $(".spinner-border").show()
   // const values = _values ? _values : checkForm();
   const values = getValues();
-  console.log(values);
   if (!values) return;
 
   setDetails(values);
@@ -190,7 +210,7 @@ const submitCompute = (_values) => {
     $(".spinner-border").hide()
     $("#result-card").fadeIn();
     if ($(window).width() < 769) {
-      $("#goToResults").trigger("click");
+      scrollToBottomResultCard()
     }
   }, getRandomInt(500, 1200)
   )
@@ -272,6 +292,9 @@ const setInputs2 = () => {
     target: '#mainNav',
     offset: 100
   });
+  $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+    console.log(this);
+  })
 
   // $("#navbarResponsive a").on('activate', function () {
   //   console.log($(this));
@@ -316,7 +339,7 @@ const setInputs2 = () => {
 
     if (i % 2 == 0) {
       const arrowTemplate = `
-      <a class="arrow-icon arrow-learn-even open" title="Learn more">
+      <a class="arrow-icon arrow-learn-even" title="Learn more">
       <span class="left-bar"></span>
       <span class="right-bar"></span>
       </a>
@@ -324,7 +347,7 @@ const setInputs2 = () => {
       $(el).append($(arrowTemplate))
     } else {
       const arrowTemplate = `
-      <a class="arrow-icon arrow-learn-odd open" title="Learn more">
+      <a class="arrow-icon arrow-learn-odd" title="Learn more">
       <span class="left-bar"></span>
       <span class="right-bar"></span>
       </a>

@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
-    padding: 6rem 0;
+    padding: $sectionPaddingTop 0;
 
     text-align: center;
 
@@ -27,12 +27,12 @@
 
 
     .arrow-learn-even {
-        margin: 1em 0 0 1em;
+        margin: 1em 0 0 2em;
         position: relative;
     }
 
     .arrow-learn-odd {
-        margin: 1em 1em 0 0em;
+        margin: 1em 2em 0 0em;
         position: relative;
     }
 
@@ -47,7 +47,7 @@
 
     .learn-text {
         padding: 2rem;
-        font-size: 90%;
+        // font-size: 90%;
 
         @media (min-width: 992px) {
             padding: 3rem;

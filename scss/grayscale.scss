@@ -16,6 +16,8 @@ html {
 body {
     font-family: 'Open Sans';
     letter-spacing: 0.0625em;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 a {

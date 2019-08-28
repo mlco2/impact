@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
-    padding: 6rem 0;
+    padding: $sectionPaddingTop 0;
 
     @media(max-width: 768px) {
         padding-top: 3rem;

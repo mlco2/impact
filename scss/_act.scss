@@ -1,5 +1,5 @@
 .act-section {
-    padding: 6rem 0;
+    padding: $sectionPaddingTop 0;
     background: linear-gradient(to bottom, $back-15 0, $back-2 75%, $back-25 100%), url("../img/100_0221-min.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -48,70 +48,3 @@
         }
     }
 }
-
-// $distance: 4em;
-
-// .act-section {
-//     padding: 6rem 0;
-//     background: linear-gradient(to bottom, $back-15 0, $back-2 75%, $back-25 100%), url("../img/100_0221-min.jpg");
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-attachment: scroll;
-//     background-size: cover;
-//     min-height: 100vh;
-
-//     @media(max-width: 768px) {
-//         padding-top: 3rem;
-//         padding-bottom: 3rem;
-//     }
-
-//     .cards-custom {
-//         display: flex;
-//     }
-
-//     .card-custom {
-//         background: white;
-//         border-radius: 4px;
-//         padding: 2rem;
-//         box-shadow: -1rem 0 3rem rgba(0, 0, 0, .6);
-//         transition: 0.2s;
-//         min-width: 300px;
-//         position: relative;
-//     }
-
-//     .card-content {
-//         border: 1px solid lightgrey;
-//         border-radius: 4px;
-//     }
-
-//     .card-custom:not(:first-child) {
-//         margin-left: -$distance;
-//     }
-
-//     .card-custom:hover,
-//     .card-custom:focus-within {
-//         transform: translateY(-1rem);
-
-//         ~.card-custom {
-//             transform: translateX(1.2 * $distance);
-//         }
-//     }
-
-//     #learn-card-container {
-//         padding-top: 3rem;
-//         overflow-x: scroll;
-//         display: flex;
-//     }
-
-
-//     #learn-more-div {
-//         padding: 5rem;
-//         justify-content: center;
-//         align-items: center;
-//         line-height: 1.5rem;
-
-//         i {
-//             font-size: 1.5rem;
-//         }
-//     }
-// }
