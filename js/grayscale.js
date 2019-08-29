@@ -67,13 +67,6 @@ const getValues = () => {
   }
 }
 
-const fail = (id) => {
-  $("#result-card").hide();
-  $(".spinner-border").hide()
-  $("#compute-" + id).css("border", "2px solid red");
-  setInputs();
-}
-
 const scrollToBottomResultCard = () => {
   const cardOffset = $("#result-card").offset().top + $("#result-card").outerHeight() - $(window).height() + 50;
   $("html, body").animate({
@@ -92,7 +85,7 @@ const growDivOnArrowClick = (clickId, growId) => {
       $(growId).height(h);
 
       setTimeout(() => {
-        if ($(window).height() > ($("#result-card").outerHeight() + 150)) {
+        if ($(window).height() > ($("#result-card").outerHeight() + 150) && !isBottomVisible()) {
           scrollToBottomResultCard()
         }
       }, 500)
@@ -100,7 +93,7 @@ const growDivOnArrowClick = (clickId, growId) => {
     } else {
       $(growId).height(0);
       setTimeout(() => {
-        scrollToBottomResultCard()
+        !isBottomVisible(50) && scrollToBottomResultCard();
       }, 500);
     }
 
@@ -156,23 +149,26 @@ const checkForm = () => {
   return values;
 }
 
+const twoDigits = n => Number(Number(n).toFixed(2));
+
 const setDetails = (values) => {
   const { gpu, hours, provider, region } = values
-  const energy = state.gpus[gpu].watt * hours;
-  const co2 = parseInt(energy * state.providers[provider][region].impact / 1000, 10);
-  const offset = parseInt(co2 * state.providers[provider][region].offsetRatio / 100, 10)
+  const energy = twoDigits(state.gpus[gpu].watt * hours / 1000); // kWh
+  const impact = twoDigits(state.providers[provider][region].impact / 1000); // kg/kwH
+  const co2 = twoDigits(energy * impact);
+  const offset = twoDigits(co2 * state.providers[provider][region].offsetRatio / 100)
   $("#emitted-value").text(co2);
   $("#offset-value").text(offset);
   $("#details-counts").html(`
-  ${state.gpus[gpu].watt}W x ${hours}h x ${state.providers[provider][region].impact / 1000} 
-  kg CO<sub>2</sub>/kWh = ${co2} kg eq. CO<sub>2</sub>
+  ${state.gpus[gpu].watt}W x ${hours}h = <strong>${energy} kWh</strong> x ${impact} 
+  kg  eq. CO<sub>2</sub>/kWh = <strong>${co2} kg eq. CO<sub>2</sub></strong>
   `);
 
   const provName = state.providers[provider][region].providerName;
   const minRegId = state.providers[provider].__min.region;
   const minReg = state.providers[provider][minRegId];
   if (region !== minRegId) {
-    const minco2 = parseInt(energy * minReg.impact / 1000, 10);
+    const minco2 = twoDigits(energy * minReg.impact / 1000);
     $("#details-min-selected").hide()
     $("#details-alternative").html(
       `
@@ -194,6 +190,11 @@ const setDetails = (values) => {
 
 }
 
+const isBottomVisible = _bottomOffset => {
+  const bottomOffset = _bottomOffset || 0;
+  return $("#result-card").offset().top + $("#result-card").outerHeight() + bottomOffset < ($(window).scrollTop() + $(window).height())
+}
+
 const submitCompute = (_values) => {
   $("#result-card").hide();
   $("#details-content").height(0);
@@ -209,10 +210,10 @@ const submitCompute = (_values) => {
   setTimeout(() => {
     $(".spinner-border").hide()
     $("#result-card").fadeIn();
-    const isBottomVisible = $("#result-card").offset().top + $("#result-card").outerHeight() < ($(window).scrollTop() + $(window).height())
+
     console.log($(window).scrollTop() + $(window).height());
 
-    if ($(window).width() < 769 || !isBottomVisible) {
+    if ($(window).width() < 769 || !isBottomVisible()) {
       scrollToBottomResultCard()
     }
   }, getRandomInt(500, 1200)
@@ -241,7 +242,7 @@ const setRegion = provider => {
   }
 }
 
-const setInputs2 = () => {
+const setInputs = () => {
   for (const gpuName in state.gpus) {
     $("#compute-gpu").append(`<option value="${gpuName}">${gpuName}</option>`)
   }
@@ -319,7 +320,7 @@ const setInputs2 = () => {
 
 
   state = await getData();
-  setInputs2();
+  setInputs();
   setImports(serveFrom, "a", "href");
   setImports(serveFrom, "img", "src");
 
@@ -363,48 +364,6 @@ const setInputs2 = () => {
   growDivOnArrowClickLearn(`.details-summary`, `.summary-content`);
   growDivOnArrowClick("#details-banner", "#details-content");
 
-
-
-
-  // carddeck
-  // $(".card-custom").mouseenter((el) => {
-  //   const customCard = $(el.target).closest(".card-custom");
-  //   const containerId = "#learn-card-container"
-
-  //   const viewportLeft = $(containerId).scrollLeft();
-  //   const viewportRight = viewportLeft + $(containerId).width();
-  //   const elementLeft = viewportLeft + customCard.offset().left;
-  //   const elementRight = elementLeft + customCard.width();
-
-
-  //   const rightVisible = elementRight < viewportRight;
-  //   const leftVisible = elementLeft > viewportLeft;
-  //   console.log("")
-  //   console.log("")
-  //   console.log(customCard)
-  //   console.log("elementLeft: " + elementLeft);
-  //   console.log("elementRight: " + elementRight);
-  //   console.log("viewportLeft: " + viewportLeft);
-  //   console.log("viewportRight: " + viewportRight);
-  //   console.log("rightVisible: " + rightVisible);
-  //   console.log("leftVisible: " + leftVisible);
-
-  //   if (rightVisible && leftVisible) {
-  //     return
-  //   }
-
-  //   let target;
-
-  //   if (!leftVisible) {
-  //     target = elementLeft - 50;
-  //   } else {
-  //     target = viewportLeft + customCard.width();
-  //   }
-  //   console.log(target);
-  //   $('#learn-card-container').animate({
-  //     scrollLeft: target
-  //   }, 'slow');
-  // })
 
 
 })(jQuery); // End of use strict
