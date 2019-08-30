@@ -320,6 +320,10 @@ const setInputs = () => {
 
 
   state = await getData();
+  $("#compute-loader").fadeOut(() => {
+    $("#compute-container").fadeIn()
+  })
+
   setInputs();
   setImports(serveFrom, "a", "href");
   setImports(serveFrom, "img", "src");
