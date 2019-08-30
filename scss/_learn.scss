@@ -14,9 +14,15 @@
         padding-bottom: 3rem;
     }
 
+    h4{
+        max-width: 30%;
+        min-width: 30%;
+    }
+
     .details-summary {
         display: flex;
         cursor: pointer;
+        align-items: center;
     }
 
     .summary-content {
@@ -55,7 +61,7 @@
             hr {
                 border-color: $primary;
                 border-width: .25rem;
-                width: 30%;
+                width: calc(30% + 5em);
             }
         }
     }

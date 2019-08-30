@@ -31,9 +31,10 @@
                 max-width: 90%;
                 border-radius: 4px;
                 box-shadow: $cardboxshadow;
-
-                &:hover {
-                    transform: scale(1.05)
+                @media(min-width: 768px) {
+                    &:hover {
+                        transform: scale(1.05)
+                    }
                 }
             }
         }

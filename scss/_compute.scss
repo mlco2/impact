@@ -76,8 +76,10 @@
             box-shadow: $cardboxshadow;
             transition: all ease 250ms;
 
-            &:hover {
-                transform: scale(1.05)
+            @media(min-width: 768px) {
+                &:hover {
+                    transform: scale(1.05)
+                }
             }
 
             .result-value {

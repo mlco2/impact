@@ -18,19 +18,23 @@
         @media(max-width: 768px) {
             padding: 1rem;
         }
+
         @media(max-width: 992px) {
             transform: scale(0.9)
         }
-        
-        .card-col{
+
+        .card-col {
             margin-bottom: 2rem;
         }
+
         .card-item {
             transition: all 250ms ease;
             box-shadow: $cardboxshadow;
 
-            &:hover {
-                transform: scale(1.05)
+            @media(min-width: 768px) {
+                &:hover {
+                    transform: scale(1.05)
+                }
             }
         }
 
