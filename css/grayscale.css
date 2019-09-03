@@ -387,6 +387,13 @@
   min-width: 30%;
 }
 
+@media (max-width: 768px) {
+  .learn-section h4 {
+    max-width: 75%;
+    min-width: 75%;
+  }
+}
+
 .learn-section .details-summary {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -405,12 +412,12 @@
 }
 
 .learn-section .arrow-learn-even {
-  margin: 1em 0 0 2em;
+  margin: 1.5em 0 0 2em;
   position: relative;
 }
 
 .learn-section .arrow-learn-odd {
-  margin: 1em 2em 0 0em;
+  margin: 1.5em 2em 0 0em;
   position: relative;
 }
 

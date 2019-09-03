@@ -14,9 +14,14 @@
         padding-bottom: 3rem;
     }
 
-    h4{
+    h4 {
         max-width: 30%;
         min-width: 30%;
+
+        @media(max-width: 768px) {
+            max-width: 75%;
+            min-width: 75%;
+        }
     }
 
     .details-summary {
@@ -33,12 +38,12 @@
 
 
     .arrow-learn-even {
-        margin: 1em 0 0 2em;
+        margin: 1.5em 0 0 2em;
         position: relative;
     }
 
     .arrow-learn-odd {
-        margin: 1em 2em 0 0em;
+        margin: 1.5em 2em 0 0em;
         position: relative;
     }
 

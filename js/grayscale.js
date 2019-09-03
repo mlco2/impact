@@ -345,7 +345,7 @@ const setInputs = () => {
 
   $(".details-summary").each((i, el) => {
 
-    if (i % 2 == 0) {
+    if (i % 2 == 0 || $(window).width() < 770) {
       const arrowTemplate = `
       <a class="arrow-icon arrow-learn-even" title="Learn more">
       <span class="left-bar"></span>
