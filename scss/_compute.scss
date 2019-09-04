@@ -74,7 +74,7 @@
             // border-bottom: 5px solid $primary;
             padding: 2rem;
             box-shadow: $cardboxshadow;
-            transition: all ease 250ms;
+            transition: all $inOutExpo 250ms;
 
             @media(min-width: 768px) {
                 &:hover {
@@ -96,7 +96,7 @@
                 padding: 0px 20px;
 
                 #details-content {
-                    transition: all ease 600ms;
+                    transition: all $inOutExpo 600ms;
                     overflow: hidden;
                     height: 0px;
                 }

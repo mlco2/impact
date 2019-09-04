@@ -5,7 +5,7 @@
   text-transform: uppercase;
   letter-spacing: .15rem;
   border: 0;
-  transition: all ease 250ms;
+  transition: all $inOutExpo 450ms;
 
   @media(min-width: 768px) {
     &:hover {

@@ -101,13 +101,13 @@ function css() {
 
 function html() {
   return gulp.src([
-    'html/head.html',
-    'html/home.html',
-    'html/compute.html',
-    'html/act.html',
-    'html/learn.html',
-    'html/about.html',
-    'html/foot.html',
+    'html/_head.html',
+    'html/_home.html',
+    'html/_compute.html',
+    'html/_act.html',
+    'html/_learn.html',
+    'html/_about.html',
+    'html/_foot.html',
   ])
     .pipe(concat('index.html'))
     .pipe(gulp.dest('./'));

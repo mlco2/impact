@@ -151,8 +151,8 @@
   text-transform: uppercase;
   letter-spacing: .15rem;
   border: 0;
-  -webkit-transition: all ease 250ms;
-  transition: all ease 250ms;
+  -webkit-transition: all cubic-bezier(1, 0, 0, 1) 450ms;
+  transition: all cubic-bezier(1, 0, 0, 1) 450ms;
 }
 
 @media (min-width: 768px) {
@@ -287,8 +287,8 @@
   padding: 2rem;
   -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
   box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
-  -webkit-transition: all ease 250ms;
-  transition: all ease 250ms;
+  -webkit-transition: all cubic-bezier(1, 0, 0, 1) 250ms;
+  transition: all cubic-bezier(1, 0, 0, 1) 250ms;
 }
 
 @media (min-width: 768px) {
@@ -313,8 +313,8 @@
 }
 
 .compute-section #result-row #result-card #result-details #details-content {
-  -webkit-transition: all ease 600ms;
-  transition: all ease 600ms;
+  -webkit-transition: all cubic-bezier(1, 0, 0, 1) 600ms;
+  transition: all cubic-bezier(1, 0, 0, 1) 600ms;
   overflow: hidden;
   height: 0px;
 }
@@ -407,8 +407,8 @@
 .learn-section .summary-content {
   height: 0px;
   overflow: hidden;
-  -webkit-transition: all 250ms ease;
-  transition: all 250ms ease;
+  -webkit-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+  transition: all 600ms cubic-bezier(1, 0, 0, 1);
 }
 
 .learn-section .arrow-learn-even {
@@ -487,8 +487,8 @@
 }
 
 .act-section #learn-card-container .card-item {
-  -webkit-transition: all 250ms ease;
-  transition: all 250ms ease;
+  -webkit-transition: all 300ms cubic-bezier(1, 0, 0, 1);
+  transition: all 300ms cubic-bezier(1, 0, 0, 1);
   -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
   box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
 }
