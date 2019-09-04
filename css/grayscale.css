@@ -151,8 +151,8 @@
   text-transform: uppercase;
   letter-spacing: .15rem;
   border: 0;
-  -webkit-transition: all cubic-bezier(1, 0, 0, 1) 450ms;
-  transition: all cubic-bezier(1, 0, 0, 1) 450ms;
+  -webkit-transition: all ease 350ms;
+  transition: all ease 350ms;
 }
 
 @media (min-width: 768px) {
@@ -287,8 +287,8 @@
   padding: 2rem;
   -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
   box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
-  -webkit-transition: all cubic-bezier(1, 0, 0, 1) 250ms;
-  transition: all cubic-bezier(1, 0, 0, 1) 250ms;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
 }
 
 @media (min-width: 768px) {
@@ -487,8 +487,8 @@
 }
 
 .act-section #learn-card-container .card-item {
-  -webkit-transition: all 300ms cubic-bezier(1, 0, 0, 1);
-  transition: all 300ms cubic-bezier(1, 0, 0, 1);
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
   -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
   box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
 }

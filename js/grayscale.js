@@ -210,6 +210,9 @@ const submitCompute = (_values) => {
   setTimeout(() => {
     $(".spinner-border").hide()
     $("#result-card").fadeIn();
+    $("#compute-carbon-emitted-title").height(
+      $("#compute-carbon-offset-title").height()
+    )
 
     console.log($(window).scrollTop() + $(window).height());
 

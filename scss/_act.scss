@@ -28,7 +28,7 @@
         }
 
         .card-item {
-            transition: all 300ms $inOutExpo;
+            transition: all 300ms ease;
             box-shadow: $cardboxshadow;
 
             @media(min-width: 768px) {

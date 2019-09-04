@@ -74,7 +74,7 @@
             // border-bottom: 5px solid $primary;
             padding: 2rem;
             box-shadow: $cardboxshadow;
-            transition: all $inOutExpo 250ms;
+            transition: all ease 250ms;
 
             @media(min-width: 768px) {
                 &:hover {
