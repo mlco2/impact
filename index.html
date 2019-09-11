@@ -43,10 +43,10 @@
             <a id="compute-nav-link" class="nav-link js-scroll-trigger" href="#compute">Compute</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#act">Act</a>
+            <a class="nav-link js-scroll-trigger" href="#learn">Learn</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#learn">Learn</a>
+            <a class="nav-link js-scroll-trigger" href="#act">Act</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
@@ -103,7 +103,7 @@
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
                     <label for="compute-hours">Hours Used</label>
-                    <input class="form-control compute-input" id="compute-hours" type="number" value="3" />
+                    <input class="form-control compute-input" id="compute-hours" type="number" step="0.1" value="3" />
                 </div>
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
@@ -190,128 +190,6 @@
 
     </div>
 </section>
-<!-- Act Section -->
-<section id="act" class="act-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-lg-8 mx-auto text-center">
-
-                <i class="far fa-compass fa-2x mb-2 text-white"></i>
-                <h2 class="text-white mb-4">There are things you can do</h2>
-                <p class="text-white-80">With great computing power comes great responsibility</p>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="container" id="learn-card-container">
-
-        <div class="row">
-
-            <div class="card-col col-md-4 col-lg-3">
-                <div class="card card-item h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Chose your cloud provider wisely</h6>
-                        <hr class="my-4">
-                        <div class="small text-black-50">They don't all buy offsets, RECs or invest equally in clean
-                            energy sources. Read their sustainability commitments and make an informed choice.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-col col-md-4 col-lg-3">
-                <div class="card card-item h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-envelope text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Chose your region</h6>
-                        <hr class="my-4">
-                        <div class="small text-black-50">
-                            Different regions are powered by different combinations of renewable and non-renewable energy. If regulations and
-                            legal aspects allow, select a more sustainable region.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-col col-md-4 col-lg-3">
-                <div class="card card-item h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Buy Carbon Offsets</h6>
-                        <hr class="my-4">
-                        <div class="small text-black-50">Many platforms provide easy ways to offset
-                            your emissions. You can have a big impact by proposing offsetting within your organization. It is
-                            also worth doing in your personal life too, for instance by offsetting flights. </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-col col-md-4 col-lg-3">
-                <div class="card card-item h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Don't Do Grid Search</h6>
-                        <hr class="my-4">
-                        <div class="small text-black-50">Hyperparameter search is a great source of ML-related carbon
-                            emissions. If there is no literature to help you establish good values and you need to look for
-                            relevant ones, at least do it randomly, not via grid search.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-col col-md-4 col-lg-3">
-                <div class="card card-item h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Choose Clean Energy</h6>
-                        <hr class="my-4">
-                        <div class="small text-black-50">Your organization may have a choice in their power supply. You
-                            may too. Chosing a cleaner and more sustainable source of energy will go far in decreasing your
-                            carbon impact</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-col col-md-4 col-lg-3">
-                <div class="card card-item h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                        <h6 class="text-uppercase m-0">Fill Out Our Survey</h6>
-                        <hr class="my-4">
-                        <div class="small text-black-50">[Because this site will be under peer-review, the survey is hidden until publication] <!--We are trying to understand ML practitioners' understanding and
-                            perspective on Climate Change. Help us by filling out our survey!--> </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-        </div>
-        <div class="row" id="learn-more-div">
-
-            <a href="#learn" class="btn btn-primary js-scroll-trigger">Learn more<i>⤵</i></a>
-
-        </div>
-        <!-- 
-        <div class="social d-flex justify-content-center">
-          <a href="#" class="mx-2">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="mx-2">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="mx-2">
-            <i class="fab fa-github"></i>
-          </a>
-        </div> -->
-
-    </div>
-
-</section>
-
 <!-- Learn Section -->
 <section id="learn" class="learn-section bg-light">
     <div class="container">
@@ -514,6 +392,128 @@
 
         </div>
 </section>
+<!-- Act Section -->
+<section id="act" class="act-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+                <i class="far fa-compass fa-2x mb-2 text-white"></i>
+                <h2 class="text-white mb-4">There are things you can do</h2>
+                <p class="text-white-80">With great computing power comes great responsibility</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="learn-card-container">
+
+        <div class="row">
+
+            <div class="card-col col-md-4 col-lg-3">
+                <div class="card card-item h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Chose your cloud provider wisely</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">They don't all buy offsets, RECs or invest equally in clean
+                            energy sources. Read their sustainability commitments and make an informed choice.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-col col-md-4 col-lg-3">
+                <div class="card card-item h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Chose your region</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">
+                            Different regions are powered by different combinations of renewable and non-renewable energy. If regulations and
+                            legal aspects allow, select a more sustainable region.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-col col-md-4 col-lg-3">
+                <div class="card card-item h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Buy Carbon Offsets</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">Many platforms provide easy ways to offset
+                            your emissions. You can have a big impact by proposing offsetting within your organization. It is
+                            also worth doing in your personal life too, for instance by offsetting flights. </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-col col-md-4 col-lg-3">
+                <div class="card card-item h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Don't Do Grid Search</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">Hyperparameter search is a great source of ML-related carbon
+                            emissions. If there is no literature to help you establish good values and you need to look for
+                            relevant ones, at least do it randomly, not via grid search.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-col col-md-4 col-lg-3">
+                <div class="card card-item h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Choose Clean Energy</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">Your organization may have a choice in their power supply. You
+                            may too. Chosing a cleaner and more sustainable source of energy will go far in decreasing your
+                            carbon impact</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-col col-md-4 col-lg-3">
+                <div class="card card-item h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                        <h6 class="text-uppercase m-0">Fill Out Our Survey</h6>
+                        <hr class="my-4">
+                        <div class="small text-black-50">[Because this site will be under peer-review, the survey is hidden until publication] <!--We are trying to understand ML practitioners' understanding and
+                            perspective on Climate Change. Help us by filling out our survey!--> </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="row" id="learn-more-div">
+
+            <a href="#learn" class="btn btn-primary js-scroll-trigger">Learn more<i>⤵</i></a>
+
+        </div>
+        <!-- 
+        <div class="social d-flex justify-content-center">
+          <a href="#" class="mx-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="mx-2">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="mx-2">
+            <i class="fab fa-github"></i>
+          </a>
+        </div> -->
+
+    </div>
+
+</section>
+
 <!-- About Section -->
 <section class="about-section bg-light" id="about">
     <div class="container">

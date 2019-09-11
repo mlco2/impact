@@ -61,7 +61,7 @@ const getValues = () => {
   const gpu = $("#compute-gpu option:selected").val();
   const provider = $("#compute-provider option:selected").val();
   const region = $("#compute-region option:selected").val();
-  const hours = parseInt($("#compute-hours").val(), 10);
+  const hours = parseFloat($("#compute-hours").val());
   return {
     gpu, provider, region, hours
   }
