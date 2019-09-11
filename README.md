@@ -34,3 +34,7 @@ Then `git push origin master` as usual with the credentials you have been given
 
 After editing content, if `gulp watch` was running, you're good ; otherwise, run `gulp build` to apply your changes. Then commit and push **safely** (see [previous section](#stay-anonymous-for-now)).
 
+### Data
+
+Anything to say or add? See [`data/`](https://github.com/mlco2/impact/tree/master/data)
+
