@@ -560,8 +560,8 @@
 }
 
 .about-section {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c));
-  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("https://storage.needpix.com/rsynced_images/sunset-sky-1455125487HWs.jpg");
+  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("https://storage.needpix.com/rsynced_images/sunset-sky-1455125487HWs.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -614,6 +614,77 @@
 }
 
 .about-section .about-content-row .about-content-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.authors-section {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("https://get.pxhere.com/photo/sky-bicycle-cycling-vehicle-cycle-sport-mountain-bike-mountainous-landforms-mountain-range-mountain-mountain-biking-recreation-alps-mode-of-transport-road-downhill-mountain-biking-mountain-pass-sports-equipment-tree-spoke-road-bicycle-bicycle-pedal-freeride-road-cycling-hill-hill-station-cloud-bicycle-wheel-ridge-thoroughfare-adventure-tourism-trail-mountain-bike-racing-bicycle-frame-holiday-hybrid-bicycle-wheel-valley-cross-country-cycling-1576559.png");
+  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("https://get.pxhere.com/photo/sky-bicycle-cycling-vehicle-cycle-sport-mountain-bike-mountainous-landforms-mountain-range-mountain-mountain-biking-recreation-alps-mode-of-transport-road-downhill-mountain-biking-mountain-pass-sports-equipment-tree-spoke-road-bicycle-bicycle-pedal-freeride-road-cycling-hill-hill-station-cloud-bicycle-wheel-ridge-thoroughfare-adventure-tourism-trail-mountain-bike-racing-bicycle-frame-holiday-hybrid-bicycle-wheel-valley-cross-country-cycling-1576559.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  padding: 4rem 0;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .authors-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.authors-section .authors-content-row {
+  margin-top: 3rem;
+}
+
+.authors-section .authors-content-row .authors-content-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.authors-section .authors-content-row .authors-content-img a {
+  text-align: center;
+}
+
+.authors-section .authors-content-row .authors-content-img img {
+  background-color: white;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  max-width: 90%;
+  border-radius: 4px;
+  -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
+  box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
+}
+
+@media (min-width: 768px) {
+  .authors-section .authors-content-row .authors-content-img img:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+}
+
+.authors-section .authors-content-row .authors-content-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
