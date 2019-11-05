@@ -671,13 +671,16 @@
   background-color: white;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
-  max-width: 90%;
+  max-width: 200px;
   border-radius: 4px;
   -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
   box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
 }
 
 @media (min-width: 768px) {
+  .authors-section .authors-content-row .authors-content-img img {
+    max-width: 90%;
+  }
   .authors-section .authors-content-row .authors-content-img img:hover {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
