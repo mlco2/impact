@@ -1,0 +1,46 @@
+{
+  "title": "ML CO2 Impact",
+  "name": "ml-co2-impact",
+  "version": "5.0.8",
+  "scripts": {
+    "start": "node_modules/.bin/gulp watch"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "html",
+    "responsive",
+    "theme",
+    "template"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.9.0",
+    "bootstrap": "4.3.1",
+    "jquery": "3.4.1",
+    "jquery.easing": "^1.4.1",
+    "lodash.template": ">=4.5.0",
+    "popper.js": "^1.15.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "2.26.7",
+    "del": "4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "2.0.7",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify": "3.0.2",
+    "lodash.template": ">=4.5.0",
+    "merge-stream": "2.0.0"
+  }
+}
