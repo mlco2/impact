@@ -18,8 +18,7 @@ Checkout the [**online GPU emissions calculator**](https://mlco2.github.io/impac
 
 `html` files are split by section in the `html/` folder, and then built into the `index.html` file.
 
-After editing content, if `gulp watch` was running, you're good ; otherwise, run `gulp build` to apply your changes. Then commit and push **safely** (see [previous section](#stay-anonymous-for-now)).
-
+After editing content, if `gulp watch` was running, you're good ; otherwise, run `gulp build` to apply your changes.
 ### Data
 
 Anything to say or add? See [`data/`](https://github.com/mlco2/impact/tree/master/data)
