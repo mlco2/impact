@@ -1,24 +1,10 @@
 # Machine Learning's CO2 Impact
 
-This repository is currently kept anonymous as it will be submitted with a research paper to a peer-review process.
+Checkout the [**online GPU emissions calculator**](https://mlco2.github.io/impact)!
+
+[![](https://i.postimg.cc/pTqVSx7N/Capture-d-e-cran-2019-11-07-a-12-41-58.png)](https://mlco2.github.io/impact)
 
 ## Contributing
-
-### Stay anonymous for now 
-
-For safety, disable the credential helper:
-
-```
-~/path/to/mlco2/impact $ git config --local credential.helper ""
-```
-
-To **commit** chose a random username and password:
-
-```
-~/path/to/mlco2/impact $ git -c user.name='Jahne Doe' -c user.email='my@email.org' commit -am 'some commit message'
-```
-
-Then `git push origin master` as usual with the credentials you have been given
 
 ### Setup
 
@@ -32,9 +18,7 @@ Then `git push origin master` as usual with the credentials you have been given
 
 `html` files are split by section in the `html/` folder, and then built into the `index.html` file.
 
-After editing content, if `gulp watch` was running, you're good ; otherwise, run `gulp build` to apply your changes. Then commit and push **safely** (see [previous section](#stay-anonymous-for-now)).
-
+After editing content, if `gulp watch` was running, you're good ; otherwise, run `gulp build` to apply your changes.
 ### Data
 
 Anything to say or add? See [`data/`](https://github.com/mlco2/impact/tree/master/data)
-
