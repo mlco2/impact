@@ -4,6 +4,10 @@ Checkout the [**online GPU emissions calculator**](https://mlco2.github.io/impac
 
 [![](https://i.postimg.cc/pTqVSx7N/Capture-d-e-cran-2019-11-07-a-12-41-58.png)](https://mlco2.github.io/impact)
 
+By A. Lacoste, A. Luccioni, V. Schmidt
+
+Read our paper on [**Quantifying Carbon Emissions of Machine Learning**](https://arxiv.org/pdf/1910.09700) (NeurIPS 2019, Climate Change AI Workshop)
+
 ## Contributing
 
 ### Setup
