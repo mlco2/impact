@@ -160,7 +160,7 @@ const setDetails = (values) => {
   $("#emitted-value").text(co2);
   $("#offset-value").text(offset);
   $("#details-counts").html(`
-  ${state.gpus[gpu].watt}W x ${hours}h = <strong>${energy} kWh</strong> x ${impact} 
+  ${state.gpus[gpu].watt}W x ${hours}h = <strong>${energy} kWh</strong> x ${impact}
   kg  eq. CO<sub>2</sub>/kWh = <strong>${co2} kg eq. CO<sub>2</sub></strong>
   `);
 
@@ -371,6 +371,7 @@ const setInputs = () => {
   growDivOnArrowClickLearn(`.details-summary`, `.summary-content`);
   growDivOnArrowClick("#details-banner", "#details-content");
 
+  $("#details-featured-maps").click()
 
 
 })(jQuery); // End of use strict
