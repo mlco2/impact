@@ -62,6 +62,7 @@ const getValues = () => {
   const provider = $("#compute-provider option:selected").val();
   const region = $("#compute-region option:selected").val();
   const hours = parseFloat($("#compute-hours").val());
+  const city = 0
   return {
     gpu, provider, region, hours
   }
@@ -225,23 +226,34 @@ const submitCompute = (_values) => {
 
 
 const setRegion = provider => {
-  $("#compute-region").html('');
-  let regs = [];
-  for (const region in state.providers[provider]) {
-    if (state.providers[provider].hasOwnProperty(region) && region !== "__min") {
-      let { regionName } = state.providers[provider][region];
-      if (!regionName) {
-        regionName = region;
-      }
-      regs.push({ region, regionName })
+  if (provider === "custom") {
+    $("#compute-region-div").fadeOut(() => {
+      $("#compute-city-div").fadeIn()
+    })
+  } else {
+    if (!$("#compute-region-div").is(":visible")) {
+      $("#compute-city-div").fadeOut(() => {
+        $("#compute-region-div").fadeIn();
+      })
     }
-  }
-  regs.sort((a, b) => (
-    a.regionName > b.regionName) ? 1 : ((b.regionName > a.regionName) ? -1 : 0)
-  );
-  for (const reg of regs) {
-    const { regionName, region } = reg;
-    $("#compute-region").append(`<option value="${region}">${regionName}</option>`)
+    $("#compute-region").html('');
+    let regs = [];
+    for (const region in state.providers[provider]) {
+      if (state.providers[provider].hasOwnProperty(region) && region !== "__min") {
+        let { regionName } = state.providers[provider][region];
+        if (!regionName) {
+          regionName = region;
+        }
+        regs.push({ region, regionName })
+      }
+    }
+    regs.sort((a, b) => (
+      a.regionName > b.regionName) ? 1 : ((b.regionName > a.regionName) ? -1 : 0)
+    );
+    for (const reg of regs) {
+      const { regionName, region } = reg;
+      $("#compute-region").append(`<option value="${region}">${regionName}</option>`)
+    }
   }
 }
 
@@ -265,6 +277,7 @@ const setInputs = () => {
       $("#compute-provider").append(`<option value="${provider}">${providerName}</option>`)
     }
   }
+  $("#compute-provider").append(`<option value="custom">Private Architecture</option>`)
   setRegion(prov)
 }
 

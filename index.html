@@ -111,15 +111,21 @@
                 </div>
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
-                    <label for="compute-provider">Cloud Provider</label>
+                    <label for="compute-provider">Provider</label>
                     <select class="form-control compute-input" id="compute-provider">
                     </select>
                 </div>
 
-                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                <div class="form-group col-md-4 col-lg-3 col-xl-2" id="compute-region-div">
                     <label for="compute-region">Region of Compute</label>
                     <select class="form-control compute-input" id="compute-region">
                     </select>
+                </div>
+
+                <div class="form-group col-md-4 col-lg-3 col-xl-2" style="display:none" id="compute-city-div">
+                    <label for="compute-city">City of Compute</label>
+                    <input class="form-control compute-input" id="compute-city">
+                    </input>
                 </div>
 
             </div>
@@ -194,6 +200,7 @@
 
     </div>
 </section>
+
 <!-- Learn Section -->
 <section id="learn" class="learn-section bg-light">
     <div class="container">
@@ -767,14 +774,23 @@
 <script src="js/grayscale.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88678459-2"></script>
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpPUW0VsfRI9tV2r5rMZOCEflPCVv1Zh8&libraries=places"></script>
+
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-88678459-2');
-</script>
 
+    var input = document.getElementById('compute-city');
+    var autocomplete = new google.maps.places.Autocomplete(input, { types: ['(cities)'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        console.log(place);
+    })
+</script>
 
 </body>
 

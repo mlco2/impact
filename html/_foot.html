@@ -39,14 +39,23 @@
 <script src="js/grayscale.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88678459-2"></script>
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpPUW0VsfRI9tV2r5rMZOCEflPCVv1Zh8&libraries=places"></script>
+
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-88678459-2');
-</script>
 
+    var input = document.getElementById('compute-city');
+    var autocomplete = new google.maps.places.Autocomplete(input, { types: ['(cities)'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        console.log(place);
+    })
+</script>
 
 </body>
 
