@@ -294,14 +294,17 @@ const setInputs = () => {
     $('.navbar-collapse').collapse('hide');
   });
 
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 100
-  });
-  $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
-    console.log(this);
-  })
+  // // Activate scrollspy to add active class to navbar items on scroll
+  // $('body').scrollspy({
+  //   target: '#mainNav',
+  //   offset: 100
+  // });
+  // $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+  //   console.log(this);
+  // })
+
+  const observer = lozad();
+  observer.observe();
 
   // $("#navbarResponsive a").on('activate', function () {
   //   console.log($(this));
@@ -372,6 +375,15 @@ const setInputs = () => {
   growDivOnArrowClick("#details-banner", "#details-content");
 
   $("#details-featured-maps").click()
+
+  const response = await fetch("https://api.co2signal.com/v1/latest?lon=6.8770394&lat=45.9162776", {
+    credentials: "include",
+    headers: {
+      'Content-Type': 'application/jsonp',
+      'auth-token': 'c5f38468eddd9edb'
+    }
+  })
+  console.log({ response });
 
 
 })(jQuery); // End of use strict
