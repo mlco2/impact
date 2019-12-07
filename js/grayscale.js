@@ -294,14 +294,14 @@ const setInputs = () => {
     $('.navbar-collapse').collapse('hide');
   });
 
-  // // Activate scrollspy to add active class to navbar items on scroll
-  // $('body').scrollspy({
-  //   target: '#mainNav',
-  //   offset: 100
-  // });
-  // $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
-  //   console.log(this);
-  // })
+  // Activate scrollspy to add active class to navbar items on scroll
+  $('body').scrollspy({
+    target: '#mainNav',
+    offset: 100
+  });
+  $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+    console.log(this);
+  })
 
   const observer = lozad();
   observer.observe();
