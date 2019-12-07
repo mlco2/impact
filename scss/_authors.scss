@@ -1,5 +1,5 @@
 .authors-section {
-    background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%), url("https://get.pxhere.com/photo/sky-bicycle-cycling-vehicle-cycle-sport-mountain-bike-mountainous-landforms-mountain-range-mountain-mountain-biking-recreation-alps-mode-of-transport-road-downhill-mountain-biking-mountain-pass-sports-equipment-tree-spoke-road-bicycle-bicycle-pedal-freeride-road-cycling-hill-hill-station-cloud-bicycle-wheel-ridge-thoroughfare-adventure-tourism-trail-mountain-bike-racing-bicycle-frame-holiday-hybrid-bicycle-wheel-valley-cross-country-cycling-1576559.png");
+    background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/bicycle-pic.png");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -37,6 +37,7 @@
                     &:hover {
                         transform: scale(1.05)
                     }
+
                     max-width: 90%;
                 }
             }
