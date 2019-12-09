@@ -7,6 +7,21 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function selectAndCopyText(containerid) {
+  if (document.selection) { // IE
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(containerid));
+    range.select();
+    document.execCommand('copy');
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+  }
+}
+
 function findGetParameter(parameterName) {
   var result = null, tmp = [];
   location.search
@@ -151,22 +166,34 @@ const checkForm = () => {
 
 const twoDigits = n => Number(Number(n).toFixed(2));
 
+const fillLatexTemplate = (provName, region, hours, gpu, emissions, offset) => {
+
+  $("#template-provider").text(provName);
+  $("#template-region").text(region);
+  $("#template-hours").text(hours);
+  $("#template-gpu").text(gpu);
+  $("#template-emissions").text(emissions);
+  $("#template-percentage-offset").text(offset);
+}
+
 const setDetails = (values) => {
   const { gpu, hours, provider, region } = values
   const energy = twoDigits(state.gpus[gpu].watt * hours / 1000); // kWh
   const impact = twoDigits(state.providers[provider][region].impact / 1000); // kg/kwH
   const co2 = twoDigits(energy * impact);
   const offset = twoDigits(co2 * state.providers[provider][region].offsetRatio / 100)
+  const provName = state.providers[provider][region].providerName;
+  const minRegId = state.providers[provider].__min.region;
+  const minReg = state.providers[provider][minRegId];
+
+  fillLatexTemplate(provName, region, hours, gpu, co2, offset)
+
   $("#emitted-value").text(co2);
   $("#offset-value").text(offset);
   $("#details-counts").html(`
   ${state.gpus[gpu].watt}W x ${hours}h = <strong>${energy} kWh</strong> x ${impact}
   kg  eq. CO<sub>2</sub>/kWh = <strong>${co2} kg eq. CO<sub>2</sub></strong>
   `);
-
-  const provName = state.providers[provider][region].providerName;
-  const minRegId = state.providers[provider].__min.region;
-  const minReg = state.providers[provider][minRegId];
   if (region !== minRegId) {
     const minco2 = twoDigits(energy * minReg.impact / 1000);
     $("#details-min-selected").hide()
@@ -306,10 +333,6 @@ const setInputs = () => {
   const observer = lozad();
   observer.observe();
 
-  // $("#navbarResponsive a").on('activate', function () {
-  //   console.log($(this));
-  // });
-
   // Collapse Navbar
   var navbarCollapse = function () {
     if ($("#mainNav").offset().top > 100) {
@@ -374,16 +397,26 @@ const setInputs = () => {
   growDivOnArrowClickLearn(`.details-summary`, `.summary-content`);
   growDivOnArrowClick("#details-banner", "#details-content");
 
-  $("#details-featured-maps").click()
+  // $("#details-featured-maps").click()
 
-  const response = await fetch("https://api.co2signal.com/v1/latest?lon=6.8770394&lat=45.9162776", {
-    credentials: "include",
-    headers: {
-      'Content-Type': 'application/jsonp',
-      'auth-token': 'c5f38468eddd9edb'
-    }
+  // const response = await fetch("https://api.co2signal.com/v1/latest?lon=6.8770394&lat=45.9162776", {
+  //   credentials: "include",
+  //   headers: {
+  //     'Content-Type': 'application/jsonp',
+  //     'auth-token': 'c5f38468eddd9edb'
+  //   }
+  // })
+  // console.log({ response });
+
+  $("#copy-template-btn").click(() => {
+    selectAndCopyText("template-code");
+    $("#copy-template-feedback").fadeIn(() => {
+      setTimeout(
+        () => {
+          $("#copy-template-feedback").fadeOut()
+        }, 1000);
+    })
   })
-  console.log({ response });
 
 
 })(jQuery); // End of use strict

@@ -1,15 +1,180 @@
 <!-- Publish Section -->
 <section id="publish" class="publish-section">
-
     <div class="container">
+
         <div id="publish-title" class="row">
             <div class="col-lg-8 mx-auto">
                 <h2 class="text-white mb-4">Publish</h2>
-                <p class="text-white-80">This section will present some of the important concepts to better understand
-                    the carbon footprint of your ML research, including what providers do to help you offset it
+                <p class="text-white-80">We believe that an important step towards reducing carbon emissions is the generalization of emissions reporting in papers, blog posts and publications in general.
                 </p>
+                <p class="text-white-80">To that end, here is a LateX template you can use in your publication to report the emissions you have calculated with the Calculator:
+                </p>
+
+
             </div>
         </div>
-    </div>
 
+        <div class="row template-row">
+            <div class="card col-12 col-sm-8" id="social-card-div">
+                <h3 class="pad">Latex template</h3>
+                <div class="pad card-body">
+
+                    <pre>
+                        <code class="language-latex" id="template-code">
+\usepackage{hyperref}
+
+\subsection{CO2 Emission Related to Experiments}
+
+Experiments were conducted using <span id="template-provider">{cloud provider}</span> in region <span id="template-region">{region of compute}</span>. A cumulative of <span id="template-hours">{hours used}</span> hours of computation was performed on hardware of type <span id="template-gpu">{hardware type}</span>.
+
+This emitted a total of <span id="template-emissions">{emission}</span> kg CO2eq of which <span id="template-percentage-offset">{percentage offset}</span> kg CO2eq were directly offset by the cloud provider.
+    <!-- , corresponding to driving a regular car for {km of driving} km. -->
+%Uncomment if you bought additional offsets:
+%XX kg CO2eq were manually offset through \href{Offset Provider}{link}.
+
+Estimations were conducted using the \href{https://mlco2.github.io/impact#compute}{MachineLearning Impact calculator} presented in \cite{lacoste2019quantifying}.
+
+@article{lacoste2019quantifying,
+&nbsp;&nbsp;title={Quantifying the Carbon Emissions of Machine Learning},
+&nbsp;&nbsp;author={Lacoste, Alexandre and Luccioni, Alexandra and Schmidt, Victor and Dandres, Thomas},
+&nbsp;&nbsp;journal={arXiv preprint arXiv:1910.09700},
+&nbsp;&nbsp;year={2019}
+}
+                        </code>
+                    </pre>
+                    <br>
+                    <br>
+                    <div class="row" id="copy-template-row">
+                        <button id="copy-template-btn" class="btn btn-primary">Copy</button>
+                        <span id="copy-template-feedback">Copied to your Clipboard!</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="row template-row">
+            <div class="card col-12 col-sm-8" id="template-card-div">
+                <h3 class="pad">Social Media</h3>
+                <div class="pad card-body">
+                    <div class="row">
+
+                        <!-- Sharing button Facebook -->
+                        <div class="col-6">
+                            <a class="resp-sharing-button__link"
+                                href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmlco2.github.io%2Fimpact"
+                                target="_blank" rel="noopener" aria-label="Share on Facebook">
+                                <div
+                                    class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large">
+                                    <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path
+                                                d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+                                        </svg>
+                                    </div>Share on Facebook
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Sharing button Twitter -->
+                        <div class="col-6">
+                            <a class="resp-sharing-button__link"
+                                href="https://twitter.com/intent/tweet/?text=I%20just%20computed%20my%20model&#x27;s%20carbon%20emissions%2C%20using%20%23mlco2%20&#x27;s%20calculator.%20I%20pledge%20to%20include%20it%20in%20any%20related%20publication.&amp;url=https%3A%2F%2Fmlco2.github.io%2Fimpact"
+                                target="_blank" rel="noopener" aria-label="Share on Twitter">
+                                <div
+                                    class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--large">
+                                    <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path
+                                                d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+                                        </svg>
+                                    </div>Share on Twitter
+                                </div>
+                            </a></div>
+
+                        <!-- Sharing button E-Mail -->
+                        <div class="col-6">
+                            <a class="resp-sharing-button__link"
+                                href="mailto:?subject=I%20just%20computed%20my%20model&#x27;s%20carbon%20emissions%2C%20using%20%23mlco2%20&#x27;s%20calculator.%20I%20pledge%20to%20include%20it%20in%20any%20related%20publication.&amp;body=https%3A%2F%2Fmlco2.github.io%2Fimpact"
+                                target="_self" rel="noopener" aria-label="Share by E-Mail">
+                                <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--large">
+                                    <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path
+                                                d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+                                        </svg></div>Share by E-Mail
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Sharing button LinkedIn -->
+                        <div class="col-6">
+                            <a class="resp-sharing-button__link"
+                                href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fmlco2.github.io%2Fimpact&amp;title=I%20just%20computed%20my%20model&#x27;s%20carbon%20emissions%2C%20using%20%23mlco2%20&#x27;s%20calculator.%20I%20pledge%20to%20include%20it%20in%20any%20related%20publication.&amp;summary=I%20just%20computed%20my%20model&#x27;s%20carbon%20emissions%2C%20using%20%23mlco2%20&#x27;s%20calculator.%20I%20pledge%20to%20include%20it%20in%20any%20related%20publication.&amp;source=https%3A%2F%2Fmlco2.github.io%2Fimpact"
+                                target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                                <div
+                                    class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--large">
+                                    <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path
+                                                d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z" />
+                                        </svg>
+                                    </div>Share on LinkedIn
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Sharing button WhatsApp -->
+                        <div class="col-6">
+                            <a class="resp-sharing-button__link"
+                                href="whatsapp://send?text=I%20just%20computed%20my%20model&#x27;s%20carbon%20emissions%2C%20using%20%23mlco2%20&#x27;s%20calculator.%20I%20pledge%20to%20include%20it%20in%20any%20related%20publication.%20https%3A%2F%2Fmlco2.github.io%2Fimpact"
+                                target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+                                <div
+                                    class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--large">
+                                    <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path
+                                                d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z" />
+                                        </svg>
+                                    </div>Share on WhatsApp
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Sharing button Hacker News -->
+                        <div class="col-6">
+                            <a class="resp-sharing-button__link"
+                                href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmlco2.github.io%2Fimpact&amp;t=I%20just%20computed%20my%20model&#x27;s%20carbon%20emissions%2C%20using%20%23mlco2%20&#x27;s%20calculator.%20I%20pledge%20to%20include%20it%20in%20any%20related%20publication."
+                                target="_blank" rel="noopener" aria-label="Share on Hacker News">
+                                <div
+                                    class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--large">
+                                    <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+                                            <path fill-rule="evenodd"
+                                                d="M60.94 82.314L17 0h20.08l25.85 52.093c.397.927.86 1.888 1.39 2.883.53.994.995 2.02 1.393 3.08.265.4.463.764.596 1.095.13.334.262.63.395.898.662 1.325 1.26 2.618 1.79 3.877.53 1.26.993 2.42 1.39 3.48 1.06-2.254 2.22-4.673 3.48-7.258 1.26-2.585 2.552-5.27 3.877-8.052L103.49 0h18.69L77.84 83.308v53.087h-16.9v-54.08z">
+                                            </path>
+                                        </svg>
+                                    </div>Share on Hacker News
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>

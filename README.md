@@ -26,3 +26,10 @@ After editing content, if `gulp watch` was running, you're good ; otherwise, run
 ### Data
 
 Anything to say or add? See [`data/`](https://github.com/mlco2/impact/tree/master/data)
+
+## Acknowledgements
+
+Special thanks to
+
+* https://sharingbuttons.io/
+* prim.js
