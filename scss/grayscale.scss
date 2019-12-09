@@ -1,7 +1,7 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 @import 'navbar.scss';
-@import 'masthead.scss';
+@import 'home.scss';
 @import 'buttons.scss';
 @import 'compute.scss';
 @import 'learn.scss';
@@ -9,6 +9,7 @@
 @import 'contact.scss';
 @import 'about.scss';
 @import 'authors.scss';
+@import 'publish.scss';
 
 html {
     background: $secondary;

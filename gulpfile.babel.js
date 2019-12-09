@@ -104,6 +104,7 @@ function html() {
     'html/_head.html',
     'html/_home.html',
     'html/_compute.html',
+    'html/_publish.html',
     'html/_learn.html',
     'html/_act.html',
     'html/_about.html',

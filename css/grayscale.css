@@ -86,7 +86,7 @@
   }
 }
 
-.masthead {
+.home-section {
   color: white;
   position: relative;
   width: 100%;
@@ -108,7 +108,7 @@
   align-items: center;
 }
 
-.masthead h1 {
+.home-section h1 {
   font-family: 'Open Sans';
   font-size: 2.5rem;
   line-height: 3.5rem;
@@ -116,28 +116,28 @@
   color: white;
 }
 
-.masthead h2 {
+.home-section h2 {
   max-width: 20rem;
   font-size: 1rem;
 }
 
 @media (min-width: 768px) {
-  .masthead h1 {
+  .home-section h1 {
     font-size: 4rem;
     line-height: 6rem;
   }
 }
 
 @media (min-width: 992px) {
-  .masthead {
+  .home-section {
     height: 100vh;
   }
-  .masthead h1 {
+  .home-section h1 {
     font-size: 6.5rem;
     line-height: 9.5rem;
     letter-spacing: 0.8rem;
   }
-  .masthead h2 {
+  .home-section h2 {
     max-width: 30rem;
     font-size: 1.25rem;
   }
@@ -365,8 +365,8 @@
 }
 
 .learn-section {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("https://raw.githubusercontent.com/mlco2/impact/master/img/Lake-Tahoe-Scenic.jpg");
-  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/Lake-Tahoe-Scenic.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("https://raw.githubusercontent.com/mlco2/impact/master/img/Lake-Tahoe-Scenic.jpg");
+  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/Lake-Tahoe-Scenic.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -449,8 +449,8 @@
 
 .act-section {
   padding: 4rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("../img/100_0221-min.jpg");
-  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("../img/100_0221-min.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("../img/100_0221-min.jpg");
+  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("../img/100_0221-min.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -560,8 +560,8 @@
 }
 
 .about-section {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("https://storage.needpix.com/rsynced_images/sunset-sky-1455125487HWs.jpg");
-  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("https://storage.needpix.com/rsynced_images/sunset-sky-1455125487HWs.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("https://storage.needpix.com/rsynced_images/sunset-sky-1455125487HWs.jpg");
+  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("https://storage.needpix.com/rsynced_images/sunset-sky-1455125487HWs.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -630,8 +630,8 @@
 }
 
 .authors-section {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394a5c), color-stop(75%, rgba(12, 31, 55, 0.9)), to(#0c1f37)), url("https://raw.githubusercontent.com/mlco2/impact/master/img/bicycle-pic.png");
-  background: linear-gradient(to bottom, #394a5c 0, rgba(12, 31, 55, 0.9) 75%, #0c1f37 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/bicycle-pic.png");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("https://raw.githubusercontent.com/mlco2/impact/master/img/bicycle-pic.png");
+  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/bicycle-pic.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -701,6 +701,18 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.publish-section {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("https://raw.githubusercontent.com/mlco2/impact/master/img/Lake-Tahoe-Scenic.jpg");
+  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/Lake-Tahoe-Scenic.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  padding: 4rem 0;
+  text-align: center;
 }
 
 html {
