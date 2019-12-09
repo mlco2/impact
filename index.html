@@ -83,13 +83,32 @@
 
 <!-- Home Section -->
 <header class="home-section">
-    <div class="container d-flex h-100 align-items-center">
+    <div id="home-container" class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
-            <h1 class="mx-auto my-0 text-uppercase">ML CO<sub>2</sub> Impact</h1>
-            <br />
-            <h2 class="mx-auto mt-2 mb-5"> Machine Learning has a carbon footprint. We've made a tool to help you
-                estimate yours!
+            <h1 class="mx-auto text-uppercase mb">ML CO<sub>2</sub> Impact</h1>
+            <h2 class="mx-auto mt"> Machine Learning has a carbon footprint. <br><br>We've made a tool to help you
+                estimate yours:
             </h2>
+
+            <div class="row todo-row mt">
+                <div class="col-1 todo-item">
+                    1
+                </div>
+                <div class="col-9 col-sm-6">
+                    <p>Compute your GPU's carbon emissions</p>
+                </div>
+            </div>
+            <br>
+            <div class="row todo-row">
+                <div class="col-1 todo-item">
+                    2
+                </div>
+                <div class="col-9 col-sm-6">
+                    <p>Push for more transparency in our field buy including the results in your publication (research
+                        paper, blog post etc.)</p>
+                </div>
+            </div>
+
             <a href="#compute" class="btn-primary btn js-scroll-trigger">Compute your ML carbon impact</a>
         </div>
     </div>
@@ -168,15 +187,15 @@
                 <!-- main card -->
 
                 <div class="row">
-                    <a href="#act" class="btn btn-secondary text-uppercase js-scroll-trigger" id="results-more">What can
-                        I
-                        do?</a>
+                    <a href="#publish" class="btn btn-secondary text-uppercase js-scroll-trigger" id="results-more">Publish this!</a>
                     <div class="col-md-6 result-box" id="result-emitted">
-                        <div id="compute-carbon-emitted-title" class="result-title small text-uppercase text-black-50">Carbon Emitted </div>
+                        <div id="compute-carbon-emitted-title" class="result-title small text-uppercase text-black-50">
+                            Carbon Emitted </div>
                         <div id="emitted-value" class="result-value"></div>
                     </div>
                     <div class="col-md-6 result-box" id="result-offset">
-                        <div id="compute-carbon-offset-title" class="result-title small text-uppercase text-black-50">Carbon Already Offset by Provider
+                        <div id="compute-carbon-offset-title" class="result-title small text-uppercase text-black-50">
+                            Carbon Already Offset by Provider
                         </div>
                         <div id="offset-value" class="result-value"></div>
                     </div>
@@ -217,6 +236,7 @@
 
     </div>
 </section>
+
 <!-- Publish Section -->
 <section id="publish" class="publish-section">
 
@@ -809,9 +829,9 @@
 <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
+<link href="css/grayscale.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 
-<link href="css/grayscale.min.css" rel="stylesheet">
 
 
 <!-- Bootstrap core JavaScript -->

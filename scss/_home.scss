@@ -13,39 +13,113 @@
     justify-content: center;
     align-items: center;
 
+    #home-container {
+        @media(max-width: 992px) {
+            padding-top: 3rem;
+        }
+
+        @media(max-width: 768px) {
+            padding-top: 2rem;
+        }
+    }
 
     h1 {
         font-family: 'Open Sans';
-        font-size: 2.5rem;
-        line-height: 3.5rem;
         letter-spacing: 0.8rem;
         color: white;
+
+        font-size: 6rem;
+
+        @media(max-width: 992px) {
+            font-size: 4rem;
+        }
+
+        @media(max-width: 768px) {
+            font-size: 2.5rem;
+        }
+
+        @media(max-height: 650px) {
+            display: none;
+        }
     }
 
     h2 {
-        max-width: 20rem;
-        font-size: 1rem;
+        @media(max-width: 992px) {
+            font-size: 2rem;
+        }
+
+        @media(max-width: 768px) {
+            font-size: 1.2rem;
+        }
     }
 
-    @media(min-width: 768px) {
-        h1 {
+    .mt {
+        margin-top: 4rem;
+
+        @media(max-width: 992px) {
+            margin-top: 3rem;
+        }
+
+        @media(max-width: 768px) {
+            margin-top: 2rem;
+        }
+    }
+
+    .mb {
+        margin-bottom: 4rem;
+
+        @media(max-width: 992px) {
+            margin-bottom: 3rem;
+        }
+
+        @media(max-width: 768px) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .todo-row {
+        align-items: center;
+        justify-content: center;
+
+        p {
+            text-align: left;
+        }
+
+        .todo-item {
+            text-align: right;
             font-size: 4rem;
-            line-height: 6rem;
+
+            @media(max-width: 992px) {
+                font-size: 3rem;
+            }
+
+            @media(max-width: 768px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+
+        @media(max-width: 992px) {}
+
+        @media(max-width: 768px) {
+            text-align: center;
+            font-size: 0.85rem;
         }
     }
 
-    @media(min-width: 992px) {
-        height: 100vh;
+    .btn-primary {
+        margin-top: 4rem;
 
-        h1 {
-            font-size: 6.5rem;
-            line-height: 9.5rem;
-            letter-spacing: 0.8rem;
+        @media(max-width: 992px) {
+            margin-top: 3rem;
         }
 
-        h2 {
-            max-width: 30rem;
-            font-size: 1.25rem;
+        @media(max-width: 768px) {
+            margin-top: 2rem;
         }
     }
+
 }
