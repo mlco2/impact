@@ -32,6 +32,13 @@ a {
     }
 }
 
+.section-title{
+    font-size: 3rem;
+    @media(max-width: 768px){
+        font-size: 2rem;
+    }
+}
+
 .bg-black {
     background-color: $black !important;
 }

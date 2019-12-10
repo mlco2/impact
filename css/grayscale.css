@@ -1162,6 +1162,16 @@ a:focus, a:hover {
   color: #cd150b;
 }
 
+.section-title {
+  font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
 .bg-black {
   background-color: #161616 !important;
 }
