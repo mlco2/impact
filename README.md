@@ -36,5 +36,5 @@ Anything to say or add? See [`data/`](https://github.com/mlco2/impact/tree/maste
 Special thanks to
 
 * https://sharingbuttons.io/
-* prim.js
+* [prism.js](https://prismjs.com/)
 * https://unsplash.com/
