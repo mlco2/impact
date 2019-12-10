@@ -807,8 +807,8 @@
 }
 
 .publish-section {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("https://www.worldbank.org/content/dam/photos/780x439/2016/feb-5/Journals_2.jpg");
-  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("https://www.worldbank.org/content/dam/photos/780x439/2016/feb-5/Journals_2.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c1f37), color-stop(75%, rgba(57, 74, 92, 0.9)), to(#394a5c)), url("https://raw.githubusercontent.com/mlco2/impact/master/img/library.jpeg");
+  background: linear-gradient(to bottom, #0c1f37 0, rgba(57, 74, 92, 0.9) 75%, #394a5c 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/library.jpeg");
   min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;

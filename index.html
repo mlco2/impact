@@ -178,8 +178,6 @@
             <span class="sr-only">Loading...</span>
         </div>
 
-        <a id="goToResults" href="#compute-submit" class="js-scroll-trigger"></a>
-
         <div class="row" id="result-row">
 
             <div style="display:none;" id="result-card" class="col-md-6 col-8">
@@ -640,12 +638,14 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
 
                                 <iframe class="lozad"
                                     data-src="https://ourworldindata.org/grapher/co-emissions-per-capita"
+                                    title="ourworldindata: co2 emissions per capita"
                                     style="width: 100%; height: 650px; border: 0px none;"></iframe>
                                 <br>
                                 <br>
 
                                 <iframe class="lozad"
                                     data-src="https://ourworldindata.org/grapher/carbon-dioxide-co2-emissions-by-sector-or-source"
+                                    title="ourworldindata: co2 emissions by sector or source"
                                     style="width: 100%; height: 650px; border: 0px none;"></iframe>
 
                                 <br>
@@ -1006,11 +1006,15 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
         <form class="row form-inline d-flex" action="https://formspree.io/maywjool" method="POST">
 
             <div class="col-md-6 col-12">
+                <label style="color: darkslategrey;" for="comment" class="">We'd love your feedback, opinions, ideas or suggestions</label>
+                <br>
                 <textarea rows="5" required type="text" name="comment"
                     class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
                     placeholder="Can something be improved?"></textarea>
             </div>
             <div class="col-md-4 col-12">
+                <label style="color: darkslategrey;" for="_replyto" class="">How can we get back to you?</label>
+                <br>
                 <input type="email" name="_replyto" required class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
                     id="inputEmail" placeholder="Enter email address...">
             </div>
@@ -1026,42 +1030,44 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
           Copyright &copy; Your Website 2019
         </div> -->
 </footer>
-
-<!-- Bootstrap core CSS -->
+<!--
+-----------------
+-----  CSS  -----
+-----------------
+-->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom fonts for this template -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> -->
 <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 <link href="css/prism.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <link href="css/grayscale.min.css" rel="stylesheet">
 
+<!--
+------------------------
+-----  JavaScript  -----
+------------------------
+-->
 
-<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Plugin JavaScript -->
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for this template -->
 <script src="js/jquery-csv.min.js"></script>
-<script src="js/data.js"></script>
-<script src="js/grayscale.js"></script>
 <script src="js/prism.min.js"></script>
-
 <script charset="UTF-8"
     src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-latex.min.js"></script>
-
 <script async defer crossorigin="anonymous"
     src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88678459-2"></script>
+
+
+<script src="js/data.js"></script>
+<script src="js/grayscale.js"></script>
+
+
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
