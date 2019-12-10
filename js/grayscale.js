@@ -251,7 +251,7 @@ const submitCompute = (_values) => {
 }
 
 
-const setRegion = provider => {
+const setRegions = provider => {
   $("#compute-region").html('');
   let regs = [];
   for (const region in state.providers[provider]) {
@@ -273,8 +273,9 @@ const setRegion = provider => {
 }
 
 const setInputs = () => {
-  for (const gpuName in state.gpus) {
-    $("#compute-gpu").append(`<option value="${gpuName}">${gpuName}</option>`)
+  for (const gpuName of Object.keys(state.gpus).sort()) {
+    const selected = gpuName === "Tesla V100" ? 'selected' : ''
+    $("#compute-gpu").append(`<option ${selected} value="${gpuName}">${gpuName}</option>`)
   }
   let prov;
   let i = 0;
@@ -292,7 +293,7 @@ const setInputs = () => {
       $("#compute-provider").append(`<option value="${provider}">${providerName}</option>`)
     }
   }
-  setRegion(prov)
+  setRegions(prov)
 }
 
 
@@ -330,6 +331,7 @@ const setInputs = () => {
     console.log(this);
   })
 
+  // lazy load resources as images and iframes
   const observer = lozad();
   observer.observe();
 
@@ -356,10 +358,11 @@ const setInputs = () => {
   setInputs();
   setImports(serveFrom, "a", "href");
   setImports(serveFrom, "img", "src");
+  // $('select').selectize();
 
   $("#compute-provider").change(e => {
     const provider = $("#compute-provider option:selected").val();
-    setRegion(provider)
+    setRegions(provider)
   })
 
   $("#compute-form").submit(e => {
