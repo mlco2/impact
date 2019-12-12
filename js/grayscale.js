@@ -75,11 +75,12 @@ const setImports = (serveFrom, elType, attr) => {
 const getValues = () => {
   const gpu = $("#compute-gpu option:selected").val();
   const provider = $("#compute-provider option:selected").val();
-  const region = $("#compute-region option:selected").val();
+  const region = provider !== "custom" ? $("#compute-region option:selected").val() : null;
+  const customImpact = provider !== "custom" ? null : parseFloat($("#compute-custom-impact").val());
+  const customOffset = provider !== "custom" ? null : parseFloat($("#compute-custom-offset").val());
   const hours = parseFloat($("#compute-hours").val());
-  const city = 0
   return {
-    gpu, provider, region, hours
+    gpu, provider, region, hours, customImpact, customOffset
   }
 }
 
@@ -151,7 +152,6 @@ const check = (type, value) => {
 const checkForm = () => {
   const values = getValues();
   const { gpu, provider, region, hours } = values;
-  console.log({ values });
   let failed = false;
 
   FEATURES.forEach((v, k) => {
@@ -169,8 +169,8 @@ const twoDigits = n => Number(Number(n).toFixed(2));
 
 const fillLatexTemplate = (provName, region, hours, gpu, emissions, offset) => {
 
-  $("#template-provider").text(provName);
-  $("#template-region").text(region);
+  $("#template-provider").text(provName || "a private infrastructure");
+  $("#template-region").text(region ? `in region ${region}` : "");
   $("#template-hours").text(hours);
   $("#template-gpu").text(gpu);
   $("#template-emissions").text(emissions);
@@ -178,14 +178,15 @@ const fillLatexTemplate = (provName, region, hours, gpu, emissions, offset) => {
 }
 
 const setDetails = (values) => {
-  const { gpu, hours, provider, region } = values
+  console.log({ values });
+  const { gpu, hours, provider, region, customImpact, customOffset } = values
   const energy = twoDigits(state.gpus[gpu].watt * hours / 1000); // kWh
-  const impact = twoDigits(state.providers[provider][region].impact / 1000); // kg/kwH
+  const impact = Number.isFinite(customImpact) ? customImpact : twoDigits(state.providers[provider][region].impact / 1000); // kg/kwH
   const co2 = twoDigits(energy * impact);
-  const offset = twoDigits(co2 * state.providers[provider][region].offsetRatio / 100)
-  const provName = state.providers[provider][region].providerName;
-  const minRegId = state.providers[provider].__min.region;
-  const minReg = state.providers[provider][minRegId];
+  const offset = Number.isFinite(customOffset) ? customOffset : twoDigits(co2 * state.providers[provider][region].offsetRatio / 100)
+  const provName = Number.isFinite(customOffset) ? "" : state.providers[provider][region].providerName;
+  const minRegId = Number.isFinite(customOffset) ? "" : state.providers[provider].__min.region;
+  const minReg = Number.isFinite(customOffset) ? "" : state.providers[provider][minRegId];
 
   fillLatexTemplate(provName, region, hours, gpu, co2, offset)
 
@@ -195,24 +196,31 @@ const setDetails = (values) => {
   ${state.gpus[gpu].watt}W x ${hours}h = <strong>${energy} kWh</strong> x ${impact}
   kg  eq. CO<sub>2</sub>/kWh = <strong>${co2} kg eq. CO<sub>2</sub></strong>
   `);
-  if (region !== minRegId) {
-    const minco2 = twoDigits(energy * minReg.impact / 1000);
-    $("#details-min-selected").hide()
-    $("#details-alternative").html(
-      `
-      Had this model been run in ${provName}'s <strong>${minReg.regionName}</strong> region,
-      the carbon emitted would have been of <strong>${minco2}</strong> kg eq. CO<sub>2</sub>
-      `
-    )
-    $("#details-alternative").show()
+  if (Number.isFinite(customOffset)) {
+    $("#details-min-region").html("");
+    $("#details-alternative").html("");
+    $("#details-alternative-content").show()
   } else {
-    $("#details-min-selected").show()
-    $("#details-alternative").hide()
-    $("#details-min-region").html(
-      `
-      You have selected ${provName}'s cleanest region!
-      `
-    )
+
+    if (region !== minRegId) {
+      const minco2 = twoDigits(energy * minReg.impact / 1000);
+      $("#details-min-selected").hide()
+      $("#details-alternative").html(
+        `
+        Had this model been run in ${provName}'s <strong>${minReg.regionName}</strong> region,
+        the carbon emitted would have been of <strong>${minco2}</strong> kg eq. CO<sub>2</sub>
+        `
+      )
+      $("#details-alternative").show()
+    } else {
+      $("#details-min-selected").show()
+      $("#details-alternative").hide()
+      $("#details-min-region").html(
+        `
+        You have selected ${provName}'s cleanest region!
+        `
+      )
+    }
   }
 
 
@@ -252,14 +260,14 @@ const submitCompute = (_values) => {
 }
 
 
-const setRegion = provider => {
+const setRegions = provider => {
   if (provider === "custom") {
     $("#compute-region-div").fadeOut(() => {
-      $("#compute-city-div").fadeIn()
+      $(".custom-hidable").fadeIn()
     })
   } else {
     if (!$("#compute-region-div").is(":visible")) {
-      $("#compute-city-div").fadeOut(() => {
+      $(".custom-hidable").fadeOut(() => {
         $("#compute-region-div").fadeIn();
       })
     }
@@ -305,8 +313,8 @@ const setInputs = () => {
       $("#compute-provider").append(`<option value="${provider}">${providerName}</option>`)
     }
   }
-  $("#compute-provider").append(`<option value="custom">Private Architecture</option>`)
-  setRegion(prov)
+  $("#compute-provider").append(`<option value="custom">Private Infrastructure</option>`)
+  setRegions(prov)
 }
 
 
@@ -343,9 +351,6 @@ const setInputs = () => {
   // $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
   //   console.log(this);
   // })
-
-  const observer = lozad();
-  observer.observe();
 
   // lazy load resources as images and iframes
   const observer = lozad();
@@ -437,14 +442,14 @@ const setInputs = () => {
     })
   })
 
-  const response = await fetch("https://api.co2signal.com/v1/latest?lon=6.8770394&lat=45.9162776", {
-    credentials: "include",
-    headers: {
-      'Content-Type': 'application/jsonp',
-      'auth-token': 'c5f38468eddd9edb'
-    }
-  })
-  console.log({ response });
+  // const response = await fetch("https://api.co2signal.com/v1/latest?lon=6.8770394&lat=45.9162776", {
+  //   credentials: "include",
+  //   headers: {
+  //     'Content-Type': 'application/jsonp',
+  //     'auth-token': 'c5f38468eddd9edb'
+  //   }
+  // })
+  // console.log({ response });
 
 
 })(jQuery); // End of use strict

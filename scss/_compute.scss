@@ -17,6 +17,56 @@
         margin-bottom: 1.5rem;
     }
 
+
+    label {
+        margin: 0;
+        vertical-align: middle;
+        text-align: center;
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modalHelp {
+        background-color: $primary;
+        padding: 4px 13px;
+        border: none;
+        border-radius: 100px;
+        color: $gray-100;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-left: 8px;
+    }
+
+    .modal-body {
+        color: $back-1;
+        padding: 50px 80px;
+
+        button {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            padding-bottom: 20px;
+        }
+
+    }
+
+    .modal-dialog {
+        @media (min-width: 576px) {
+            max-width: 600px;
+            margin: 1.75rem auto;
+        }
+    }
+
     #results-more {
         @media(max-width: 768px) {
             max-width: 90px;
@@ -48,10 +98,6 @@
         margin-bottom: 2.5rem;
 
         margin-top: 1.5rem;
-
-        label {
-            margin: 0;
-        }
 
         #compute-selects-row {
             justify-content: space-evenly;

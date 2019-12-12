@@ -9,7 +9,7 @@
                     suggestions</label>
                 <br>
                 <textarea rows="5" required type="text" name="comment"
-                    class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
+                    class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="commentForm"
                     placeholder="Can something be improved?"></textarea>
             </div>
             <div class="col-md-4 col-12">
@@ -60,6 +60,7 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 
 <script src="js/prism.min.js"></script>
 <script charset="UTF-8"
@@ -79,20 +80,20 @@
 <script src="js/grayscale.js"></script>
 
 
-<script>
+<!-- <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-88678459-2');
 
-    var input = document.getElementById('compute-city');
+    var input = document.getElementById('compute-custom-impact');
     var autocomplete = new google.maps.places.Autocomplete(input, { types: ['(cities)'] });
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
         console.log(place);
     })
-</script>
+</script> -->
 
 </script>
 <div id="fb-root"></div>
