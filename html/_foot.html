@@ -9,7 +9,7 @@
                     suggestions</label>
                 <br>
                 <textarea rows="5" required type="text" name="comment"
-                    class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
+                    class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="commentForm"
                     placeholder="Can something be improved?"></textarea>
             </div>
             <div class="col-md-4 col-12">
@@ -60,16 +60,19 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 
 <script src="js/prism.min.js"></script>
 <script charset="UTF-8"
-src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-latex.min.js"></script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-latex.min.js"></script>
 
 <script async defer crossorigin="anonymous"
-src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0"></script>
+    src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88678459-2"></script>
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtCCcK-9uoW6kPLo67YoKyoTOZvg14Zkw&libraries=places"></script>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script> -->
 
@@ -77,12 +80,21 @@ src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0"></script>
 <script src="js/grayscale.js"></script>
 
 
-<script>
+<!-- <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-88678459-2');
+
+    var input = document.getElementById('compute-custom-impact');
+    var autocomplete = new google.maps.places.Autocomplete(input, { types: ['(cities)'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        console.log(place);
+    })
+</script> -->
+
 </script>
 <div id="fb-root"></div>
 </body>

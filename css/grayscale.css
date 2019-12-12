@@ -331,6 +331,60 @@
   margin-bottom: 1.5rem;
 }
 
+.compute-section label {
+  margin: 0;
+  vertical-align: middle;
+  text-align: center;
+  min-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.compute-section .modalHelp {
+  background-color: #f55249;
+  padding: 4px 13px;
+  border: none;
+  border-radius: 100px;
+  color: #f8f9fa;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.compute-section .modal-body {
+  color: rgba(12, 31, 55, 0.9);
+  padding: 50px 80px;
+}
+
+.compute-section .modal-body button {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.compute-section .modal-body ul {
+  padding: 0;
+}
+
+.compute-section .modal-body li {
+  list-style-type: none;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .compute-section .modal-dialog {
+    max-width: 600px;
+    margin: 1.75rem auto;
+  }
+}
+
 .compute-section #results-more {
   position: absolute;
   max-width: 100px;
@@ -364,10 +418,6 @@
   color: white;
   margin-bottom: 2.5rem;
   margin-top: 1.5rem;
-}
-
-.compute-section #compute-form label {
-  margin: 0;
 }
 
 .compute-section #compute-form #compute-selects-row {

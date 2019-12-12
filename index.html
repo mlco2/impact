@@ -44,7 +44,6 @@
 
 
 
-
 </head>
 
 <body id="page-top">
@@ -147,21 +146,48 @@
                     </select>
                 </div>
 
-                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                <div class="form-group col-md-4 col-lg-2 col-xl-2">
                     <label for="compute-hours">Hours Used</label>
-                    <input class="form-control compute-input" id="compute-hours" type="number" step="0.1" value="12" />
+                    <input class="form-control compute-input" id="compute-hours" type="number" step="0.5" value="12" />
                 </div>
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
-                    <label for="compute-provider">Cloud Provider</label>
+                    <label for="compute-provider">Provider</label>
                     <select class="form-control compute-input" id="compute-provider">
                     </select>
                 </div>
 
-                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                <div class="form-group col-md-4 col-lg-3 col-xl-2" id="compute-region-div">
                     <label for="compute-region">Region of Compute</label>
                     <select class="form-control compute-input" id="compute-region">
                     </select>
+                </div>
+
+                <div class="custom-hidable form-group col-md-4 col-lg-4 col-xl-3" style="display:none"
+                    id="compute-custom-impact-div">
+                    <label for="compute-custom-impact">
+                        Carbon Efficiency (<u>k</u>g/<u>k</u>Wh)
+                        <!-- Button trigger modal -->
+                        <button class="modalHelp" id="modalImpactHelp" type="button" data-toggle="modal"
+                            data-target="#impactModal">
+                            ?
+                        </button></label>
+                    <input class="form-control compute-input" id="compute-custom-impact" type="number" step="0.5"
+                        value="0.432">
+                    </input>
+                </div>
+                <div class="custom-hidable form-group col-md-4 col-lg-4 col-xl-3" style="display:none"
+                    id="compute-custom-impact-div">
+                    <label for="compute-custom-offset">
+                        Offset bought (<u>%</u>)
+                        <!-- Button trigger modal -->
+                        <button class="modalHelp" id="modalOffsetHelp" type="button" data-toggle="modal"
+                            data-target="#offsetModal">
+                            ?
+                        </button></label>
+                    <input class="form-control compute-input" id="compute-custom-offset" type="number" step="0.001"
+                        value="0">
+                    </input>
                 </div>
 
             </div>
@@ -169,6 +195,75 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <button id="compute-submit" class="btn btn-primary" type="submit">Compute</button>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="impactModal" tabindex="-1" role="dialog" aria-labelledby="impactModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h5 class="modal-title" id="impactModalLabel">Modal title</h5>
+                        </div> -->
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>How carbon-intensive is the grid your infrastructure is plugged to, in <strong><u>k</u>g
+                                    CO<sub>2</sub>eq/kWh</strong></p>
+
+                            <p>Default value is the OECD's 2014 yearly average</p>
+
+                            <p>Sources we have used include:</p>
+                            <ul>
+                                <li><a href="https://www.electricitymap.org/" target="_blank"
+                                        rel="noopener noreferrer">electricitymap.org</a></li>
+                                <li><a href="https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf"
+                                        target="_blank" rel="noopener noreferrer">Carbon Footprint's country specific
+                                        electricity factors</a></li>
+                                <li><a href="https://www.sciencedirect.com/science/article/pii/S1361920916307933	"
+                                        target="_blank" rel="noopener noreferrer">Electricity carbon intensity in
+                                        European Member States</a></li>
+                                <li><a href="https://www.epa.gov/energy/egrid-summary-tables" target="_blank"
+                                        rel="noopener noreferrer">USA's EPA's eGRID</a></li>
+                                <li>...</li>
+                                <li><a href="https://github.com/mlco2/impact/tree/master/data" target="_blank"
+                                        rel="noopener noreferrer">More sources in our data's "source" column</a></li>
+                            </ul>
+
+
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="offsetModal" tabindex="-1" role="dialog" aria-labelledby="impactModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h5 class="modal-title" id="impactModalLabel">Modal title</h5>
+                        </div> -->
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>How much of your infrastructure's energy consumption do you offset, <strong>in %</strong>
+                            </p>
+
+                            <p>Default value is 0</p>
+
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                    </div>
                 </div>
             </div>
 
@@ -211,13 +306,12 @@
                         </div>
                         <div id="details-counts"></div>
                         <div id="details-separator"></div>
-                        <div id="details-alternative">
-                        </div>
+                        <div id="details-alternative"></div>
                         <div id="details-min-selected">
                             <div id="details-min-region"></div>
                             <div id="details-alternative-content">
                                 Visit the <strong><a href="#act" class="js-scroll-trigger">Act</a></strong>
-                                section to learn about what you can do!
+                                section to learn about what more you can do!
                             </div>
                         </div>
                     </div>
@@ -263,7 +357,7 @@
 
 \subsection{CO2 Emission Related to Experiments}
 
-Experiments were conducted using <span id="template-provider">{cloud provider}</span> in region <span id="template-region">{region of compute}</span>. A cumulative of <span id="template-hours">{hours used}</span> hours of computation was performed on hardware of type <span id="template-gpu">{hardware type}</span>.
+Experiments were conducted using <span id="template-provider">{cloud provider}</span> <span id="template-region">in region {region of compute}</span>. A cumulative of <span id="template-hours">{hours used}</span> hours of computation was performed on hardware of type <span id="template-gpu">{hardware type}</span>.
 
 This emitted a total of approximately <span id="template-emissions">{emission}</span> kg CO2eq of which <span id="template-percentage-offset">{percentage offset}</span> kg CO2eq were directly offset by the cloud provider.
     <!-- , corresponding to driving a regular car for {km of driving} km. -->
@@ -632,7 +726,7 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
                                     Here are a few maps from Our World In Data which illustrate the complexity of carbon
                                     emissions mitigations. For a complete analysis, visit <a
                                         href="https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions"
-                                        target="_blank" rel="noopener noreferrer">their website</a>
+                                        target="_blank" rel="noopener noreferrer">their webstie</a>
                                 </p>
 
                                 <br>
@@ -656,6 +750,31 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
                                     alt="greenhouse gas scenarios">
                             </div>
                             <hr class="d-none d-lg-block mb-0 ml-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center no-gutters">
+            <div class="col-lg-12 order-lg-first">
+                <div class="text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="learn-text w-100 my-auto text-center text-lg-right">
+                            <div class="details-summary">
+                                <h3 class="text-white" class="summary-header">Carbon Efficiency</h3>
+                            </div>
+                            <div class="summary-content">
+                                <p class="mb-0 text-white-80">
+                                    Carbon efficiency: the amount of CO2 emitted per unit energy (grams of CO2 emitted
+                                    per kilowatt-hour). This is largely related to a country’s energy mix. An economy
+                                    powered by coal-fired energy will produce higher CO2 emissions per unit of energy
+                                    versus an energy system with a high percentage of renewable energy. As economies
+                                    increase their share of renewable capacity, efficiency improves and the amount of
+                                    CO2 emitted per unit energy falls.
+                                </p>
+                            </div>
+                            <hr class="d-none d-lg-block mb-0 mr-0">
                         </div>
                     </div>
                 </div>
@@ -897,7 +1016,7 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
                         We're currently working towards enabling you to compute your emissions when using a <strong>
                             private infrastructure</strong>. This would require either mapping cities to carbon emissions of
                         local grids or expecting our users (you) to input such a value. The mapping does not (?) exist for now (and for free), and we feel like
-                        most users would not know the carbon intensity of their electricity grid. This is why this is not yet available.
+                        most users would not know the carbon efficiency of their electricity grid. This is why this is not yet available.
                     </p>
                     <p class="text-white-80">
                         <strong >Any help with this issue is welcome, please get in touch.</strong>
@@ -1036,7 +1155,7 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
                     suggestions</label>
                 <br>
                 <textarea rows="5" required type="text" name="comment"
-                    class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
+                    class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="commentForm"
                     placeholder="Can something be improved?"></textarea>
             </div>
             <div class="col-md-4 col-12">
@@ -1087,16 +1206,19 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 
 <script src="js/prism.min.js"></script>
 <script charset="UTF-8"
-src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-latex.min.js"></script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-latex.min.js"></script>
 
 <script async defer crossorigin="anonymous"
-src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0"></script>
+    src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88678459-2"></script>
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtCCcK-9uoW6kPLo67YoKyoTOZvg14Zkw&libraries=places"></script>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script> -->
 
@@ -1104,12 +1226,21 @@ src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0"></script>
 <script src="js/grayscale.js"></script>
 
 
-<script>
+<!-- <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-88678459-2');
+
+    var input = document.getElementById('compute-custom-impact');
+    var autocomplete = new google.maps.places.Autocomplete(input, { types: ['(cities)'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        console.log(place);
+    })
+</script> -->
+
 </script>
 <div id="fb-root"></div>
 </body>

@@ -31,21 +31,48 @@
                     </select>
                 </div>
 
-                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                <div class="form-group col-md-4 col-lg-2 col-xl-2">
                     <label for="compute-hours">Hours Used</label>
-                    <input class="form-control compute-input" id="compute-hours" type="number" step="0.1" value="12" />
+                    <input class="form-control compute-input" id="compute-hours" type="number" step="0.5" value="12" />
                 </div>
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
-                    <label for="compute-provider">Cloud Provider</label>
+                    <label for="compute-provider">Provider</label>
                     <select class="form-control compute-input" id="compute-provider">
                     </select>
                 </div>
 
-                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                <div class="form-group col-md-4 col-lg-3 col-xl-2" id="compute-region-div">
                     <label for="compute-region">Region of Compute</label>
                     <select class="form-control compute-input" id="compute-region">
                     </select>
+                </div>
+
+                <div class="custom-hidable form-group col-md-4 col-lg-4 col-xl-3" style="display:none"
+                    id="compute-custom-impact-div">
+                    <label for="compute-custom-impact">
+                        Carbon Efficiency (<u>k</u>g/<u>k</u>Wh)
+                        <!-- Button trigger modal -->
+                        <button class="modalHelp" id="modalImpactHelp" type="button" data-toggle="modal"
+                            data-target="#impactModal">
+                            ?
+                        </button></label>
+                    <input class="form-control compute-input" id="compute-custom-impact" type="number" step="0.5"
+                        value="0.432">
+                    </input>
+                </div>
+                <div class="custom-hidable form-group col-md-4 col-lg-4 col-xl-3" style="display:none"
+                    id="compute-custom-impact-div">
+                    <label for="compute-custom-offset">
+                        Offset bought (<u>%</u>)
+                        <!-- Button trigger modal -->
+                        <button class="modalHelp" id="modalOffsetHelp" type="button" data-toggle="modal"
+                            data-target="#offsetModal">
+                            ?
+                        </button></label>
+                    <input class="form-control compute-input" id="compute-custom-offset" type="number" step="0.001"
+                        value="0">
+                    </input>
                 </div>
 
             </div>
@@ -53,6 +80,75 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <button id="compute-submit" class="btn btn-primary" type="submit">Compute</button>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="impactModal" tabindex="-1" role="dialog" aria-labelledby="impactModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h5 class="modal-title" id="impactModalLabel">Modal title</h5>
+                        </div> -->
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>How carbon-intensive is the grid your infrastructure is plugged to, in <strong><u>k</u>g
+                                    CO<sub>2</sub>eq/kWh</strong></p>
+
+                            <p>Default value is the OECD's 2014 yearly average</p>
+
+                            <p>Sources we have used include:</p>
+                            <ul>
+                                <li><a href="https://www.electricitymap.org/" target="_blank"
+                                        rel="noopener noreferrer">electricitymap.org</a></li>
+                                <li><a href="https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf"
+                                        target="_blank" rel="noopener noreferrer">Carbon Footprint's country specific
+                                        electricity factors</a></li>
+                                <li><a href="https://www.sciencedirect.com/science/article/pii/S1361920916307933	"
+                                        target="_blank" rel="noopener noreferrer">Electricity carbon intensity in
+                                        European Member States</a></li>
+                                <li><a href="https://www.epa.gov/energy/egrid-summary-tables" target="_blank"
+                                        rel="noopener noreferrer">USA's EPA's eGRID</a></li>
+                                <li>...</li>
+                                <li><a href="https://github.com/mlco2/impact/tree/master/data" target="_blank"
+                                        rel="noopener noreferrer">More sources in our data's "source" column</a></li>
+                            </ul>
+
+
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="offsetModal" tabindex="-1" role="dialog" aria-labelledby="impactModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h5 class="modal-title" id="impactModalLabel">Modal title</h5>
+                        </div> -->
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>How much of your infrastructure's energy consumption do you offset, <strong>in %</strong>
+                            </p>
+
+                            <p>Default value is 0</p>
+
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                    </div>
                 </div>
             </div>
 
@@ -95,13 +191,12 @@
                         </div>
                         <div id="details-counts"></div>
                         <div id="details-separator"></div>
-                        <div id="details-alternative">
-                        </div>
+                        <div id="details-alternative"></div>
                         <div id="details-min-selected">
                             <div id="details-min-region"></div>
                             <div id="details-alternative-content">
                                 Visit the <strong><a href="#act" class="js-scroll-trigger">Act</a></strong>
-                                section to learn about what you can do!
+                                section to learn about what more you can do!
                             </div>
                         </div>
                     </div>
