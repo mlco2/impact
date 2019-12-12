@@ -183,7 +183,7 @@ const setDetails = (values) => {
   const energy = twoDigits(state.gpus[gpu].watt * hours / 1000); // kWh
   const impact = Number.isFinite(customImpact) ? customImpact : twoDigits(state.providers[provider][region].impact / 1000); // kg/kwH
   const co2 = twoDigits(energy * impact);
-  const offset = Number.isFinite(customOffset) ? customOffset : twoDigits(co2 * state.providers[provider][region].offsetRatio / 100)
+  const offset = Number.isFinite(customOffset) ? co2 * customOffset / 100 : twoDigits(co2 * state.providers[provider][region].offsetRatio / 100)
   const provName = Number.isFinite(customOffset) ? "" : state.providers[provider][region].providerName;
   const minRegId = Number.isFinite(customOffset) ? "" : state.providers[provider].__min.region;
   const minReg = Number.isFinite(customOffset) ? "" : state.providers[provider][minRegId];
