@@ -8,6 +8,10 @@ By A. Lacoste, A. Luccioni, V. Schmidt
 
 Read our paper on [**Quantifying Carbon Emissions of Machine Learning**](https://arxiv.org/pdf/1910.09700) (NeurIPS 2019, Climate Change AI Workshop)
 
+Use our **generated latex template** which automatically includes the Calculator's output for you to easily report your procedure's CO2 eq. emissions
+
+[![](https://raw.githubusercontent.com/mlco2/impact/master/img/template.png)](https://mlco2.github.io/impact#publish)
+
 ## Contributing
 
 ### Setup
@@ -26,3 +30,11 @@ After editing content, if `gulp watch` was running, you're good ; otherwise, run
 ### Data
 
 Anything to say or add? See [`data/`](https://github.com/mlco2/impact/tree/master/data)
+
+## Acknowledgements
+
+Special thanks to
+
+* https://sharingbuttons.io/
+* [prism.js](https://prismjs.com/)
+* https://unsplash.com/

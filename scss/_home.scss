@@ -1,0 +1,125 @@
+.home-section {
+    color: white;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, $back-1 0, $back-2 75%, $back-25 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/bamboos.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #home-container {
+        @media(max-width: 992px) {
+            padding-top: 3rem;
+        }
+
+        @media(max-width: 768px) {
+            padding-top: 2rem;
+        }
+    }
+
+    h1 {
+        font-family: 'Open Sans';
+        letter-spacing: 0.8rem;
+        color: white;
+
+        font-size: 6rem;
+
+        @media(max-width: 992px) {
+            font-size: 4rem;
+        }
+
+        @media(max-width: 768px) {
+            font-size: 2.5rem;
+        }
+
+        @media(max-height: 650px) {
+            display: none;
+        }
+    }
+
+    h2 {
+        @media(max-width: 992px) {
+            font-size: 2rem;
+        }
+
+        @media(max-width: 768px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    .mt {
+        margin-top: 4rem;
+
+        @media(max-width: 992px) {
+            margin-top: 3rem;
+        }
+
+        @media(max-width: 768px) {
+            margin-top: 2rem;
+        }
+    }
+
+    .mb {
+        margin-bottom: 4rem;
+
+        @media(max-width: 992px) {
+            margin-bottom: 3rem;
+        }
+
+        @media(max-width: 768px) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .todo-row {
+        align-items: center;
+        justify-content: center;
+
+        p {
+            text-align: left;
+        }
+
+        .todo-item {
+            text-align: right;
+            font-size: 4rem;
+
+            @media(max-width: 992px) {
+                font-size: 3rem;
+            }
+
+            @media(max-width: 768px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+
+        @media(max-width: 992px) {}
+
+        @media(max-width: 768px) {
+            text-align: center;
+            font-size: 0.85rem;
+        }
+    }
+
+    .btn-primary {
+        margin-top: 4rem;
+
+        @media(max-width: 992px) {
+            margin-top: 3rem;
+        }
+
+        @media(max-width: 768px) {
+            margin-top: 2rem;
+        }
+    }
+
+}

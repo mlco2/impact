@@ -1,7 +1,7 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 @import 'navbar.scss';
-@import 'masthead.scss';
+@import 'home.scss';
 @import 'buttons.scss';
 @import 'compute.scss';
 @import 'learn.scss';
@@ -9,6 +9,7 @@
 @import 'contact.scss';
 @import 'about.scss';
 @import 'authors.scss';
+@import 'publish.scss';
 
 html {
     background: $secondary;
@@ -28,6 +29,13 @@ a {
     &:hover {
         text-decoration: none;
         color: darken($primary, 20%);
+    }
+}
+
+.section-title{
+    font-size: 3rem;
+    @media(max-width: 768px){
+        font-size: 2rem;
     }
 }
 
@@ -143,4 +151,14 @@ footer {
         transform: rotate(70deg);
     }
 
+}
+
+.display-1 {
+    @media(max-width: 992px) {
+        font-size: 5rem;
+    }
+
+    @media(max-width: 768px) {
+        font-size: 3.5rem;
+    }
 }
