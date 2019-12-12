@@ -63,7 +63,7 @@ azure,Azure,100,canadacentral,Canada Central,Canada,Ontario,Toronto,69.3,Calcula
 azure,Azure,100,canadaeast,Canada East,Canada,Quebec,Quebec,20,Hydro-Québec,
 azure,Azure,100,uksouth,UK South,United Kingdom,England,Midhurst,623,https://www.sciencedirect.com/science/article/pii/S1361920916307933,
 azure,Azure,100,ukwest,UK West,United Kingdom,England,Wallasey,623,https://www.sciencedirect.com/science/article/pii/S1361920916307933,
-azure,Azure,100,westcentralus,West Central US,USA,Wyoming,Mountain View,297.6,"it is not clear which grid power this zone, could be or 297.6, not sure"
+azure,Azure,100,westcentralus,West Central US,USA,Wyoming,Mountain View,297.6,,"it is not clear which grid power this zone, could be or 297.6, not sure"
 azure,Azure,100,westus2,West US 2,USA,Washington,Quincy,297.6,eGRID,
 azure,Azure,100,koreacentral,Korea Central,South Korea,Seoul,Seoul,517,https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf,
 azure,Azure,100,koreasouth,Korea South,South Korea,Busan,Busan,517,https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf,
