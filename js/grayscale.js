@@ -167,14 +167,14 @@ const checkForm = () => {
 
 const twoDigits = n => Number(Number(n).toFixed(2));
 
-const fillLatexTemplate = (provName, region, hours, gpu, emissions, offset) => {
+const fillLatexTemplate = (provName, region, hours, gpu, emissions, offsetPercents) => {
 
   $("#template-provider").text(provName || "a private infrastructure");
   $("#template-region").text(region ? `in region ${region}` : "");
   $("#template-hours").text(hours);
   $("#template-gpu").text(gpu);
   $("#template-emissions").text(emissions);
-  $("#template-percentage-offset").text(offset);
+  $("#template-percentage-offset").text(offsetPercents);
 }
 
 const setDetails = (values) => {
@@ -184,11 +184,12 @@ const setDetails = (values) => {
   const impact = Number.isFinite(customImpact) ? customImpact : twoDigits(state.providers[provider][region].impact / 1000); // kg/kwH
   const co2 = twoDigits(energy * impact);
   const offset = Number.isFinite(customOffset) ? twoDigits(co2 * customOffset / 100) : twoDigits(co2 * state.providers[provider][region].offsetRatio / 100)
+  const offsetPercents = Number.isFinite(customOffset) ? twoDigits(customOffset) : twoDigits(state.providers[provider][region].offsetRatio)
   const provName = Number.isFinite(customOffset) ? "" : state.providers[provider][region].providerName;
   const minRegId = Number.isFinite(customOffset) ? "" : state.providers[provider].__min.region;
   const minReg = Number.isFinite(customOffset) ? "" : state.providers[provider][minRegId];
 
-  fillLatexTemplate(provName, region, hours, gpu, co2, offset)
+  fillLatexTemplate(provName, region, hours, gpu, co2, offsetPercents)
 
   $("#emitted-value").text(co2);
   $("#offset-value").text(offset);
