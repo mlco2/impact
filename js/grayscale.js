@@ -388,15 +388,19 @@ const setInputs = () => {
     setRegions(provider)
   })
 
+  $("#compute-submit").click(()=> {
+    $("#compute-form").submit()
+  })
+
   $("#compute-form").submit(e => {
     submitCompute();
     return false;
   })
 
-  $(".compute-input").change(() => {
-    $("#compute-submit").prop("disabled", true);
-    if (checkForm()) $("#compute-submit").prop("disabled", false);
-  })
+  // $(".compute-input").change(() => {
+  //   $("#compute-submit").prop("disabled", true);
+  //   if (checkForm()) $("#compute-submit").prop("disabled", false);
+  // })
 
   $(".details-summary").each((i, el) => {
 

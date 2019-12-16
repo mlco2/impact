@@ -21,7 +21,7 @@
 
         </div>
 
-        <form id="compute-form">
+        <form id="compute-form" novalidate>
 
             <div class="form-row" id="compute-selects-row">
 
@@ -53,7 +53,7 @@
                     <label for="compute-custom-impact">
                         Carbon Efficiency (<u>k</u>g/<u>k</u>Wh)
                         <!-- Button trigger modal -->
-                        <button class="modalHelp" id="modalImpactHelp" type="button" data-toggle="modal"
+                        <button type="button" class="modalHelp" id="modalImpactHelp" data-toggle="modal"
                             data-target="#impactModal">
                             ?
                         </button></label>
@@ -66,7 +66,7 @@
                     <label for="compute-custom-offset">
                         Offset bought (<u>%</u>)
                         <!-- Button trigger modal -->
-                        <button class="modalHelp" id="modalOffsetHelp" type="button" data-toggle="modal"
+                        <button type="button" class="modalHelp" id="modalOffsetHelp" data-toggle="modal"
                             data-target="#offsetModal">
                             ?
                         </button></label>
@@ -79,7 +79,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <button id="compute-submit" class="btn btn-primary" type="submit">Compute</button>
+                    <button type="submit" id="compute-submit" class="btn btn-primary">Compute</button>
                 </div>
             </div>
 

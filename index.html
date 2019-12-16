@@ -52,7 +52,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#home">ML CO2 Impact</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation">
         Menu
@@ -136,7 +136,7 @@
 
         </div>
 
-        <form id="compute-form">
+        <form id="compute-form" novalidate>
 
             <div class="form-row" id="compute-selects-row">
 
@@ -168,7 +168,7 @@
                     <label for="compute-custom-impact">
                         Carbon Efficiency (<u>k</u>g/<u>k</u>Wh)
                         <!-- Button trigger modal -->
-                        <button class="modalHelp" id="modalImpactHelp" type="button" data-toggle="modal"
+                        <button type="button" class="modalHelp" id="modalImpactHelp" data-toggle="modal"
                             data-target="#impactModal">
                             ?
                         </button></label>
@@ -181,7 +181,7 @@
                     <label for="compute-custom-offset">
                         Offset bought (<u>%</u>)
                         <!-- Button trigger modal -->
-                        <button class="modalHelp" id="modalOffsetHelp" type="button" data-toggle="modal"
+                        <button type="button" class="modalHelp" id="modalOffsetHelp" data-toggle="modal"
                             data-target="#offsetModal">
                             ?
                         </button></label>
@@ -194,7 +194,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <button id="compute-submit" class="btn btn-primary" type="submit">Compute</button>
+                    <button type="submit" id="compute-submit" class="btn btn-primary">Compute</button>
                 </div>
             </div>
 
@@ -379,7 +379,7 @@ Estimations were conducted using the \href{https://mlco2.github.io/impact#comput
                     <br>
                     <br>
                     <div class="row" id="copy-template-row">
-                        <button id="copy-template-btn" class="btn btn-primary">Copy</button>
+                        <button type="button" id="copy-template-btn" class="btn btn-primary">Copy</button>
                         <span id="copy-template-feedback">Copied to your Clipboard!</span>
                     </div>
 
