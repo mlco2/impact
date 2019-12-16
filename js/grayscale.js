@@ -388,7 +388,7 @@ const setInputs = () => {
     setRegions(provider)
   })
 
-  $("#compute-submit").click(()=> {
+  $("#compute-submit").click(() => {
     $("#compute-form").submit()
   })
 
