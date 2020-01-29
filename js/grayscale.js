@@ -167,12 +167,14 @@ const checkForm = () => {
 
 const twoDigits = n => Number(Number(n).toFixed(2));
 
-const fillLatexTemplate = (provName, region, hours, gpu, emissions, offsetPercents) => {
-
+const fillLatexTemplate = (provName, region, hours, gpu, gpuPower, emissions, offsetPercents, impact) => {
+  provName ? $("#template-text-offset").show() : $("#template-text-offset").hide();
   $("#template-provider").text(provName || "a private infrastructure");
   $("#template-region").text(region ? `in region ${region}` : "");
+  $("#template-region-efficiency").text(impact);
   $("#template-hours").text(hours);
   $("#template-gpu").text(gpu);
+  $("#template-gpu-power").text(gpuPower)
   $("#template-emissions").text(emissions);
   $("#template-percentage-offset").text(offsetPercents);
 }
@@ -189,7 +191,7 @@ const setDetails = (values) => {
   const minRegId = Number.isFinite(customOffset) ? "" : state.providers[provider].__min.region;
   const minReg = Number.isFinite(customOffset) ? "" : state.providers[provider][minRegId];
 
-  fillLatexTemplate(provName, region, hours, gpu, co2, offsetPercents)
+  fillLatexTemplate(provName, region, hours, gpu, state.gpus[gpu].watt, co2, offsetPercents, impact)
 
   $("#emitted-value").text(co2);
   $("#offset-value").text(offset);

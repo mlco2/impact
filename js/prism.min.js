@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - ML CO2 Impact v5.0.8 ()
- * Copyright 2013-2019 
+ * Copyright 2013-2020 
  * Licensed under MIT (https://github.com/BlackrockDigital/ml-co2-impact/blob/master/LICENSE)
  */
 
