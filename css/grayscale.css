@@ -1271,6 +1271,12 @@ footer {
   border-radius: 4px;
 }
 
+@-moz-document url-prefix() {
+  .arrow-icon {
+    margin: 1em auto -1em;
+  }
+}
+
 .left-bar {
   position: absolute;
   background-color: transparent;

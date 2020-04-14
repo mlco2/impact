@@ -32,9 +32,10 @@ a {
     }
 }
 
-.section-title{
+.section-title {
     font-size: 3rem;
-    @media(max-width: 768px){
+
+    @media(max-width: 768px) {
         font-size: 2rem;
     }
 }
@@ -88,6 +89,13 @@ footer {
     position: absolute;
     cursor: pointer;
     border-radius: 4px;
+
+}
+
+@-moz-document url-prefix() {
+    .arrow-icon {
+        margin: 1em auto -1em;
+    }
 }
 
 .left-bar {
