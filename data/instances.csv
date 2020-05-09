@@ -1,0 +1,15 @@
+provider,id,gpu,source
+aws,p3.2xlarge,Tesla V100, https://aws.amazon.com/fr/ec2/instance-types/p3/
+aws,p3.8xlarge,Tesla V100, https://aws.amazon.com/fr/ec2/instance-types/p3/
+aws,p3.16xlarge,Tesla V100, https://aws.amazon.com/fr/ec2/instance-types/p3/
+aws,p3dn.24xlarge,Tesla V100, https://aws.amazon.com/fr/ec2/instance-types/p3/
+aws,p2.xlarge, Tesla K80, https://aws.amazon.com/fr/ec2/instance-types/p2/
+aws,p2.8xlarge, Tesla K80, https://aws.amazon.com/fr/ec2/instance-types/p2/
+aws,p2.16xlarge, Tesla K80, https://aws.amazon.com/fr/ec2/instance-types/p2/
+aws,g4dn.xlarge, T4, https://aws.amazon.com/fr/ec2/instance-types/g4/
+aws,g4dn.2xlarge, T4, https://aws.amazon.com/fr/ec2/instance-types/g4/
+aws,g4dn.4xlarge, T4, https://aws.amazon.com/fr/ec2/instance-types/g4/
+aws,g4dn.8xlarge, T4, https://aws.amazon.com/fr/ec2/instance-types/g4/
+aws,g4dn.16xlarge, T4, https://aws.amazon.com/fr/ec2/instance-types/g4/
+aws,g4dn.12xlarge, T4, https://aws.amazon.com/fr/ec2/instance-types/g4/
+aws,g4dn.metal, T4, https://aws.amazon.com/fr/ec2/instance-types/g4/
