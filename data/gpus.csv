@@ -7,6 +7,7 @@ AMD RX480,gpu,150,5.80,5.80,38.67,38.67,8,techpowerup.com
 Titan V,gpu,250,14.90,29.80,59.60,119.20,12,techpowerup.com
 Tesla V100,gpu,300,15.00,30.00,50.00,100.00,32,techpowerup.com
 Tesla P100,gpu,250,9.526,19.05,38.1,76.2,16,techpowerup.com
+Tesla K40c,gpu,245,5.046,,20.60,,12,techpowerup.com
 Tesla K80,gpu,300,4.113,,13.71,,12,techpowerup.com
 TPU2,250,tpu,22.00,45.00,88.00,180.00,64,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
 TPU3,200,tpu,45.00,90.00,225.00,450.00,128,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
