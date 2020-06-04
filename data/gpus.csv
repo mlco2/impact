@@ -9,8 +9,8 @@ Tesla V100,gpu,300,15.00,30.00,50.00,100.00,32,techpowerup.com
 Tesla P100,gpu,250,9.526,19.05,38.1,76.2,16,techpowerup.com
 Tesla K40c,gpu,245,5.046,,20.60,,12,techpowerup.com
 Tesla K80,gpu,300,4.113,,13.71,,12,techpowerup.com
-TPU2,250,tpu,22.00,45.00,88.00,180.00,64,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
-TPU3,200,tpu,45.00,90.00,225.00,450.00,128,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
+TPU2,tpu,250,22.00,45.00,88.00,180.00,64,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
+TPU3,tpu,200,45.00,90.00,225.00,450.00,128,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
 Intel Xeon E5-2699,cpu,145,0.70,0.70,4.83,4.83,,https://ark.intel.com/content/www/us/en/ark/products/81061/intel-xeon-processor-e5-2699-v3-45m-cache-2-30-ghz.html
 AGX Xavier,gpu,30,16.00,32.00,533.33,1066.67,,https://elinux.org/Jetson_AGX_Xavier
 GTX TITAN X,gpu,250,6.691,,26.76,,12,techpowerup.com
