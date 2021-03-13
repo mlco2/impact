@@ -17,3 +17,4 @@ GTX TITAN X,gpu,250,6.691,,26.76,,12,techpowerup.com
 TITAN X Pascal,gpu,250,10.97,0.17,43.9,0.68,12,techpowerup.com
 T4,gpu,70, 8.141, 65.13, 116.3,930,16,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet-951643.pdf
 Titan RTX,gpu,280,16.31,32.63,58.25,116.5,24,https://www.techpowerup.com/gpu-specs/titan-rtx.c3311
+RTX 8000,gpu,260,16.31,32.62,62.7,125.46,48, https://www.techpowerup.com/gpu-specs/quadro-rtx-8000.c3306
