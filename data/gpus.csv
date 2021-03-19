@@ -1,21 +1,27 @@
 name,type,watt,TFLOPS32, TFLOPS16,GFLOPS32/W,GFLOPS16/W,memory,source
-RTX 2080 Ti,gpu,250,13.45,26.90,53.80,107.60,11,techpowerup.com
-RTX 2080,gpu,215,10.00,20.00,46.51,93.02,8,techpowerup.com
+RTX 2080 Ti,gpu,250,13.45,26.9,53.8,107.6,11,techpowerup.com
+RTX 2080,gpu,215,10,20,46.51,93.02,8,techpowerup.com
 GTX 1080 Ti,gpu,250,11.34,0.17,45.36,0.68,11,techpowerup.com
-GTX 1080,gpu,180,8.00,0.13,44.44,0.72,8,techpowerup.com
-AMD RX480,gpu,150,5.80,5.80,38.67,38.67,8,techpowerup.com
-Titan V,gpu,250,14.90,29.80,59.60,119.20,12,techpowerup.com
-Tesla V100-SXM2-32GB,gpu,300,15.00,30.00,50.00,100.00,32,https://www.techpowerup.com/gpu-specs/tesla-v100-sxm2-32-gb.c3185
+GTX 1080,gpu,180,8,0.13,44.44,0.72,8,techpowerup.com
+AMD RX480,gpu,150,5.8,5.8,38.67,38.67,8,techpowerup.com
+Titan V,gpu,250,14.9,29.8,59.6,119.2,12,techpowerup.com
+Tesla V100-SXM2-32GB,gpu,300,15,30,50,100,32,https://www.techpowerup.com/gpu-specs/tesla-v100-sxm2-32-gb.c3185
 Tesla V100-SXM2-16GB,gpu,250,16.35,32.71,65.4,130.84,16,https://www.techpowerup.com/gpu-specs/tesla-v100-sxm2-16-gb.c3471
 Tesla P100,gpu,250,9.526,19.05,38.1,76.2,16,techpowerup.com
-Tesla K40c,gpu,245,5.046,,20.60,,12,techpowerup.com
+Tesla K40c,gpu,245,5.046,,20.6,,12,techpowerup.com
 Tesla K80,gpu,300,4.113,,13.71,,12,techpowerup.com
-TPU2,tpu,250,22.00,45.00,88.00,180.00,64,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
-TPU3,tpu,200,45.00,90.00,225.00,450.00,128,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
-Intel Xeon E5-2699,cpu,145,0.70,0.70,4.83,4.83,,https://ark.intel.com/content/www/us/en/ark/products/81061/intel-xeon-processor-e5-2699-v3-45m-cache-2-30-ghz.html
-AGX Xavier,gpu,30,16.00,32.00,533.33,1066.67,,https://elinux.org/Jetson_AGX_Xavier
+TPU2,tpu,250,22,45,88,180,64,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
+TPU3,tpu,200,45,90,225,450,128,https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/
+Intel Xeon E5-2699,cpu,145,0.7,0.7,4.83,4.83,,https://ark.intel.com/content/www/us/en/ark/products/81061/intel-xeon-processor-e5-2699-v3-45m-cache-2-30-ghz.html
+AGX Xavier,gpu,30,16,32,533.33,1066.67,,https://elinux.org/Jetson_AGX_Xavier
 GTX TITAN X,gpu,250,6.691,,26.76,,12,techpowerup.com
 TITAN X Pascal,gpu,250,10.97,0.17,43.9,0.68,12,techpowerup.com
-T4,gpu,70, 8.141, 65.13, 116.3,930,16,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet-951643.pdf
+T4,gpu,70,8.141,65.13,116.3,930,16,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet-951643.pdf
 Titan RTX,gpu,280,16.31,32.63,58.25,116.5,24,https://www.techpowerup.com/gpu-specs/titan-rtx.c3311
 RTX 8000,gpu,260,16.31,32.62,62.7,125.46,48, https://www.techpowerup.com/gpu-specs/quadro-rtx-8000.c3306
+GTX 750,gpu,250,1111,NaN,444.4,Nan,24,https://www.techpowerup.com/gpu-specs/geforce-gtx-750.c1986
+Quadro K6000,gpu,225,5.196,NaN,2.30933333333333,NaN,12,https://www.techpowerup.com/gpu-specs/quadro-k6000.c2426
+Quadro P6000,gpu,250,12.63,197.4,5.052,789.6,24,https://www.techpowerup.com/gpu-specs/quadro-p6000.c2865
+Tesla M40 24GB,gpu,250,6.844,NaN,2.7376,NaN,12,https://www.techpowerup.com/gpu-specs/tesla-m40.c2771
+Tesla V100-PCIE-16GB,gpu,300,14.13,28.26,4.71,94.2,16,https://www.techpowerup.com/gpu-specs/tesla-v100-pcie-16-gb.c2957
+Titan Xp,gpu,250,12.15,0.1898,4.86,0.7592,12,https://www.techpowerup.com/gpu-specs/titan-xp.c2948
