@@ -170,7 +170,7 @@ const twoDigits = n => Number(Number(n).toFixed(2));
 const fillLatexTemplate = (provName, region, hours, gpu, gpuPower, emissions, offsetPercents, impact) => {
   provName ? $("#template-text-offset").show() : $("#template-text-offset").hide();
   $("#template-provider").text(provName || "a private infrastructure");
-  $("#template-region").text(region ? `in region ${region}` : "");
+  $("#template-region").text(region ? ` in region ${region}` : "");
   $("#template-region-efficiency").text(impact);
   $("#template-hours").text(hours);
   $("#template-gpu").text(gpu);
