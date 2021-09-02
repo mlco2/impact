@@ -55,6 +55,7 @@ const parseGPUData = data => {
     let min = 1000000;
     for (const d of data) {
         const { name, watt } = d;
+        const watt = d.tdp_watts
         gpus[name] = {
             watt: parseFloat(watt)
         }

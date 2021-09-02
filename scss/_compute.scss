@@ -219,7 +219,7 @@
             width: 100%;
 
 
-            h2 {
+            h3 {
                 font-size: 1.2rem;
                 margin: auto;
                 margin-bottom: 2rem;
@@ -256,7 +256,7 @@
                     justify-content: center;
                     align-items: center;
 
-                    h3 {
+                    h4 {
 
                         color: $gray-800;
                         font-size: 1rem;
@@ -267,6 +267,14 @@
                     .comparison-result-item {
                         font-weight: bolder;
                         width: 100%;
+                        color: $gray-800;
+                    }
+
+                    small {
+                        color: rgba(0, 0, 0, .35);
+                        font-size: 0.7rem;
+                        vertical-align: text-top;
+
                     }
                 }
             }

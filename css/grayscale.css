@@ -537,7 +537,7 @@
   width: 100%;
 }
 
-.compute-section #comparison-row #comparison-card h2 {
+.compute-section #comparison-row #comparison-card h3 {
   font-size: 1.2rem;
   margin: auto;
   margin-bottom: 2rem;
@@ -586,7 +586,7 @@
   align-items: center;
 }
 
-.compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column h3 {
+.compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column h4 {
   color: #343a40;
   font-size: 1rem;
   margin-bottom: 8px;
@@ -596,6 +596,13 @@
 .compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column .comparison-result-item {
   font-weight: bolder;
   width: 100%;
+  color: #343a40;
+}
+
+.compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column small {
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 0.7rem;
+  vertical-align: text-top;
 }
 
 .learn-section {

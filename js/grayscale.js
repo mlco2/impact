@@ -257,22 +257,20 @@ const scientificNotation = (n, d) => {
 const fillComparisonTable = co2 => {
   $("#emitted-value").text(co2);
   // https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references
-  return
+
   const DIGITS = 2;
   // # Miles driven by the average passenger vehicle
   // 3.98 x 10-4 metric tons CO2E/mile
-  const kgC02PerKm = 3.98 * 10e-4 * 10e3 * 1.609344
-  console.log({ kgC02PerKm });
+  const kgC02PerKm = 3.98 * 1e-4 * 1e3 / 1.609344
   const eqDriven = scientificNotation(co2 / kgC02PerKm, DIGITS);
   // # Pounds of coal burned
   // 9.05 x 10-4 metric tons CO2/pound of coal
-  const kgCoalBurnedPerKg = 9.05 * 10e-4 * 10e3 * 2.204623
-  const eqCoal = scientificNotation(co2 * kgCoalBurnedPerKg, DIGITS);
-  // # Conversion Factor for Carbon Sequestered by 1 Acre of Forest Preserved from Conversion to Cropland
-  //  -146.27 metric tons CO2/acre/year (in the year of conversion)
-  const kgC02SequestratedPerYearPerAcre = 146.27 * 1e3
-  const acresForAYearPerKg = 1 / kgC02SequestratedPerYearPerAcre
-  const eqForest = scientificNotation(co2 * acresForAYearPerKg, DIGITS);
+  const kgCoalBurnedPerKg = 9.05 * 1e-4 * 1e3 * 2.204623
+  const eqCoal = scientificNotation(co2 / kgCoalBurnedPerKg, DIGITS);
+  // https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references#seedlings
+  //  0.060 metric ton CO2 per urban tree planted (sequestered)
+  const kgC02SequestratedBySeedling = 0.060 * 1e3
+  const eqForest = scientificNotation(co2 / kgC02SequestratedBySeedling, DIGITS);
 
   $("#comparison-result-driven").text(eqDriven);
   $("#comparison-result-coal").text(eqCoal);
@@ -299,7 +297,7 @@ const submitCompute = (_values) => {
   setTimeout(() => {
     $(".spinner-border").hide()
     $("#result-card").fadeIn();
-    // $("#comparison-row").fadeIn();
+    $("#comparison-row").fadeIn();
     $("#compute-carbon-emitted-title").height(
       $("#compute-carbon-offset-title").height()
     )

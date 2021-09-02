@@ -21,7 +21,7 @@
                 <p>
                     <small>
                         <em style="color: grey">
-                            Missing a Harware or a region? Open an issue or a PR on <a
+                            Missing a Hardware or a region? Open an issue or a PR on <a
                                 href="https://github.com/mlco2/impact" target="_blank"
                                 rel="noopener noreferrer">Github</a>
                         </em>
@@ -43,7 +43,7 @@
 
                 <div class="form-group col-md-4 col-lg-2 col-xl-2">
                     <label for="compute-hours">Hours Used</label>
-                    <input class="form-control compute-input" id="compute-hours" type="number" step="0.5" value="12" />
+                    <input class="form-control compute-input" id="compute-hours" type="number" step="0.5" value="100" />
                 </div>
 
                 <div class="form-group col-md-4 col-lg-3 col-xl-2">
@@ -226,7 +226,7 @@
 
         <div class="row" id="comparison-row" style="display: none;">
             <div id="comparison-card">
-                <h2 class="pad"><span id="comparison-result-co2">0</span> kg of CO<sub>2</sub>eq. is equivalent to:</h2>
+                <h3 class="pad"><span id="comparison-result-co2">0</span> kg of CO<sub>2</sub>eq. is equivalent to:</h3>
                 <div class="row" id="comparison-columns-row">
                     <div class="comparison-column col-xs-6 col-md-4">
                         <div class="row"
@@ -235,7 +235,11 @@
                                 <div class="comparison-result-item" id="comparison-result-driven">3.4</div>
                             </div>
                             <div class="col-8">
-                                <h3>Km driven by an average car</h3>
+                                <h4> Km driven by an average car
+                                    <small>
+                                        [1]
+                                    </small>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -247,7 +251,11 @@
                                 <div class="comparison-result-item" id="comparison-result-coal">3.4</div>
                             </div>
                             <div class="col-8">
-                                <h3>Kgs of coal burned</h3>
+                                <h4> Kgs of coal burned
+                                    <small>
+                                        [2]
+                                    </small>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -259,7 +267,11 @@
                                 <div class="comparison-result-item" id="comparison-result-forest">3.4</div>
                             </div>
                             <div class="col-8">
-                                <h3>Acres of forest preserved for a year from becoming cropland</h3>
+                                <h4> Tree seedlings sequesting carbon for 10 years
+                                    <small>
+                                        [3]
+                                    </small>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -267,7 +279,13 @@
                 <div>
                     <a href="https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references"
                         target="_blank" rel="noopener noreferrer">Source: Greenhouse Gases Equivalencies Calculator -
-                        Calculations and References</a>
+                        Calculations and References</a> :
+                    <a href="https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references#miles"
+                        target="_blank" rel="noreferrer noopener"> [1] </a>
+                    <a href="https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references#lbscoal"
+                        target="_blank" rel="noreferrer noopener"> [2] </a>
+                    <a href="https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references#seedlings"
+                        target="_blank" rel="noreferrer noopener"> [3] </a>
                 </div>
             </div>
 
