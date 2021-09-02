@@ -257,11 +257,13 @@ const scientificNotation = (n, d) => {
 const fillComparisonTable = co2 => {
   $("#emitted-value").text(co2);
   // https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references
+  return
   const DIGITS = 2;
   // # Miles driven by the average passenger vehicle
   // 3.98 x 10-4 metric tons CO2E/mile
-  const kmDrivenPerKg = 3.98 * 10e-4 * 10e3 * 0.621371
-  const eqDriven = scientificNotation(co2 * kmDrivenPerKg, DIGITS);
+  const kgC02PerKm = 3.98 * 10e-4 * 10e3 * 1.609344
+  console.log({ kgC02PerKm });
+  const eqDriven = scientificNotation(co2 / kgC02PerKm, DIGITS);
   // # Pounds of coal burned
   // 9.05 x 10-4 metric tons CO2/pound of coal
   const kgCoalBurnedPerKg = 9.05 * 10e-4 * 10e3 * 2.204623
@@ -297,7 +299,7 @@ const submitCompute = (_values) => {
   setTimeout(() => {
     $(".spinner-border").hide()
     $("#result-card").fadeIn();
-    $("#comparison-row").fadeIn();
+    // $("#comparison-row").fadeIn();
     $("#compute-carbon-emitted-title").height(
       $("#compute-carbon-offset-title").height()
     )
