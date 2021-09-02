@@ -251,7 +251,6 @@ const scientificNotation = (n, d) => {
   } else {
     n_d += "e" + power
   }
-
   return n_d
 }
 
