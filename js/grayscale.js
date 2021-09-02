@@ -166,6 +166,7 @@ const checkForm = () => {
 }
 
 const twoDigits = n => Number(Number(n).toFixed(2));
+const toDigits = (n, d) => Number(Number(n).toFixed(d));
 
 const fillLatexTemplate = (provName, region, hours, gpu, gpuPower, emissions, offsetPercents, impact) => {
   provName ? $("#template-text-offset").show() : $("#template-text-offset").hide();
@@ -192,8 +193,9 @@ const setDetails = (values) => {
   const minReg = Number.isFinite(customOffset) ? "" : state.providers[provider][minRegId];
 
   fillLatexTemplate(provName, region, hours, gpu, state.gpus[gpu].watt, co2, offsetPercents, impact)
+  fillComparisonTable(co2);
 
-  $("#emitted-value").text(co2);
+  $("#comparison-result-co2").text(co2);
   $("#offset-value").text(offset);
   $("#details-counts").html(`
   ${state.gpus[gpu].watt}W x ${hours}h = <strong>${energy} kWh</strong> x ${impact}
@@ -230,6 +232,52 @@ const setDetails = (values) => {
 
 }
 
+const scientificNotation = (n, d) => {
+  const exp = n.toExponential() + "";
+  let dec = exp.split(".")[1].split("e")[0];
+  dec = dec.slice(0, d);
+  const power = exp.split("e")[1];
+  let n_d = parseFloat(exp.split(".")[0] + "." + dec);
+  if (power === "+0") {
+    n_d = toDigits(n_d * 1, d);
+  } else if (power === "+1") {
+    n_d = toDigits(n_d * 10, d);
+  } else if (power === "+2") {
+    n_d = toDigits(n_d * 100, d);
+  } else if (power === "-1") {
+    n_d = toDigits(n_d * 0.1, d);
+  } else if (power === "-2") {
+    n_d = toDigits(n_d * 0.01, d);
+  } else {
+    n_d += "e" + power
+  }
+
+  return n_d
+}
+
+const fillComparisonTable = co2 => {
+  $("#emitted-value").text(co2);
+  // https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references
+  const DIGITS = 2;
+  // # Miles driven by the average passenger vehicle
+  // 3.98 x 10-4 metric tons CO2E/mile
+  const kmDrivenPerKg = 3.98 * 10e-4 * 10e3 * 0.621371
+  const eqDriven = scientificNotation(co2 * kmDrivenPerKg, DIGITS);
+  // # Pounds of coal burned
+  // 9.05 x 10-4 metric tons CO2/pound of coal
+  const kgCoalBurnedPerKg = 9.05 * 10e-4 * 10e3 * 2.204623
+  const eqCoal = scientificNotation(co2 * kgCoalBurnedPerKg, DIGITS);
+  // # Conversion Factor for Carbon Sequestered by 1 Acre of Forest Preserved from Conversion to Cropland
+  //  -146.27 metric tons CO2/acre/year (in the year of conversion)
+  const kgC02SequestratedPerYearPerAcre = 146.27 * 1e3
+  const acresForAYearPerKg = 1 / kgC02SequestratedPerYearPerAcre
+  const eqForest = scientificNotation(co2 * acresForAYearPerKg, DIGITS);
+
+  $("#comparison-result-driven").text(eqDriven);
+  $("#comparison-result-coal").text(eqCoal);
+  $("#comparison-result-forest").text(eqForest);
+}
+
 const isBottomVisible = _bottomOffset => {
   const bottomOffset = _bottomOffset || 0;
   return $("#result-card").offset().top + $("#result-card").outerHeight() + bottomOffset < ($(window).scrollTop() + $(window).height())
@@ -250,6 +298,7 @@ const submitCompute = (_values) => {
   setTimeout(() => {
     $(".spinner-border").hide()
     $("#result-card").fadeIn();
+    $("#comparison-row").fadeIn();
     $("#compute-carbon-emitted-title").height(
       $("#compute-carbon-offset-title").height()
     )

@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - ML CO2 Impact v5.0.8 ()
- * Copyright 2013-2020 
+ * Copyright 2013-2021 
  * Licensed under MIT (https://github.com/BlackrockDigital/ml-co2-impact/blob/master/LICENSE)
  */
 
@@ -515,6 +515,87 @@
 
 .compute-section #result-row #result-card #result-offset #offset-value {
   color: green;
+}
+
+.compute-section #comparison-row {
+  margin: auto;
+  margin-top: 3rem;
+  background-color: #b9b9cd;
+  border-radius: 5px;
+  padding: 2rem;
+  -webkit-box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
+  box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.compute-section #comparison-row #comparison-card {
+  text-align: center;
+  width: 100%;
+}
+
+.compute-section #comparison-row #comparison-card h2 {
+  font-size: 1.2rem;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.compute-section #comparison-row #comparison-card .separator {
+  width: 0;
+  border-left: 1px solid #f55249;
+  margin-left: -1px;
+}
+
+@media (max-width: 768px) {
+  .compute-section #comparison-row #comparison-card .separator {
+    display: none;
+  }
+}
+
+.compute-section #comparison-row #comparison-card a {
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 0.8rem;
+}
+
+.compute-section #comparison-row #comparison-card a:hover {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.compute-section #comparison-row #comparison-card #comparison-columns-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column h3 {
+  color: #343a40;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column .comparison-result-item {
+  font-weight: bolder;
+  width: 100%;
 }
 
 .learn-section {

@@ -201,4 +201,77 @@
             }
         }
     }
+
+    #comparison-row {
+        margin: auto;
+        margin-top: 3rem;
+        background-color: rgb(185, 185, 205);
+        border-radius: 5px;
+        // border-bottom: 5px solid $primary;
+        padding: 2rem;
+        box-shadow: $cardboxshadow;
+        transition: all ease 250ms;
+        justify-content: center;
+
+
+        #comparison-card {
+            text-align: center;
+            width: 100%;
+
+
+            h2 {
+                font-size: 1.2rem;
+                margin: auto;
+                margin-bottom: 2rem;
+            }
+
+            .separator {
+                width: 0;
+                border-left: 1px solid $primary;
+                margin-left: -1px;
+
+                @media(max-width: 768px) {
+                    display: none;
+                }
+            }
+
+
+            a {
+                color: rgba(0, 0, 0, 0.35);
+                font-size: 0.8rem;
+
+                &:hover {
+                    color: rgba(0, 0, 0, 0.55);
+                }
+            }
+
+            #comparison-columns-row {
+
+                display: flex;
+                justify-content: space-evenly;
+                margin-bottom: 2rem;
+
+                .comparison-column {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    h3 {
+
+                        color: $gray-800;
+                        font-size: 1rem;
+                        margin-bottom: 8px;
+                        margin-top: 8px;
+                    }
+
+                    .comparison-result-item {
+                        font-weight: bolder;
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+
 }

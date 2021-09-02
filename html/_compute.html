@@ -17,6 +17,16 @@
                     carbon emissions. The latter number depends on the grid used by the cloud provider and we are open
                     to update our estimates if
                     anything looks inaccurate or outdated.</p>
+
+                <p>
+                    <small>
+                        <em style="color: grey">
+                            Missing a Harware or a region? Open an issue or a PR on <a
+                                href="https://github.com/mlco2/impact" target="_blank"
+                                rel="noopener noreferrer">Github</a>
+                        </em>
+                    </small>
+                </p>
             </div>
 
         </div>
@@ -56,7 +66,8 @@
                         <button type="button" class="modalHelp" id="modalImpactHelp" data-toggle="modal"
                             data-target="#impactModal">
                             ?
-                        </button></label>
+                        </button>
+                    </label>
                     <input class="form-control compute-input" id="compute-custom-impact" type="number" step="0.5"
                         value="0.432">
                     </input>
@@ -69,7 +80,8 @@
                         <button type="button" class="modalHelp" id="modalOffsetHelp" data-toggle="modal"
                             data-target="#offsetModal">
                             ?
-                        </button></label>
+                        </button>
+                    </label>
                     <input class="form-control compute-input" id="compute-custom-offset" type="number" step="0.001"
                         value="0">
                     </input>
@@ -210,6 +222,55 @@
 
 
             </div>
+        </div>
+
+        <div class="row" id="comparison-row" style="display: none;">
+            <div id="comparison-card">
+                <h2 class="pad"><span id="comparison-result-co2">0</span> kg of CO<sub>2</sub>eq. is equivalent to:</h2>
+                <div class="row" id="comparison-columns-row">
+                    <div class="comparison-column col-xs-6 col-md-4">
+                        <div class="row"
+                            style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div class="col-4">
+                                <div class="comparison-result-item" id="comparison-result-driven">3.4</div>
+                            </div>
+                            <div class="col-8">
+                                <h3>Km driven by an average car</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="separator"></span>
+                    <div class="comparison-column col-xs-6 col-md-4">
+                        <div class="row"
+                            style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div class="col-4">
+                                <div class="comparison-result-item" id="comparison-result-coal">3.4</div>
+                            </div>
+                            <div class="col-8">
+                                <h3>Kgs of coal burned</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="separator"></span>
+                    <div class="comparison-column col-xs-6 col-md-4">
+                        <div class="row"
+                            style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div class="col-4">
+                                <div class="comparison-result-item" id="comparison-result-forest">3.4</div>
+                            </div>
+                            <div class="col-8">
+                                <h3>Acres of forest preserved for a year from becoming cropland</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references"
+                        target="_blank" rel="noopener noreferrer">Source: Greenhouse Gases Equivalencies Calculator -
+                        Calculations and References</a>
+                </div>
+            </div>
+
         </div>
 
     </div>
