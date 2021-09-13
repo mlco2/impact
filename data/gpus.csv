@@ -1,4 +1,4 @@
-https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf,type,tdp_watts,TFLOPS32, TFLOPS16,GFLOPS32/W,GFLOPS16/W,memory,source
+name,type,tdp_watts,TFLOPS32, TFLOPS16,GFLOPS32/W,GFLOPS16/W,memory,source
 A100 PCIe 40/80GB,gpu,250,,312,,,40,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
 A100 SXM4 80 GB,gpu,400,,312,,,80,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
 AGX Xavier,gpu,30,16,32,533.33,1066.67,,https://elinux.org/Jetson_AGX_Xavier
