@@ -12,7 +12,7 @@ gcp,Google Cloud Platform,100,europe-west2,,United Kingdom,England,London,623,ht
 gcp,Google Cloud Platform,100,europe-west3,,Germany,,Frankfurt,615,https://www.sciencedirect.com/science/article/pii/S1361920916307933,
 gcp,Google Cloud Platform,100,europe-west4,,Netherlands,,Eemshaven,569,https://www.sciencedirect.com/science/article/pii/S1361920916307933,
 gcp,Google Cloud Platform,100,europe-west6,,Switzerland,,Zürich,16,https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf,
-gcp,Google Cloud Platform,100,northamerica-northeast1,,Canada,Québec,Montréal,20,Hydro-Québec,
+gcp,Google Cloud Platform,100,northamerica-northeast1,,Canada,Québec,Montréal,34.5,Hydro-Québec (https://www.sciencedirect.com/science/article/pii/S1364032120307206),
 gcp,Google Cloud Platform,100,southamerica-east1,,Brazil,,São Paulo,205,https://pdfs.semanticscholar.org/bd2a/69da81529a0f8dd16573dfd38e9d7468637e.pdf,
 gcp,Google Cloud Platform,100,us-central1,,USA,Iowa,Council Bluffs,566.3,eGRID,
 gcp,Google Cloud Platform,100,us-east1,,USA,South Carolina,Moncks Corner,367.8,eGRID,
