@@ -81,15 +81,13 @@ footer {
 }
 
 .arrow-icon {
-    height: 2.2em;
-    width: 2.8em;
     display: block;
     padding: 0.5em;
     margin: 1em auto;
     position: absolute;
     cursor: pointer;
     border-radius: 4px;
-
+    transform: translate(-50%, 45%);
 }
 
 @-moz-document url-prefix() {

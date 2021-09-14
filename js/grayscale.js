@@ -249,7 +249,7 @@ const scientificNotation = (n, d) => {
   } else if (power === "-2") {
     n_d = toDigits(n_d * 0.01, d);
   } else {
-    n_d += "e" + power
+    n_d += ` <small>x</small>10<sup>${power.replace("+", "")}</sup>`
   }
   return n_d
 }
@@ -272,9 +272,9 @@ const fillComparisonTable = co2 => {
   const kgC02SequestratedBySeedling = 0.060 * 1e3
   const eqForest = scientificNotation(co2 / kgC02SequestratedBySeedling, DIGITS);
 
-  $("#comparison-result-driven").text(eqDriven);
-  $("#comparison-result-coal").text(eqCoal);
-  $("#comparison-result-forest").text(eqForest);
+  $("#comparison-result-driven").html(eqDriven);
+  $("#comparison-result-coal").html(eqCoal);
+  $("#comparison-result-forest").html(eqForest);
 }
 
 const isBottomVisible = _bottomOffset => {
@@ -284,6 +284,7 @@ const isBottomVisible = _bottomOffset => {
 
 const submitCompute = (_values) => {
   $("#result-card").hide();
+  $("#comparison-row").hide();
   $("#details-content").height(0);
   $("#details-banner .arrow-icon").removeClass("open")
   $(".spinner-border").show()
@@ -307,7 +308,7 @@ const submitCompute = (_values) => {
     if ($(window).width() < 769 || !isBottomVisible()) {
       scrollToBottomResultCard()
     }
-  }, getRandomInt(500, 1200)
+  }, getRandomInt(500, 1500)
   )
 }
 

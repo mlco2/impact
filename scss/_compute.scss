@@ -182,10 +182,10 @@
 
             }
 
-            .result-box {}
+            // .result-box {}
 
             #result-emitted {
-                #emitted-unit {}
+                // #emitted-unit {}
 
                 #emitted-value {
                     color: orange;
@@ -193,7 +193,7 @@
             }
 
             #result-offset {
-                #offset-unit {}
+                // #offset-unit {}
 
                 #offset-value {
                     color: green
@@ -273,8 +273,6 @@
                     small {
                         color: rgba(0, 0, 0, .35);
                         font-size: 0.7rem;
-                        vertical-align: text-top;
-
                     }
                 }
             }
