@@ -1,6 +1,6 @@
 name,type,tdp_watts,TFLOPS32, TFLOPS16,GFLOPS32/W,GFLOPS16/W,memory,source
-A100 PCIe 40/80GB,gpu,250,,,,,40,https://www.techpowerup.com/gpu-specs/a100-pcie.c3623
-A100 SXM4 80 GB,gpu,400,,,,,80,https://www.techpowerup.com/gpu-specs/a100-sxm4-80-gb.c3746
+A100 PCIe 40/80GB,gpu,250,,312,,,40,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
+A100 SXM4 80 GB,gpu,400,,312,,,80,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
 AGX Xavier,gpu,30,16,32,533.33,1066.67,,https://elinux.org/Jetson_AGX_Xavier
 AMD RX480,gpu,150,5.8,5.8,38.67,38.67,8,techpowerup.com
 GTX 1080 Ti,gpu,250,11.34,0.17,45.36,0.68,11,techpowerup.com
@@ -25,5 +25,5 @@ Titan RTX,gpu,280,16.31,32.63,58.25,116.5,24,https://www.techpowerup.com/gpu-spe
 Titan V,gpu,250,14.9,29.8,59.6,119.2,12,techpowerup.com
 TITAN X Pascal,gpu,250,10.97,0.17,43.9,0.68,12,techpowerup.com
 Titan Xp,gpu,250,12.15,0.1898,4.86,0.7592,12,https://www.techpowerup.com/gpu-specs/titan-xp.c2948
-TPUv2 Chip,tpu,221,22,45,100,204,64,"average consumption - not TDP - from https://arxiv.org/pdf/2104.10350.pdf (Patterson et. al)"
-TPUv3 Chip,tpu,283,45,90,160,320,128,"average consumption - not TDP - from https://arxiv.org/pdf/2104.10350.pdf (Patterson et. al)"
+TPUv2 Chip,tpu,221,22,45,100,204,64,average consumption - not TDP - from https://arxiv.org/pdf/2104.10350.pdf (Patterson et. al)
+TPUv3 Chip,tpu,283,45,90,160,320,128,average consumption - not TDP - from https://arxiv.org/pdf/2104.10350.pdf (Patterson et. al)
