@@ -1,3 +1,5 @@
+*This repository is passively maintained: issues will be addressed -- especially if they come with a suggested solution -- but there is no active updates to the data or code. Contributions are welcome.*
+
 # Machine Learning's CO2 Impact
 
 Checkout the [**online GPU emissions calculator**](https://mlco2.github.io/impact)!
