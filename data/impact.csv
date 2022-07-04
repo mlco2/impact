@@ -73,3 +73,6 @@ azure,Azure,100,australiacentral,Australia Central,Australia,Australian Capital 
 azure,Azure,100,australiacentral2,Australia Central 2,Australia,Australian Capital Territory,Forrest,900,https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf,
 azure,Azure,100,southafricanorth,South Africa North,South Africa,Gauteng,Pretoria,1009,https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf,
 azure,Azure,100,southafricawest,South Africa West,South Africa,Western Cape,Stellenbosch,1009,https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf,
+ovh,OVHCloud,0,gra,Gravelines,France,Hauts-de-France,Gravelines,105,https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf,
+ovh,OVHCloud,0,bhs,Beauharnois,Canada,Quebec,Beauharnois,20,Hydro-Québec,
+scaleway,Scaleway,100,,Paris,France,Ile-de-France,Paris,105,https://www.carbonfootprint.com/docs/2018_8_electricity_factors_august_2018_-_online_sources.pdf,
