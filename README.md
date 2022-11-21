@@ -18,9 +18,9 @@ Use our **generated latex template** which automatically includes the Calculator
 
 ### Setup
 
-1. [Install `npm`](https://www.npmjs.com/get-npm): Node's package manager
+1. [Install `yarn`](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable): Node's package manager
 2. [Install `gulp`](https://gulpjs.com/): a build tool
-3. Install dependencies: from the root of this repo `$ npm install`
+3. Install dependencies: from the root of this repo `$ yarn install`
 4. Run the local server: `$ gulp watch`
 5. Edit files! Gulp will watch for changes, build the differences and reload the browser
 
