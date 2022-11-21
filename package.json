@@ -41,6 +41,9 @@
     "gulp-sass": "4.0.2",
     "gulp-uglify": "3.0.2",
     "lodash.template": ">=4.5.0",
-    "merge-stream": "2.0.0"
-  }
+  },
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ]
 }
