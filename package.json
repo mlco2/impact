@@ -28,7 +28,7 @@
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
-    "browser-sync": "2.26.7",
+    "browser-sync": "^2.27.10",
     "del": "4.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "6.1.0",
@@ -38,9 +38,11 @@
     "gulp-header": "2.0.7",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "1.4.0",
-    "gulp-sass": "4.0.2",
+    "gulp-sass": "5.1.0",
     "gulp-uglify": "3.0.2",
     "lodash.template": ">=4.5.0",
+    "merge-stream": "2.0.0",
+    "sass": "^1.56.1"
   },
   "browserslist": [
     "defaults and supports es6-module",
