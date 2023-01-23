@@ -32,6 +32,7 @@ RTX 3080 TI,gpu,350,34.10,34.10,NaN,NaN,12,https://www.techpowerup.com/gpu-specs
 RTX 3090,gpu,350,35.58,35.58,NaN,NaN,24,https://www.techpowerup.com/gpu-specs/geforce-rtx-3090.c3622
 RTX A4000,gpu,140,19.17,19.17,NaN,NaN,16,https://www.techpowerup.com/gpu-specs/rtx-a4000.c3756
 RTX A6000,gpu,300,38.71,38.71,NaN,NaN,48,https://www.techpowerup.com/gpu-specs/rtx-a6000.c3686
+RTX A6000,gpu,230,27.80,27.80,NaN,NaN,24,https://nvdam.widen.net/s/wrqrqt75vh/nvidia-rtx-a5000-datasheet
 Intel Xeon E5-2699,cpu,145,0.7,0.7,4.83,4.83,,https://ark.intel.com/content/www/us/en/ark/products/81061/intel-xeon-processor-e5-2699-v3-45m-cache-2-30-ghz.html
 Intel Xeon E5-2630v4,cpu,85,NaN,NaN,NaN,NaN,NaN,https://ark.intel.com/content/www/es/es/ark/products/92981/intel-xeon-processor-e52630-v4-25m-cache-2-20-ghz.html
 Intel Xeon E5-2650,cpu,105,NaN,NaN,NaN,NaN,NaN,https://ark.intel.com/content/www/us/en/ark/products/91767/intel-xeon-processor-e52650-v4-30m-cache-2-20-ghz.html
