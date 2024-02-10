@@ -38,4 +38,5 @@ Intel Xeon E5-2630v4,cpu,85,NaN,NaN,NaN,NaN,NaN,https://ark.intel.com/content/ww
 Intel Xeon E5-2650,cpu,105,NaN,NaN,NaN,NaN,NaN,https://ark.intel.com/content/www/us/en/ark/products/91767/intel-xeon-processor-e52650-v4-30m-cache-2-20-ghz.html
 Intel Xeon Gold 5220,cpu,125,NaN,NaN,NaN,NaN,NaN,https://ark.intel.com/content/www/us/en/ark/products/193388/intel-xeon-gold-5220-processor-24-75m-cache-2-20-ghz.html
 Intel Xeon Gold 6148,cpu,150,NaN,NaN,NaN,NaN,NaN,https://ark.intel.com/content/www/us/en/ark/products/120489/intel-xeon-gold-6148-processor-27-5m-cache-2-40-ghz.html
+L4,gpu,72,31.33,31.33,435.1,435.1,24,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/l4/PB-11316-001_v01.pdf
 AMD EPYC 7763,cpu,280,NaN,NaN,NaN,NaN,NaN,https://www.amd.com/de/products/cpu/amd-epyc-7763
