@@ -3,6 +3,7 @@ A100 PCIe 40/80GB,gpu,250,,312,,,40,https://www.nvidia.com/content/dam/en-zz/Sol
 A100 SXM4 80 GB,gpu,400,,312,,,80,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
 AGX Xavier,gpu,30,16,32,533.33,1066.67,,https://elinux.org/Jetson_AGX_Xavier
 AMD RX480,gpu,150,5.8,5.8,38.67,38.67,8,techpowerup.com
+GIGABYTE GTX 1660 OC,gpu,120,5.153,10.31,NaN,NaN,6,https://www.techpowerup.com/gpu-specs/gigabyte-gtx-1660-oc.b6844
 GTX 1080 Ti,gpu,250,11.34,0.17,45.36,0.68,11,techpowerup.com
 GTX 1080,gpu,180,8,0.13,44.44,0.72,8,techpowerup.com
 GTX 750,gpu,250,1111,NaN,444.4,Nan,24,https://www.techpowerup.com/gpu-specs/geforce-gtx-750.c1986
