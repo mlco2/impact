@@ -42,3 +42,5 @@ Intel Xeon Gold 5220,cpu,125,NaN,NaN,NaN,NaN,NaN,https://ark.intel.com/content/w
 Intel Xeon Gold 6148,cpu,150,NaN,NaN,NaN,NaN,NaN,https://ark.intel.com/content/www/us/en/ark/products/120489/intel-xeon-gold-6148-processor-27-5m-cache-2-40-ghz.html
 L4,gpu,72,31.33,31.33,435.1,435.1,24,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/l4/PB-11316-001_v01.pdf
 AMD EPYC 7763,cpu,280,NaN,NaN,NaN,NaN,NaN,https://www.amd.com/de/products/cpu/amd-epyc-7763
+AMD EPYC 7282,cpu,120,NaN,NaN,NaN,NaN,NaN,https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7282.html
+AMD EPYC 7702,cpu,200,NaN,NaN,NaN,NaN,NaN,https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7702.html
