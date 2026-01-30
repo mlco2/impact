@@ -44,3 +44,6 @@ L4,gpu,72,31.33,31.33,435.1,435.1,24,https://www.nvidia.com/content/dam/en-zz/So
 AMD EPYC 7763,cpu,280,NaN,NaN,NaN,NaN,NaN,https://www.amd.com/de/products/cpu/amd-epyc-7763
 AMD EPYC 7282,cpu,120,NaN,NaN,NaN,NaN,NaN,https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7282.html
 AMD EPYC 7702,cpu,200,NaN,NaN,NaN,NaN,NaN,https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7702.html
+RTX 5090,gpu,575,209.2,209.2,363.8,363.8,32,https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/
+H100 PCIe,gpu,350,51,1979,145.7,5654.3,80,https://www.nvidia.com/en-us/data-center/h100/
+H100 SXM5,gpu,700,67,1979,95.7,2827.1,80,https://www.nvidia.com/en-us/data-center/h100/
