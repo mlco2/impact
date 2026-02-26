@@ -3,6 +3,7 @@ H100 SXM,gpu,700,989,1979,,,80,https://resources.nvidia.com/en-us-tensor-core/nv
 H100 NVL,gpu,400,835,1671,,,94,https://resources.nvidia.com/en-us-tensor-core/nvidia-tensor-core-gpu-datasheet
 A100 PCIe 40/80GB,gpu,250,,312,,,40,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
 A100 SXM4 80 GB,gpu,400,,312,,,80,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf
+A10G,gpu,150,31.52,,,24,https://www.techpowerup.com/gpu-specs/a10g.c3798 
 AGX Xavier,gpu,30,16,32,533.33,1066.67,,https://elinux.org/Jetson_AGX_Xavier
 AMD RX480,gpu,150,5.8,5.8,38.67,38.67,8,techpowerup.com
 GIGABYTE GTX 1660 OC,gpu,120,5.153,10.31,NaN,NaN,6,https://www.techpowerup.com/gpu-specs/gigabyte-gtx-1660-oc.b6844
