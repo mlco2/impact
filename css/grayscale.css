@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - ML CO2 Impact v5.0.8 ()
- * Copyright 2013-2023 
+ * Copyright 2013-2026 
  * Licensed under MIT (https://github.com/BlackrockDigital/ml-co2-impact/blob/master/LICENSE)
  */
 
@@ -69,7 +69,7 @@
     color: rgb(245, 82, 73);
   }
   #mainNav.navbar-shrink .nav-link:active {
-    color: #e5180d;
+    color: rgb(89.7732843137%, 9.3719362745%, 4.9325980392%);
   }
   #mainNav.navbar-shrink .nav-link.active {
     color: rgb(245, 82, 73);
@@ -222,36 +222,36 @@
   background-color: rgb(245, 82, 73);
 }
 .btn-primary:hover {
-  background-color: #f22419;
+  background-color: rgb(95.0367647059%, 14.1360294118%, 9.6691176471%);
 }
 .btn-primary:focus {
-  background-color: #f22419;
+  background-color: rgb(95.0367647059%, 14.1360294118%, 9.6691176471%);
   color: white;
 }
 .btn-primary:disabled {
-  background-color: #f22419;
+  background-color: rgb(95.0367647059%, 14.1360294118%, 9.6691176471%);
   color: white;
 }
 .btn-primary:active {
-  background-color: #e5180d !important;
+  background-color: rgb(89.7732843137%, 9.3719362745%, 4.9325980392%) !important;
 }
 
 .btn-secondary {
   background-color: rgb(199, 200, 200);
 }
 .btn-secondary:hover {
-  background-color: #adafaf;
+  background-color: rgb(67.9491255962%, 68.5214626391%, 68.5214626391%);
 }
 .btn-secondary:focus {
-  background-color: #adafaf;
+  background-color: rgb(67.9491255962%, 68.5214626391%, 68.5214626391%);
   color: white;
 }
 .btn-secondary:disabled {
-  background-color: #adafaf;
+  background-color: rgb(67.9491255962%, 68.5214626391%, 68.5214626391%);
   color: white;
 }
 .btn-secondary:active {
-  background-color: #a0a2a2 !important;
+  background-color: rgb(62.9040805511%, 63.5665076842%, 63.5665076842%) !important;
 }
 
 .compute-section {
@@ -313,6 +313,12 @@
     margin: 1.75rem auto;
   }
 }
+@media (max-width: 768px) {
+  .compute-section #results-more {
+    max-width: 90px;
+    right: -45px;
+  }
+}
 .compute-section #results-more {
   position: absolute;
   max-width: 100px;
@@ -322,12 +328,6 @@
   top: 50%;
   transform: translateY(-50%);
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
-}
-@media (max-width: 768px) {
-  .compute-section #results-more {
-    max-width: 90px;
-    right: -45px;
-  }
 }
 .compute-section #compute-container {
   min-height: 100%;
@@ -705,11 +705,11 @@
   box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
 }
 @media (min-width: 768px) {
-  .authors-section .authors-content-row .authors-content-img img {
-    max-width: 90%;
-  }
   .authors-section .authors-content-row .authors-content-img img:hover {
     transform: scale(1.05);
+  }
+  .authors-section .authors-content-row .authors-content-img img {
+    max-width: 90%;
   }
 }
 .authors-section .authors-content-row .authors-content-text {
@@ -728,8 +728,6 @@
   background-size: cover;
   padding: 4rem 0;
   text-align: center;
-  /* Non solid icons get a stroke */
-  /* Solid icons get a fill */
 }
 .publish-section h3 {
   color: #868e96;
@@ -844,9 +842,15 @@
   margin: 0;
   vertical-align: middle;
 }
+.publish-section {
+  /* Non solid icons get a stroke */
+}
 .publish-section .resp-sharing-button__icon {
   stroke: #fff;
   fill: none;
+}
+.publish-section {
+  /* Solid icons get a fill */
 }
 .publish-section .resp-sharing-button__icon--solid,
 .publish-section .resp-sharing-button__icon--solidcircle {
@@ -996,7 +1000,7 @@ a {
 }
 a:focus, a:hover {
   text-decoration: none;
-  color: #cd150b;
+  color: rgb(80.2941176471%, 8.3823529412%, 4.4117647059%);
 }
 
 .section-title {
