@@ -1,4 +1,6 @@
 .compute-section {
+    scroll-margin-top: 80px;
+    font-family: 'Open Sans', Arial, sans-serif;
     min-height: 100vh;
     padding-top: $sectionPaddingTop;
     background: linear-gradient(to bottom, $back-25 0, $back-1 75%, $back-15 100%),
@@ -7,6 +9,70 @@
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+
+    [hidden] {
+        display: none !important;
+    }
+
+    .compute-mode-control {
+        color: $white;
+        text-align: left;
+        margin-bottom: 2rem;
+
+        small {
+            display: block;
+            margin-top: .25rem;
+        }
+    }
+
+    label.compute-mode-switch {
+        position: relative;
+        display: inline-flex;
+        justify-content: flex-start;
+        gap: .75rem;
+        min-height: 48px;
+        text-align: left;
+        cursor: pointer;
+
+        input {
+            position: absolute;
+            width: 48px;
+            height: 28px;
+            opacity: 0;
+        }
+
+        .compute-mode-track {
+            flex: 0 0 48px;
+            height: 28px;
+            border: 2px solid $white;
+            border-radius: 28px;
+            background: $gray-700;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin: 2px;
+                border-radius: 50%;
+                background: $white;
+                transition: transform 150ms;
+            }
+        }
+
+        input:checked + .compute-mode-track {
+            background: $primary;
+
+            &::after {
+                transform: translateX(20px);
+            }
+        }
+
+        input:focus + .compute-mode-track {
+            outline: 3px solid $white;
+            outline-offset: 4px;
+        }
+    }
 
     @media(max-width: 768px) {
         padding-top: 3rem;
@@ -21,10 +87,10 @@
     label {
         margin: 0;
         vertical-align: middle;
-        text-align: center;
+        text-align: left;
         min-height: 50px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
     }
 
@@ -37,13 +103,23 @@
         font-size: 1.2rem;
         font-weight: bold;
         margin-left: 8px;
+        min-width: 44px;
+        min-height: 44px;
+        flex-shrink: 0;
     }
 
     .modal-body {
         color: $back-1;
         padding: 50px 80px;
+        overflow-wrap: anywhere;
+
+        @media(max-width: 575px) {
+            padding: 4rem 1.25rem 1.25rem;
+        }
 
         button {
+            min-width: 44px;
+            min-height: 44px;
             position: absolute;
             right: 30px;
             top: 30px;
@@ -68,18 +144,12 @@
     }
 
     #results-more {
-        @media(max-width: 768px) {
-            max-width: 90px;
-            right: -45px;
-        }
-
-        position: absolute;
-        max-width: 100px;
-        padding: 10px;
+        position: static;
+        width: 100%;
+        min-height: 48px;
+        padding: 14px;
+        margin-bottom: 1rem;
         border-radius: 5px;
-        right: -50px;
-        top: 50%;
-        transform: translateY(-50%);
         box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2),
         0 1px 10px 0 rgba(0, 0, 0, 0.1);
     }
@@ -100,14 +170,54 @@
         margin-top: 1.5rem;
 
         #compute-selects-row {
-            justify-content: space-evenly;
-            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin: 0 0 1.5rem;
+
+            .compute-field {
+                min-width: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            .form-control {
+                min-height: 48px;
+                height: 48px;
+                font-size: 1rem;
+            }
+
+            .form-control:focus {
+                outline: 2px solid $white;
+                outline-offset: 2px;
+            }
 
             @media(max-width: 768px) {
-                padding: 0 2rem;
+                grid-template-columns: minmax(0, 1fr);
+                gap: 1rem;
             }
 
         }
+
+        #compute-submit {
+            min-height: 48px;
+            min-width: 180px;
+
+            @media(max-width: 768px) {
+                width: 100%;
+            }
+        }
+    }
+
+    &.compute-researcher-mode #compute-selects-row {
+        @media(min-width: 992px) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+
+    &:not(.compute-researcher-mode) #result-emitted {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
     #result-row {
@@ -121,6 +231,12 @@
             padding: 2rem;
             box-shadow: $cardboxshadow;
             transition: all ease 250ms;
+            min-width: 0;
+            overflow-wrap: anywhere;
+
+            @media(max-width: 768px) {
+                padding: 1.5rem 1rem 3rem;
+            }
 
             @media(min-width: 768px) {
                 &:hover {
@@ -139,7 +255,7 @@
             }
 
             #result-details {
-                padding: 0px 20px;
+                padding: 0 0 20px;
 
                 #details-content {
                     transition: all $inOutExpo 600ms;
@@ -171,7 +287,7 @@
                     left: 0;
                     border-radius: 0px 0px 5px 5px;
                     background-color: $primary;
-                    min-height: 21px;
+                    min-height: 44px;
                     color: white;
                     display: flex;
                     justify-content: center;
@@ -212,6 +328,11 @@
         box-shadow: $cardboxshadow;
         transition: all ease 250ms;
         justify-content: center;
+        overflow-wrap: anywhere;
+
+        @media(max-width: 768px) {
+            padding: 1.5rem 1rem;
+        }
 
 
         #comparison-card {
@@ -255,6 +376,13 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    min-width: 0;
+
+                    @media(max-width: 767px) {
+                        width: 100%;
+                        padding: 1rem 0;
+                        border: 0 !important;
+                    }
 
                     h4 {
 

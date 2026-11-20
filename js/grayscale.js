@@ -1,5 +1,4 @@
 var state;
-var FEATURES = ["gpu", "provider", "region", "hours"];
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -87,7 +86,9 @@ const setImports = (serveFrom, elType, attr) => {
 
 const getValues = () => {
   const gpu = $("#compute-gpu option:selected").val();
-  const provider = $("#compute-provider option:selected").val();
+  const provider = $("#compute-researcher-mode").prop("checked")
+    ? $("#compute-provider option:selected").val()
+    : "custom";
   const region =
     provider !== "custom" ? $("#compute-region option:selected").val() : null;
   const customImpact =
@@ -97,7 +98,7 @@ const getValues = () => {
   const customOffset =
     provider !== "custom"
       ? null
-      : parseFloat($("#compute-custom-offset").val());
+      : 0;
   const hours = parseFloat($("#compute-hours").val());
   return {
     gpu,
@@ -172,43 +173,37 @@ const growDivOnArrowClickLearn = (clickId, growId) => {
   });
 };
 
-const check = (type, value) => {
-  $("#compute-hours").css("border", "");
-  switch (type) {
-    case "gpu":
-      // console.log(state.gpus, value);
-      return state.gpus.filter((v, k) => {
-        return v.name === value;
-      }).length;
-    case "hours":
-      return Number.isInteger(value) && value > 0 && value < 1e6;
-    case "provider":
-      return state.providers.filter((v, k) => {
-        return v.name === value;
-      }).length;
-    case "region":
-      return state.regions.filter((v, k) => {
-        return v.name === value;
-      }).length;
-    default:
-      return true;
-  }
+const checkForm = () => {
+  if (!$("#compute-form")[0].reportValidity()) return null;
+  const values = getValues();
+  if (!state.gpus[values.gpu]) return null;
+  if (values.provider !== "custom" &&
+      !state.providers[values.provider][values.region]) return null;
+  return values;
 };
 
-const checkForm = () => {
-  const values = getValues();
-  const { gpu, provider, region, hours } = values;
-  let failed = false;
+const clearComputeResults = () => {
+  clearTimeout(state.computeTimeout);
+  $("#result-card, #comparison-row").stop(true, true).hide();
+  $("#compute .spinner-border").hide();
+};
 
-  FEATURES.forEach((v, k) => {
-    if (!check(k, v)) {
-      fail(k);
-      failed = true;
-    }
-  });
-  if (failed) return null;
-
-  return values;
+const updateComputeMode = () => {
+  const researcher = $("#compute-researcher-mode").prop("checked");
+  const custom = !researcher || $("#compute-provider").val() === "custom";
+  $("#compute").toggleClass("compute-researcher-mode", researcher);
+  $("#compute .compute-researcher-only").prop("hidden", !researcher);
+  $("#compute .compute-public-only").prop("hidden", researcher);
+  $("#compute-provider-div").prop("hidden", !researcher);
+  $("#compute-provider").prop("disabled", !researcher);
+  $("#compute-region-div").prop("hidden", custom);
+  $("#compute-region").prop("disabled", custom);
+  $("#compute-custom-impact-div").prop("hidden", !custom);
+  $("#compute-custom-impact").prop("disabled", !custom);
+  $("#compute-mode-description").text(researcher
+    ? "Choisissez un fournisseur et une région, ou une infrastructure privée."
+    : "Grand public : 3 paramètres pour estimer vos émissions.");
+  clearComputeResults();
 };
 
 const twoDigits = (n) => Number(Number(n).toFixed(2));
@@ -290,6 +285,7 @@ const setDetails = (values) => {
     $("#details-min-region").html("");
     $("#details-alternative").html("");
     $("#details-alternative-content").show();
+    $("#details-min-selected").show();
     $("#compute-carbon-offset-title").html("Carbon offset");
   } else {
     $("#compute-carbon-offset-title").html("Carbon Already Offset by Provider");
@@ -316,11 +312,9 @@ const setDetails = (values) => {
 };
 
 const scientificNotation = (n, d) => {
-  const exp = n.toExponential() + "";
-  let dec = exp.split(".")[1].split("e")[0];
-  dec = dec.slice(0, d);
-  const power = exp.split("e")[1];
-  let n_d = parseFloat(exp.split(".")[0] + "." + dec);
+  const [mantissa, power] = n.toExponential().split("e");
+  const dec = (mantissa.split(".")[1] || "").slice(0, d);
+  let n_d = parseFloat(mantissa.split(".")[0] + "." + dec);
   if (power === "+0") {
     n_d = toDigits(n_d * 1, d);
   } else if (power === "+1") {
@@ -374,25 +368,28 @@ const isBottomVisible = (_bottomOffset) => {
 };
 
 const submitCompute = (_values) => {
+  const values = checkForm();
+  if (!values) return;
+  clearComputeResults();
   $("#result-card").hide();
   $("#comparison-row").hide();
   $("#details-content").height(0);
   $("#details-banner .arrow-icon").removeClass("open");
-  $(".spinner-border").show();
-  // const values = _values ? _values : checkForm();
-  const values = getValues();
-  if (!values) return;
+  $("#compute .spinner-border").show();
 
   setDetails(values);
   state.current = values;
 
-  setTimeout(() => {
-    $(".spinner-border").hide();
+  state.computeTimeout = setTimeout(() => {
+    $("#compute .spinner-border").hide();
     $("#result-card").fadeIn();
     $("#comparison-row").fadeIn();
-    $("#compute-carbon-emitted-title").height(
-      $("#compute-carbon-offset-title").height()
-    );
+    $("#compute-carbon-emitted-title").css("height", "");
+    if ($("#result-offset").is(":visible")) {
+      $("#compute-carbon-emitted-title").height(
+        $("#compute-carbon-offset-title").height()
+      );
+    }
 
     // console.log($(window).scrollTop() + $(window).height());
 
@@ -403,16 +400,7 @@ const submitCompute = (_values) => {
 };
 
 const setRegions = (provider) => {
-  if (provider === "custom") {
-    $("#compute-region-div").fadeOut(() => {
-      $(".custom-hidable").fadeIn();
-    });
-  } else {
-    if (!$("#compute-region-div").is(":visible")) {
-      $(".custom-hidable").fadeOut(() => {
-        $("#compute-region-div").fadeIn();
-      });
-    }
+  if (provider !== "custom") {
     $("#compute-region").html("");
     let regs = [];
     for (const region in state.providers[provider]) {
@@ -437,6 +425,7 @@ const setRegions = (provider) => {
       );
     }
   }
+  updateComputeMode();
 };
 
 const setInputs = () => {
@@ -546,6 +535,9 @@ const setInputs = () => {
     const provider = $("#compute-provider option:selected").val();
     setRegions(provider);
   });
+
+  $("#compute-researcher-mode").change(updateComputeMode);
+  $("#compute .compute-input").on("input change", clearComputeResults);
 
   $("#compute-form").submit((e) => {
     submitCompute();

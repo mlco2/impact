@@ -6,9 +6,22 @@
         <div style="margin-top: 3rem" class="text-white-80">Loading Data</div>
     </div>
     <div id="compute-container" class="container" style="display:none">
+        <div class="compute-mode-control">
+            <label class="compute-mode-switch" for="compute-researcher-mode">
+                <input type="checkbox" id="compute-researcher-mode" role="switch"
+                    aria-controls="compute-provider-div compute-region-div compute-custom-impact-div"
+                    aria-describedby="compute-mode-description">
+                <span class="compute-mode-track" aria-hidden="true"></span>
+                <span>Mode chercheur</span>
+            </label>
+            <small id="compute-mode-description" class="text-white-80">Grand public : 3 paramètres pour estimer vos émissions.</small>
+        </div>
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h2 class="text-white mb-4 section-title">Machine Learning Emissions Calculator</h2>
+                <p class="text-white-80 compute-public-only">Choose your GPU, hours used and carbon efficiency to estimate your carbon emissions.</p>
+                <p class="text-white-80 compute-public-only"><small>This estimate excludes datacenter PUE (Power Usage Effectiveness).</small></p>
+                <div class="compute-researcher-only" hidden>
                 <p class="text-white-80">Choose your hardware, runtime and cloud provider to estimate the carbon impact
                     of your
                     research.</p>
@@ -30,6 +43,7 @@
                         </em>
                     </small>
                 </p>
+                </div>
             </div>
 
         </div>
@@ -38,56 +52,42 @@
 
             <div class="form-row" id="compute-selects-row">
 
-                <div class="form-group col-md-4 col-lg-3 col-xl-2">
-                    <label for="compute-gpu">Hardware type</label>
-                    <select class="form-control compute-input" id="compute-gpu">
+                <div class="form-group compute-field">
+                    <label for="compute-gpu">GPU</label>
+                    <select class="form-control compute-input" id="compute-gpu" required>
                     </select>
                 </div>
 
-                <div class="form-group col-md-4 col-lg-2 col-xl-2">
+                <div class="form-group compute-field">
                     <label for="compute-hours">Hours Used</label>
-                    <input class="form-control compute-input" id="compute-hours" type="number" step="0.5" value="100" />
+                    <input class="form-control compute-input" id="compute-hours" type="number" min="0.5" max="999999.5" step="0.5" value="100" inputmode="decimal" required />
                 </div>
 
-                <div class="form-group col-md-4 col-lg-3 col-xl-2">
+                <div class="form-group compute-field" id="compute-provider-div" hidden>
                     <label for="compute-provider">Provider</label>
-                    <select class="form-control compute-input" id="compute-provider">
+                    <select class="form-control compute-input" id="compute-provider" disabled required>
                     </select>
                 </div>
 
-                <div class="form-group col-md-4 col-lg-3 col-xl-2" id="compute-region-div">
+                <div class="form-group compute-field" id="compute-region-div" hidden>
                     <label for="compute-region">Region of Compute</label>
-                    <select class="form-control compute-input" id="compute-region">
+                    <select class="form-control compute-input" id="compute-region" disabled>
                     </select>
                 </div>
 
-                <div class="custom-hidable form-group col-md-4 col-lg-4 col-xl-3" style="display:none"
+                <div class="form-group compute-field"
                     id="compute-custom-impact-div">
                     <label for="compute-custom-impact">
                         Carbon Efficiency (<u>k</u>g/<u>k</u>Wh)
                         <!-- Button trigger modal -->
                         <button type="button" class="modalHelp" id="modalImpactHelp" data-toggle="modal"
-                            data-target="#impactModal">
+                            data-target="#impactModal" aria-label="About carbon efficiency">
                             ?
                         </button>
                     </label>
-                    <input class="form-control compute-input" id="compute-custom-impact" type="number" step="0.5"
-                        value="0.432">
-                    </input>
-                </div>
-                <div class="custom-hidable form-group col-md-4 col-lg-4 col-xl-3" style="display:none"
-                    id="compute-custom-impact-div">
-                    <label for="compute-custom-offset">
-                        Offset bought (<u>%</u>)
-                        <!-- Button trigger modal -->
-                        <button type="button" class="modalHelp" id="modalOffsetHelp" data-toggle="modal"
-                            data-target="#offsetModal">
-                            ?
-                        </button>
-                    </label>
-                    <input class="form-control compute-input" id="compute-custom-offset" type="number" step="0.001"
-                        value="0">
-                    </input>
+                    <input class="form-control compute-input" id="compute-custom-impact" type="number" min="0" step="any"
+                        value="0.432" inputmode="decimal" aria-describedby="compute-impact-description" required>
+                    <small id="compute-impact-description" class="form-text text-white-80">CO<sub>2</sub> emitted per kWh of electricity. Default: 0.432 kg/kWh.</small>
                 </div>
 
             </div>
@@ -103,9 +103,9 @@
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <!-- <div class="modal-header">
-                            <h5 class="modal-title" id="impactModalLabel">Modal title</h5>
-                        </div> -->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="impactModalLabel">Carbon efficiency</h5>
+                        </div>
                         <div class="modal-body">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -141,31 +141,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Modal -->
-            <div class="modal fade" id="offsetModal" tabindex="-1" role="dialog" aria-labelledby="impactModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <!-- <div class="modal-header">
-                            <h5 class="modal-title" id="impactModalLabel">Modal title</h5>
-                        </div> -->
-                        <div class="modal-body">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <p>How much of your infrastructure's energy consumption do you offset, <strong>in %</strong>
-                            </p>
-
-                            <p>Default value is 0</p>
-
-                        </div>
-                        <!-- <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
 
         </form>
 
@@ -175,19 +150,19 @@
 
         <div class="row" id="result-row">
 
-            <div style="display:none;" id="result-card" class="col-md-6 col-8">
+            <div style="display:none;" id="result-card" class="col-lg-8 col-12" role="status" aria-live="polite">
 
                 <!-- main card -->
 
                 <div class="row">
-                    <a href="#publish" class="btn btn-secondary text-uppercase js-scroll-trigger"
+                    <a href="#publish" class="btn btn-secondary text-uppercase js-scroll-trigger compute-researcher-only" hidden
                         id="results-more">Publish this!</a>
                     <div class="col-md-6 result-box" id="result-emitted">
                         <div id="compute-carbon-emitted-title" class="result-title small text-uppercase text-black-50">
                             Carbon Emitted </div>
                         <div id="emitted-value" class="result-value"></div>
                     </div>
-                    <div class="col-md-6 result-box" id="result-offset">
+                    <div class="col-md-6 result-box compute-researcher-only" id="result-offset" hidden>
                         <div id="compute-carbon-offset-title" class="result-title small text-uppercase text-black-50">
                             Carbon Already Offset by Provider
                         </div>

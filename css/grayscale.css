@@ -255,6 +255,8 @@
 }
 
 .compute-section {
+  scroll-margin-top: 80px;
+  font-family: "Open Sans", Arial, sans-serif;
   min-height: 100vh;
   padding-top: 4rem;
   background: linear-gradient(to bottom, rgb(57, 74, 92) 0, rgba(12, 31, 55, 0.9) 75%, rgb(12, 31, 55) 100%), url("https://raw.githubusercontent.com/mlco2/impact/master/img/computer.jpeg");
@@ -262,6 +264,60 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+}
+.compute-section [hidden] {
+  display: none !important;
+}
+.compute-section .compute-mode-control {
+  color: #fff;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.compute-section .compute-mode-control small {
+  display: block;
+  margin-top: 0.25rem;
+}
+.compute-section label.compute-mode-switch {
+  position: relative;
+  display: inline-flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  min-height: 48px;
+  text-align: left;
+  cursor: pointer;
+}
+.compute-section label.compute-mode-switch input {
+  position: absolute;
+  width: 48px;
+  height: 28px;
+  opacity: 0;
+}
+.compute-section label.compute-mode-switch .compute-mode-track {
+  flex: 0 0 48px;
+  height: 28px;
+  border: 2px solid #fff;
+  border-radius: 28px;
+  background: #495057;
+}
+.compute-section label.compute-mode-switch .compute-mode-track::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 150ms;
+}
+.compute-section label.compute-mode-switch input:checked + .compute-mode-track {
+  background: rgb(245, 82, 73);
+}
+.compute-section label.compute-mode-switch input:checked + .compute-mode-track::after {
+  transform: translateX(20px);
+}
+.compute-section label.compute-mode-switch input:focus + .compute-mode-track {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
 }
 @media (max-width: 768px) {
   .compute-section {
@@ -275,10 +331,10 @@
 .compute-section label {
   margin: 0;
   vertical-align: middle;
-  text-align: center;
+  text-align: left;
   min-height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .compute-section .modalHelp {
@@ -290,12 +346,23 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin-left: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
 }
 .compute-section .modal-body {
   color: rgba(12, 31, 55, 0.9);
   padding: 50px 80px;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 575px) {
+  .compute-section .modal-body {
+    padding: 4rem 1.25rem 1.25rem;
+  }
 }
 .compute-section .modal-body button {
+  min-width: 44px;
+  min-height: 44px;
   position: absolute;
   right: 30px;
   top: 30px;
@@ -313,20 +380,13 @@
     margin: 1.75rem auto;
   }
 }
-@media (max-width: 768px) {
-  .compute-section #results-more {
-    max-width: 90px;
-    right: -45px;
-  }
-}
 .compute-section #results-more {
-  position: absolute;
-  max-width: 100px;
-  padding: 10px;
+  position: static;
+  width: 100%;
+  min-height: 48px;
+  padding: 14px;
+  margin-bottom: 1rem;
   border-radius: 5px;
-  right: -50px;
-  top: 50%;
-  transform: translateY(-50%);
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
 }
 .compute-section #compute-container {
@@ -342,13 +402,48 @@
   margin-top: 1.5rem;
 }
 .compute-section #compute-form #compute-selects-row {
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+.compute-section #compute-form #compute-selects-row .compute-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+.compute-section #compute-form #compute-selects-row .form-control {
+  min-height: 48px;
+  height: 48px;
+  font-size: 1rem;
+}
+.compute-section #compute-form #compute-selects-row .form-control:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 @media (max-width: 768px) {
   .compute-section #compute-form #compute-selects-row {
-    padding: 0 2rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
   }
+}
+.compute-section #compute-form #compute-submit {
+  min-height: 48px;
+  min-width: 180px;
+}
+@media (max-width: 768px) {
+  .compute-section #compute-form #compute-submit {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .compute-section.compute-researcher-mode #compute-selects-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.compute-section:not(.compute-researcher-mode) #result-emitted {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 .compute-section #result-row #result-card {
   margin: auto;
@@ -357,6 +452,13 @@
   padding: 2rem;
   box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
   transition: all ease 250ms;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 768px) {
+  .compute-section #result-row #result-card {
+    padding: 1.5rem 1rem 3rem;
+  }
 }
 @media (min-width: 768px) {
   .compute-section #result-row #result-card:hover {
@@ -372,7 +474,7 @@
   color: #495057;
 }
 .compute-section #result-row #result-card #result-details {
-  padding: 0px 20px;
+  padding: 0 0 20px;
 }
 .compute-section #result-row #result-card #result-details #details-content {
   transition: all cubic-bezier(1, 0, 0, 1) 600ms;
@@ -400,7 +502,7 @@
   left: 0;
   border-radius: 0px 0px 5px 5px;
   background-color: rgb(245, 82, 73);
-  min-height: 21px;
+  min-height: 44px;
   color: white;
   display: flex;
   justify-content: center;
@@ -421,6 +523,12 @@
   box-shadow: 6px 5px 15px 2px rgba(20, 20, 20, 0.7);
   transition: all ease 250ms;
   justify-content: center;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 768px) {
+  .compute-section #comparison-row {
+    padding: 1.5rem 1rem;
+  }
 }
 .compute-section #comparison-row #comparison-card {
   text-align: center;
@@ -457,6 +565,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
+}
+@media (max-width: 767px) {
+  .compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column {
+    width: 100%;
+    padding: 1rem 0;
+    border: 0 !important;
+  }
 }
 .compute-section #comparison-row #comparison-card #comparison-columns-row .comparison-column h4 {
   color: #343a40;
